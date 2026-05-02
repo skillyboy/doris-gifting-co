@@ -1,25 +1,34 @@
-# CODING AGENTS: READ THIS FIRST
+# Doris Gifting Co.
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Marketing site for Doris Gifting Co. — premium, curated gift boxes.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+**Live:** https://skillyboy.github.io/doris-gifting-co/
 
-## What you should do — IMPORTANT
+## Stack
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+- Vite + React 18
+- Plain CSS variables (no UI framework)
+- Deployed to GitHub Pages via `.github/workflows/deploy.yml`
 
-**Read `project/Doris Gifting Co.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Develop
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build to dist/
+npm run preview  # preview the production build
+```
 
-## About the design files
+## Deploy
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+Pushes to `main` trigger the GitHub Actions workflow, which builds and publishes `dist/` to GitHub Pages. The Vite `base` is set to `/doris-gifting-co/` to match the project page path.
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+**One-time repo setup:** Settings → Pages → Source = **GitHub Actions**.
 
-## Bundle contents
+## Pages
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `DORIS` project files (HTML prototypes, assets, components)
+- `/` Home — hero, featured products, about snippet, gallery teaser, services accordion, testimonials
+- Services — services accordion + four-step process
+- About — founder story
+- Gallery — filterable grid with lightbox
+- Contact — get-in-touch with mailto button
