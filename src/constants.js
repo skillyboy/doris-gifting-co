@@ -32,6 +32,29 @@ export const NAV_ITEMS = [
   { id: 'contact',  label: 'Contact Us' },
 ];
 
+export const SERVICES = [
+  {
+    title: 'Corporate Gifting',
+    intro: 'Professional gift solutions for:',
+    bullets: ['Employee appreciation', 'Client gifts', 'Welcome kits', 'Business branding'],
+  },
+  {
+    title: 'Custom Gift Boxes',
+    intro: 'Bespoke compositions designed around the recipient:',
+    bullets: ['Personal milestones', 'Weddings & anniversaries', 'Holiday curations', 'One-of-one keepsakes'],
+  },
+  {
+    title: 'Special Occasion Gifts',
+    intro: 'Curated for the moments that matter:',
+    bullets: ['Birthdays & celebrations', 'Welcome & thank you', 'Get well & sympathy', 'New baby & housewarming'],
+  },
+  {
+    title: 'Bulk Orders',
+    intro: 'Volume gifting without losing the handmade touch:',
+    bullets: ['Conferences & events', 'Team milestones', 'Holiday programs', 'Custom branding at scale'],
+  },
+];
+
 export const GALLERY_FILTERS = [
   'All',
   'Corporate Gifting',
