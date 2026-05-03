@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Nav from './components/Nav';
 import MobileMenu from './components/MobileMenu';
 import Footer from './components/Footer';
-import TweaksPanel from './components/TweaksPanel';
 import Home from './pages/Home';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
@@ -19,24 +18,39 @@ function useWindowWidth() {
   return w;
 }
 
-const ACCENT_OPTIONS = [
-  { label: 'Bronze', value: '#967259' },
-  { label: 'Olive',  value: '#6f6a3d' },
-  { label: 'Plum',   value: '#6b3a4a' },
-  { label: 'Ink',    value: '#2c2520' },
-];
-const FONT_OPTIONS = [
-  { label: 'Cormorant', value: 'Cormorant Garamond' },
-  { label: 'Playfair',  value: 'Playfair Display' },
-];
+// Time of day → accent. Day of week → heading font.
+//   morning   05–11  Bronze   warm, fresh start
+//   afternoon 12–16  Olive    natural, grounded
+//   evening   17–20  Plum     rich, golden hour
+//   night     21–04  Ink      quiet, deep
+function autoTheme(now = new Date()) {
+  const h = now.getHours();
+  const accent =
+    h >= 5  && h < 12 ? '#967259' :
+    h >= 12 && h < 17 ? '#6f6a3d' :
+    h >= 17 && h < 21 ? '#6b3a4a' :
+                        '#2c2520';
+  // Mon–Thu → Cormorant (editorial weekday). Fri–Sun → Playfair (display weekend).
+  const dow = now.getDay();
+  const headingFont = dow >= 1 && dow <= 4 ? 'Cormorant Garamond' : 'Playfair Display';
+  return { accent, headingFont };
+}
+
+function useAutoTheme() {
+  const [theme, setTheme] = useState(() => autoTheme());
+  useEffect(() => {
+    const id = setInterval(() => setTheme(autoTheme()), 60_000);
+    return () => clearInterval(id);
+  }, []);
+  return theme;
+}
 
 const PAGES = { home: Home, services: Services, about: About, gallery: Gallery, contact: Contact };
 
 export default function App() {
   const [page, setPage] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
-  const [accent, setAccent] = useState('#967259');
-  const [headingFont, setHeadingFont] = useState('Cormorant Garamond');
+  const { accent, headingFont } = useAutoTheme();
 
   const winW = useWindowWidth();
   const mobile = winW < 720;
@@ -65,33 +79,22 @@ export default function App() {
   const PageComp = PAGES[page] || Home;
 
   return (
-    <>
-      <div style={{ position: 'relative', minHeight: '100vh' }}>
-        <Nav
-          page={page}
-          go={go}
-          mobile={mobile}
-          onMenu={() => setMenuOpen(true)}
-          transparent={transparentNav}
-        />
-
-        <PageComp mobile={mobile} go={go} />
-
-        <Footer mobile={mobile} go={go} />
-
-        {mobile && menuOpen && (
-          <MobileMenu page={page} go={go} onClose={() => setMenuOpen(false)} />
-        )}
-      </div>
-
-      <TweaksPanel
-        accent={accent}
-        onAccent={setAccent}
-        accentOptions={ACCENT_OPTIONS}
-        headingFont={headingFont}
-        onHeadingFont={setHeadingFont}
-        fontOptions={FONT_OPTIONS}
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <Nav
+        page={page}
+        go={go}
+        mobile={mobile}
+        onMenu={() => setMenuOpen(true)}
+        transparent={transparentNav}
       />
-    </>
+
+      <PageComp mobile={mobile} go={go} />
+
+      <Footer mobile={mobile} go={go} />
+
+      {mobile && menuOpen && (
+        <MobileMenu page={page} go={go} onClose={() => setMenuOpen(false)} />
+      )}
+    </div>
   );
 }
