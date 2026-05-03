@@ -1,8 +1,11 @@
 import React from 'react';
 import { IMG } from '../constants';
 import CTABanner from '../components/CTABanner';
-import ContactForm from '../components/ContactForm';
 import Reveal from '../components/Reveal';
+
+const EMAIL = 'hello@dorisgifting.co';
+const PHONE_DISPLAY = '+1 (301) 364-6072';
+const PHONE_HREF    = '+13013646072';
 
 export default function Contact({ mobile, go }) {
   return (
@@ -61,10 +64,10 @@ export default function Contact({ mobile, go }) {
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Email</div>
                 <a
-                  href="mailto:hello@dorisgifting.co"
+                  href={`mailto:${EMAIL}`}
                   style={{ fontSize: 13, color: 'var(--ink-soft)', textDecoration: 'none' }}
                 >
-                  hello@dorisgifting.co
+                  {EMAIL}
                 </a>
               </div>
               <div>
@@ -73,11 +76,34 @@ export default function Contact({ mobile, go }) {
               </div>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Phone Number</div>
-                <div style={{ fontSize: 13, color: 'var(--ink-soft)' }}>+1 301 364 6072</div>
+                <a
+                  href={`tel:${PHONE_HREF}`}
+                  style={{ fontSize: 13, color: 'var(--ink-soft)', textDecoration: 'none' }}
+                >
+                  {PHONE_DISPLAY}
+                </a>
               </div>
             </div>
 
-            <ContactForm mobile={mobile} />
+            <a
+              href={`mailto:${EMAIL}`}
+              style={{
+                display: 'inline-block',
+                background: 'var(--bronze)',
+                color: '#fff',
+                border: 0,
+                padding: '14px 32px',
+                borderRadius: 6,
+                fontSize: 14,
+                fontWeight: 500,
+                letterSpacing: '0.02em',
+                cursor: 'pointer',
+                textDecoration: 'none',
+                fontFamily: 'var(--sans)',
+              }}
+            >
+              Email Us
+            </a>
           </Reveal>
         </div>
       </div>

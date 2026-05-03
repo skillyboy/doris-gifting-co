@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import Services from './pages/Services';
 
 function useWindowWidth() {
   const [w, setW] = useState(typeof window !== 'undefined' ? window.innerWidth : 1280);
@@ -29,7 +30,7 @@ const FONT_OPTIONS = [
   { label: 'Playfair',  value: 'Playfair Display' },
 ];
 
-const PAGES = { home: Home, about: About, gallery: Gallery, contact: Contact };
+const PAGES = { home: Home, services: Services, about: About, gallery: Gallery, contact: Contact };
 
 export default function App() {
   const [page, setPage] = useState('home');
@@ -39,7 +40,7 @@ export default function App() {
 
   const winW = useWindowWidth();
   const mobile = winW < 720;
-  const transparentNav = page === 'home' || page === 'about';
+  const transparentNav = page === 'home' || page === 'about' || page === 'services';
 
   const go = (id) => {
     setPage(id);

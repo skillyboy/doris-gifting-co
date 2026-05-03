@@ -3,6 +3,7 @@ import { IMG } from '../constants';
 import SectionTitle from '../components/SectionTitle';
 import CTABanner from '../components/CTABanner';
 import Reveal from '../components/Reveal';
+import ServicesAccordion from '../components/ServicesAccordion';
 
 const TESTIMONIALS = [
   { name: 'Adaeze O.', role: 'Marketing Lead', avatar: IMG.a1, text: "The team made our client appreciation feel like a brand moment. Every detail was considered." },
@@ -53,7 +54,7 @@ export default function Home({ mobile, go }) {
             </Reveal>
             <Reveal delay={220}>
               <button
-                onClick={() => go('gallery')}
+                onClick={() => go('contact')}
                 style={{
                   background: '#fff',
                   color: 'var(--ink)',
@@ -65,7 +66,7 @@ export default function Home({ mobile, go }) {
                   cursor: 'pointer',
                 }}
               >
-                See our work
+                Send us a message
               </button>
             </Reveal>
           </div>
@@ -195,39 +196,7 @@ export default function Home({ mobile, go }) {
           gap: mobile ? 24 : 56,
           alignItems: 'center',
         }}>
-          <div>
-            {[
-              ['Corporate Gifting', 'Branded boxes that say thank you with intention.'],
-              ['Custom Gift Boxes', 'Bespoke compositions for personal milestones.'],
-              ['Special Occasion Gifts', 'Curated moments — birthdays, weddings, hellos.'],
-              ['Bulk Orders', 'Volume pricing without losing the handmade touch.'],
-            ].map(([t, d], i) => (
-              <Reveal key={i} delay={i * 60}>
-                <div style={{
-                  padding: '18px 0',
-                  borderBottom: '1px solid var(--line)',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  gap: 16,
-                }}>
-                  <div>
-                    <div style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{t}</div>
-                    <div style={{ fontSize: 13, color: 'var(--ink-soft)' }}>{d}</div>
-                  </div>
-                  <div style={{
-                    fontSize: 12,
-                    letterSpacing: '0.16em',
-                    color: 'var(--bronze)',
-                    textTransform: 'uppercase',
-                    whiteSpace: 'nowrap',
-                  }}>
-                    Learn more →
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <ServicesAccordion mobile={mobile} />
           <Reveal>
             <div style={{
               height: mobile ? 240 : 380,
