@@ -15,87 +15,66 @@ const TESTIMONIALS = [
 ];
 
 export default function Home({ mobile, go }) {
-  const heroH = mobile ? 480 : 640;
-  const px = mobile ? 24 : 80;
+  const pill = {
+    background: '#967259',
+    color: '#fff',
+    border: 0,
+    padding: '12px 26px',
+    borderRadius: 6,
+    fontSize: 14,
+    fontWeight: 500,
+    cursor: 'pointer',
+  };
 
   return (
     <div>
-      {/* Hero */}
-      <div
-        style={{
-          position: 'relative',
-          height: heroH,
-          backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.40) 100%), url(${IMG.workshop})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            color: '#fff',
-            padding: mobile ? '0 24px' : '0 80px',
-          }}
-        >
-          <div style={{ maxWidth: 640 }}>
-            <Reveal>
-              <div className="serif" style={{ fontSize: mobile ? 40 : 64, lineHeight: 1.05, marginBottom: 12 }}>
-                Thoughtful Gifting<br/>Elevated
-              </div>
-            </Reveal>
-            <Reveal delay={120}>
-              <p style={{ color: '#fff', opacity: 0.92, fontSize: mobile ? 14 : 16, maxWidth: 460, margin: '0 0 24px' }}>
-                Premium, curated gift experiences for the moments that matter most — designed to leave a lasting impression.
-              </p>
-            </Reveal>
-            <Reveal delay={220}>
-              <button
-                onClick={() => go('contact')}
-                style={{
-                  background: '#fff',
-                  color: 'var(--ink)',
-                  border: 0,
-                  padding: '12px 28px',
-                  borderRadius: 6,
-                  fontSize: 14,
-                  fontWeight: 500,
-                  cursor: 'pointer',
-                }}
-              >
-                Send us a message
-              </button>
-            </Reveal>
-          </div>
-        </div>
-      </div>
-
-      {/* Three featured product cards */}
-      <div style={{ background: '#fff', padding: `40px ${px}px` }}>
+      {/* Hero — editorial split */}
+      <section style={{ background: '#f3ede4', padding: mobile ? '56px 24px' : '96px 80px' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: mobile ? '1fr' : '1fr 1fr 1fr',
-          gap: mobile ? 14 : 20,
+          gridTemplateColumns: mobile ? '1fr' : '1.05fr 1fr',
+          gap: mobile ? 20 : 80,
+          alignItems: 'center',
         }}>
-          {[IMG.g1, IMG.g3, IMG.g5].map((src, i) => (
-            <Reveal key={i} delay={i * 80}>
-              <div style={{
-                height: mobile ? 200 : 280,
-                backgroundImage: `url(${src})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                borderRadius: 4,
-              }} />
-            </Reveal>
-          ))}
+          <Reveal>
+            <h1 className="serif" style={{
+              margin: 0,
+              color: 'var(--ink)',
+              fontSize: mobile ? 44 : 72,
+              lineHeight: 1.05,
+              fontWeight: 500,
+            }}>
+              Thoughtful Gifting<br/>Elevated
+            </h1>
+          </Reveal>
+          <Reveal delay={120}>
+            <p style={{
+              fontSize: mobile ? 14 : 15,
+              lineHeight: 1.7,
+              color: 'var(--ink-soft)',
+              margin: '0 0 24px',
+              maxWidth: 440,
+            }}>
+              Premium, curated gift experiences for the moments that matter most — designed to leave a lasting impression.
+            </p>
+            <button onClick={() => go('contact')} style={pill}>Send us a message</button>
+          </Reveal>
         </div>
-      </div>
+      </section>
+
+      {/* Wide image strip */}
+      <Reveal>
+        <div style={{
+          width: '100%',
+          height: mobile ? 260 : 520,
+          backgroundImage: `url(${IMG.giftWall})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }} />
+      </Reveal>
 
       {/* About Doris snippet */}
-      <div style={{ background: '#fff', padding: mobile ? '12px 24px 56px' : '24px 80px 96px', textAlign: 'center' }}>
+      <div style={{ background: '#fff', padding: mobile ? '56px 24px' : '96px 80px 96px', textAlign: 'center' }}>
         <Reveal>
           <SectionTitle mobile={mobile}>About Doris</SectionTitle>
         </Reveal>
@@ -113,6 +92,11 @@ export default function Home({ mobile, go }) {
             our goal is to help you leave a lasting impression.
           </p>
         </Reveal>
+        <Reveal delay={140}>
+          <button onClick={() => go('about')} style={{ ...pill, marginTop: mobile ? 20 : 28 }}>
+            Learn More
+          </button>
+        </Reveal>
       </div>
 
       {/* Store interior */}
@@ -129,7 +113,7 @@ export default function Home({ mobile, go }) {
 
       {/* Gallery teaser */}
       <div style={{ background: '#fff', padding: mobile ? '0 24px 32px' : '0 80px 24px' }}>
-        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 20 : 32 }}>
+        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 20 : 28 }}>
           <div style={{
             fontSize: 11,
             letterSpacing: '0.32em',
@@ -139,21 +123,39 @@ export default function Home({ mobile, go }) {
           }}>
             Gallery
           </div>
-          <h2 className="serif" style={{ margin: 0, color: 'var(--bronze)', fontSize: mobile ? 28 : 36, fontWeight: 500 }}>
+          <h2 className="serif" style={{ margin: '0 0 20px', color: 'var(--bronze)', fontSize: mobile ? 28 : 36, fontWeight: 500 }}>
             A Study in Thoughtful Details
           </h2>
+          <button onClick={() => go('gallery')} style={pill}>View Gallery</button>
         </Reveal>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: mobile ? '1fr 1fr' : 'repeat(4, 1fr)',
+          gridTemplateColumns: mobile ? '1fr 1fr' : '1.15fr 1fr 1fr',
+          gridTemplateRows: mobile ? 'auto' : '1fr 1fr',
           gap: mobile ? 8 : 14,
+          height: mobile ? 'auto' : 520,
         }}>
-          {[IMG.g1, IMG.g2, IMG.g3, IMG.g4, IMG.g5, IMG.g6, IMG.g7, IMG.g8].map((src, i) => (
-            <Reveal key={i} delay={i * 40}>
+          {[
+            { src: IMG.g3, large: true },
+            { src: IMG.g2 },
+            { src: IMG.g5 },
+            { src: IMG.g4 },
+            { src: IMG.g6 },
+          ].map(({ src, large }, i) => (
+            <Reveal
+              key={i}
+              delay={i * 40}
+              style={{
+                gridColumn: large ? (mobile ? '1 / -1' : '1 / 2') : undefined,
+                gridRow: large && !mobile ? '1 / 3' : undefined,
+              }}
+            >
               <div
                 onClick={() => go('gallery')}
                 style={{
-                  aspectRatio: '1 / 1',
+                  width: '100%',
+                  height: mobile ? 'auto' : '100%',
+                  aspectRatio: mobile ? (large ? '4 / 5' : '1 / 1') : 'auto',
                   backgroundImage: `url(${src})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
