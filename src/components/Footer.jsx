@@ -22,7 +22,7 @@ export default function Footer({ mobile, go }) {
           Important Links
         </div>
         <button onClick={() => go('about')} style={footLinkStyle}>About Us</button>
-        <button onClick={() => go('gallery')} style={footLinkStyle}>Gallery</button>
+        <button onClick={() => go('gallery')} style={footLinkStyle}>{mobile ? 'Portfolio' : 'Gallery'}</button>
       </div>
       <div>
         <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 14 }}>

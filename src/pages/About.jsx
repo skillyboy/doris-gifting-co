@@ -128,13 +128,7 @@ export default function About({ mobile, go }) {
         </div>
       </div>
 
-      <CTABanner
-        headline="Plan your dream event"
-        sub="Will respond in few minutes"
-        button="Let's Talk"
-        mobile={mobile}
-        go={go}
-      />
+      <CTABanner mobile={mobile} go={go} />
     </div>
   );
 }

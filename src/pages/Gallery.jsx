@@ -57,7 +57,7 @@ export default function Gallery({ mobile, go }) {
                   border: '1px solid var(--bronze)',
                   background: filter === f ? 'var(--bronze)' : 'transparent',
                   color: filter === f ? '#fff' : 'var(--bronze)',
-                  borderRadius: 2,
+                  borderRadius: 999,
                   fontFamily: 'var(--sans)',
                   letterSpacing: '0.04em',
                   cursor: 'pointer',
@@ -80,7 +80,7 @@ export default function Gallery({ mobile, go }) {
                   border: '1px solid var(--bronze)',
                   background: filter === f ? 'var(--bronze)' : 'transparent',
                   color: filter === f ? '#fff' : 'var(--bronze)',
-                  borderRadius: 2,
+                  borderRadius: 999,
                   fontFamily: 'var(--sans)',
                   cursor: 'pointer',
                   textTransform: 'uppercase',
@@ -125,7 +125,7 @@ export default function Gallery({ mobile, go }) {
             color: 'var(--ink)',
             border: '1px solid var(--ink)',
             padding: '12px 28px',
-            borderRadius: 2,
+            borderRadius: 999,
             fontSize: 13,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
@@ -136,13 +136,7 @@ export default function Gallery({ mobile, go }) {
         </div>
       </div>
 
-      <CTABanner
-        headline="Let's Create something thoughtful for you"
-        sub="Will respond in few minutes"
-        button="Email Us"
-        mobile={mobile}
-        go={go}
-      />
+      <CTABanner mobile={mobile} go={go} />
 
       {lbIndex != null && (
         <Lightbox
