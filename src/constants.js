@@ -5,17 +5,16 @@ export const IMG = {
   contactHand: '/img/contact-hand.jpg',
   founder:     '/img/founder.jpg',
   workshop:    '/img/cta-wall.png',
-  // gallery — real product photography
-  g1:  '/img/g-vmo.jpg',
-  g2:  '/img/g-arhaus.jpg',
-  g3:  '/img/g-huxley.jpg',
-  g4:  '/img/g-casa.jpg',
-  g5:  '/img/g-refy.jpg',
-  g6:  '/img/g-happybday.jpg',
-  g7:  '/img/g-vmo.jpg',
-  g8:  '/img/g-huxley.jpg',
-  g9:  '/img/g-casa.jpg',
-  g10: '/img/g-refy.jpg',
+  // gallery — real Doris product photography
+  g1: '/img/g-boxes-trio.jpg',      // Services hero
+  g2: '/img/g-journal-mug.jpg',     // Home teaser small
+  g3: '/img/g-mens-scent.jpg',      // Home teaser large
+  g4: '/img/g-whiskey-sauvage.jpg', // Home teaser small
+  g5: '/img/g-spa-basket.jpg',      // Home teaser small
+  g6: '/img/g-brush-candle.jpg',    // Services + Home accordion side
+  g7: '/img/g-warm-cozy.jpg',       // Home teaser small
+  g8: '/img/g-wellness.jpg',
+  g9: '/img/g-espresso-amber.jpg',
   // testimonial avatars
   a1: 'https://i.pravatar.cc/120?img=47',
   a2: 'https://i.pravatar.cc/120?img=32',
@@ -64,15 +63,13 @@ export const GALLERY_FILTERS = [
 ];
 
 export const GALLERY_ITEMS = [
-  { src: '/img/g-vmo.jpg',       cat: 'Corporate Gifting',      ratio: '4 / 3', span: 2 },
-  { src: '/img/g-huxley.jpg',    cat: 'Custom Gift Boxes',      ratio: '4 / 3' },
-  { src: '/img/g-casa.jpg',      cat: 'Bulk Orders',            ratio: '1 / 1' },
-  { src: '/img/g-refy.jpg',      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: '/img/g-happybday.jpg', cat: 'Special Occasion Gifts', ratio: '1 / 1' },
-  { src: '/img/g-arhaus.jpg',    cat: 'Bulk Orders',            ratio: '1 / 1' },
-  { src: '/img/g-vmo.jpg',       cat: 'Corporate Gifting',      ratio: '4 / 3', span: 2 },
-  { src: '/img/g-casa.jpg',      cat: 'Bulk Orders',            ratio: '3 / 4' },
-  { src: '/img/g-huxley.jpg',    cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: '/img/g-happybday.jpg', cat: 'Special Occasion Gifts', ratio: '4 / 5' },
-  { src: '/img/g-refy.jpg',      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: '/img/g-boxes-trio.jpg',      cat: 'Bulk Orders',            ratio: '4 / 3', span: 2 },
+  { src: '/img/g-journal-mug.jpg',     cat: 'Corporate Gifting',      ratio: '4 / 3' },
+  { src: '/img/g-warm-cozy.jpg',       cat: 'Special Occasion Gifts', ratio: '1 / 1' },
+  { src: '/img/g-mens-scent.jpg',      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: '/img/g-spa-basket.jpg',      cat: 'Special Occasion Gifts', ratio: '1 / 1' },
+  { src: '/img/g-whiskey-sauvage.jpg', cat: 'Custom Gift Boxes',      ratio: '4 / 3', span: 2 },
+  { src: '/img/g-brush-candle.jpg',    cat: 'Custom Gift Boxes',      ratio: '3 / 4' },
+  { src: '/img/g-espresso-amber.jpg',  cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: '/img/g-wellness.jpg',        cat: 'Special Occasion Gifts', ratio: '4 / 5' },
 ];

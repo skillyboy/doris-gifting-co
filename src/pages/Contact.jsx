@@ -3,7 +3,7 @@ import { IMG } from '../constants';
 import CTABanner from '../components/CTABanner';
 import Reveal from '../components/Reveal';
 
-const EMAIL = 'hello@dorisgifting.co';
+const EMAIL = 'dorisgiftingco@gmail.com';
 const PHONE_DISPLAY = '+1301364607289';
 const PHONE_HREF    = '+1301364607289';
 
