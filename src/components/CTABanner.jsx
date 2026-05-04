@@ -1,10 +1,16 @@
 import React from 'react';
 import { IMG } from '../constants';
 
-export default function CTABanner({ headline, sub, button, mobile, go }) {
+export default function CTABanner({ mobile, go }) {
+  const headline = mobile ? 'Plan your dream event' : "Let's Create something thoughtful for you";
+  const button = mobile ? "Let's Talk" : 'Email Us';
   const h = mobile ? 280 : 360;
+
   return (
-    <div style={{ background: 'var(--cream)', padding: mobile ? '0' : '0 56px' }}>
+    <div style={{
+      background: 'var(--cream)',
+      padding: mobile ? '24px 16px' : '32px 56px',
+    }}>
       <div
         style={{
           position: 'relative',
@@ -12,7 +18,7 @@ export default function CTABanner({ headline, sub, button, mobile, go }) {
           backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.50), rgba(0,0,0,0.55)), url(${IMG.giftWall})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          borderRadius: mobile ? 0 : 4,
+          borderRadius: mobile ? 16 : 20,
           overflow: 'hidden',
         }}
       >
@@ -33,7 +39,7 @@ export default function CTABanner({ headline, sub, button, mobile, go }) {
           <div className="serif" style={{ fontSize: mobile ? 32 : 44, lineHeight: 1.1 }}>
             {headline}
           </div>
-          <div style={{ fontSize: 14, color: '#fff', opacity: 0.9 }}>{sub}</div>
+          <div style={{ fontSize: 14, color: '#fff', opacity: 0.9 }}>Will respond in few minutes</div>
           <button
             onClick={() => go && go('contact')}
             style={{

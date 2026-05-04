@@ -256,13 +256,7 @@ export default function Home({ mobile, go }) {
         </div>
       </div>
 
-      <CTABanner
-        headline="Let's Create something thoughtful for you"
-        sub="Will respond in few minutes"
-        button="Email Us"
-        mobile={mobile}
-        go={go}
-      />
+      <CTABanner mobile={mobile} go={go} />
     </div>
   );
 }

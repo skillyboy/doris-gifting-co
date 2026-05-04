@@ -4,8 +4,8 @@ import CTABanner from '../components/CTABanner';
 import Reveal from '../components/Reveal';
 
 const EMAIL = 'hello@dorisgifting.co';
-const PHONE_DISPLAY = '+1 (301) 364-6072';
-const PHONE_HREF    = '+13013646072';
+const PHONE_DISPLAY = '+1301364607289';
+const PHONE_HREF    = '+1301364607289';
 
 export default function Contact({ mobile, go }) {
   return (
@@ -108,13 +108,7 @@ export default function Contact({ mobile, go }) {
         </div>
       </div>
 
-      <CTABanner
-        headline="Let's Create something thoughtful for you"
-        sub="Will respond in few minutes"
-        button="Email Us"
-        mobile={mobile}
-        go={go}
-      />
+      <CTABanner mobile={mobile} go={go} />
     </div>
   );
 }
