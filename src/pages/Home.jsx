@@ -140,7 +140,7 @@ export default function Home({ mobile, go }) {
             { src: IMG.g2 },
             { src: IMG.g5 },
             { src: IMG.g4 },
-            { src: IMG.g6 },
+            { src: IMG.g7 },
           ].map(({ src, large }, i) => (
             <Reveal
               key={i}

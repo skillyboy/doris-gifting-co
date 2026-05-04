@@ -73,7 +73,7 @@ export default function Footer({ mobile, go }) {
           textAlign: 'center',
         }}
       >
-        © 2026 Doris Gifting. All rights reserved.
+        © 2026 Doris Gifting Co. All rights reserved.
       </div>
     </div>
   );
