@@ -1,3 +1,9 @@
 node_modules/
 dist/
 .DS_Store
+*.pdf
+*.PDF
+assets/*.pdf
+*.pdf
+*.PDF
+assets/*.pdf
