@@ -55,7 +55,7 @@ export default function Home({ mobile, go }) {
               margin: '0 0 24px',
               maxWidth: 440,
             }}>
-              Premium, curated gift experiences for the moments that matter most — designed to leave a lasting impression.
+              Every gift should be intentional and memorable. We curate bespoke experiences that articulate gratitude and celebrate connections with quiet sophistication.
             </p>
             <button onClick={() => go('contact')} style={pill}>Send us a message</button>
           </Reveal>
