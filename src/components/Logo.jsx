@@ -2,8 +2,7 @@ import React from 'react';
 
 const B = import.meta.env.BASE_URL;
 
-export default function Logo({ size = 1, variant = 'dark', className, style }) {
-  const src = variant === 'light' ? `${B}img/logo-white.svg` : `${B}img/logo.png`;
+export default function Logo({ size = 1, className, style }) {
   return (
     <div
       className={className}
@@ -15,7 +14,7 @@ export default function Logo({ size = 1, variant = 'dark', className, style }) {
       }}
     >
       <img
-        src={src}
+        src={`${B}img/logo.png`}
         alt="Doris Gifting Co."
         style={{
           height: 56 * size,
