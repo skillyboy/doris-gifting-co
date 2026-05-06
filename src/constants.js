@@ -1,20 +1,22 @@
+const B = import.meta.env.BASE_URL; // '/' in dev, '/doris-gifting-co/' in build
+
 export const IMG = {
   // hero / banners
   storeInterior: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1600&q=80&auto=format&fit=crop',
-  giftWall:    '/img/cta-wall.png',
-  contactHand: '/img/contact-hand.jpg',
-  founder:     '/img/founder.jpg',
-  workshop:    '/img/cta-wall.png',
+  giftWall:    `${B}img/cta-wall.png`,
+  contactHand: `${B}img/contact-hand.jpg`,
+  founder:     `${B}img/founder.jpg`,
+  workshop:    `${B}img/cta-wall.png`,
   // gallery — real Doris product photography
-  g1: '/img/g-boxes-trio.jpg',      // Services hero
-  g2: '/img/g-journal-mug.jpg',     // Home teaser small
-  g3: '/img/g-mens-scent.jpg',      // Home teaser large
-  g4: '/img/g-whiskey-sauvage.jpg', // Home teaser small
-  g5: '/img/g-spa-basket.jpg',      // Home teaser small
-  g6: '/img/g-brush-candle.jpg',    // Services + Home accordion side
-  g7: '/img/g-warm-cozy.jpg',       // Home teaser small
-  g8: '/img/g-wellness.jpg',
-  g9: '/img/g-espresso-amber.jpg',
+  g1: `${B}img/g-boxes-trio.jpg`,      // Services hero
+  g2: `${B}img/g-journal-mug.jpg`,     // Home teaser small
+  g3: `${B}img/g-mens-scent.jpg`,      // Home teaser large
+  g4: `${B}img/g-whiskey-sauvage.jpg`, // Home teaser small
+  g5: `${B}img/g-spa-basket.jpg`,      // Home teaser small
+  g6: `${B}img/g-brush-candle.jpg`,    // Services + Home accordion side
+  g7: `${B}img/g-warm-cozy.jpg`,       // Home teaser small
+  g8: `${B}img/g-wellness.jpg`,
+  g9: `${B}img/g-espresso-amber.jpg`,
   // testimonial avatars
   a1: 'https://i.pravatar.cc/120?img=47',
   a2: 'https://i.pravatar.cc/120?img=32',
@@ -63,13 +65,13 @@ export const GALLERY_FILTERS = [
 ];
 
 export const GALLERY_ITEMS = [
-  { src: '/img/g-boxes-trio.jpg',      cat: 'Bulk Orders',            ratio: '4 / 3', span: 2 },
-  { src: '/img/g-journal-mug.jpg',     cat: 'Corporate Gifting',      ratio: '4 / 3' },
-  { src: '/img/g-warm-cozy.jpg',       cat: 'Special Occasion Gifts', ratio: '1 / 1' },
-  { src: '/img/g-mens-scent.jpg',      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: '/img/g-spa-basket.jpg',      cat: 'Special Occasion Gifts', ratio: '1 / 1' },
-  { src: '/img/g-whiskey-sauvage.jpg', cat: 'Custom Gift Boxes',      ratio: '4 / 3', span: 2 },
-  { src: '/img/g-brush-candle.jpg',    cat: 'Custom Gift Boxes',      ratio: '3 / 4' },
-  { src: '/img/g-espresso-amber.jpg',  cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: '/img/g-wellness.jpg',        cat: 'Special Occasion Gifts', ratio: '4 / 5' },
+  { src: `${B}img/g-boxes-trio.jpg`,      cat: 'Bulk Orders',            ratio: '4 / 3', span: 2 },
+  { src: `${B}img/g-journal-mug.jpg`,     cat: 'Corporate Gifting',      ratio: '4 / 3' },
+  { src: `${B}img/g-warm-cozy.jpg`,       cat: 'Special Occasion Gifts', ratio: '1 / 1' },
+  { src: `${B}img/g-mens-scent.jpg`,      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: `${B}img/g-spa-basket.jpg`,      cat: 'Special Occasion Gifts', ratio: '1 / 1' },
+  { src: `${B}img/g-whiskey-sauvage.jpg`, cat: 'Custom Gift Boxes',      ratio: '4 / 3', span: 2 },
+  { src: `${B}img/g-brush-candle.jpg`,    cat: 'Custom Gift Boxes',      ratio: '3 / 4' },
+  { src: `${B}img/g-espresso-amber.jpg`,  cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: `${B}img/g-wellness.jpg`,        cat: 'Special Occasion Gifts', ratio: '4 / 5' },
 ];
