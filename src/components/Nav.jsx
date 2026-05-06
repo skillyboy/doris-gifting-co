@@ -39,7 +39,7 @@ export default function Nav({ page, go, mobile, onMenu, transparent }) {
         style={{ background: 'transparent', border: 0, padding: 0, cursor: 'pointer' }}
         aria-label="Doris Home"
       >
-        <Logo size={mobile ? 0.6 : 0.75} variant={showBg ? 'dark' : 'light'} />
+        <Logo size={mobile ? 0.6 : 0.75} />
       </button>
 
       {mobile ? (
