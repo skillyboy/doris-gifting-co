@@ -13,7 +13,7 @@ export const IMG = {
   g3: `${B}img/g-mens-scent.jpg`,      // Home teaser large
   g4: `${B}img/g-whiskey-sauvage.jpg`, // Home teaser small
   g5: `${B}img/g-spa-basket.jpg`,      // Home teaser small
-  g6: `${B}img/g-brush-candle.jpg`,    // Services + Home accordion side
+  g6: `${B}img/g-services.jpg`,        // Services + Home accordion side (figma VMO/miniwood)
   g7: `${B}img/g-warm-cozy.jpg`,       // Home teaser small
   g8: `${B}img/g-wellness.jpg`,
   g9: `${B}img/g-espresso-amber.jpg`,
