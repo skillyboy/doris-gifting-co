@@ -8,6 +8,7 @@ const DORIS_DEFAULTS = /*EDITMODE-BEGIN*/{
   "showFrame": false
 }/*EDITMODE-END*/;
 
+
 const VP_OPTIONS = [
   { label: 'Auto',    value: 'auto' },
   { label: 'Mobile',  value: 'mobile' },
