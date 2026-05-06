@@ -83,40 +83,49 @@ export default function About({ mobile, go }) {
       </div>
 
       {/* Founder */}
-      <div style={{ background: '#fff', padding: mobile ? '32px 24px 72px' : '48px 80px 120px' }}>
-        <Reveal>
-          <div style={{
-            maxWidth: 720,
-            margin: '0 auto',
-            textAlign: 'center',
-          }}>
+      <div style={{ background: '#fff', padding: mobile ? '32px 24px 56px' : '48px 80px 96px' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: mobile ? '1fr' : '1fr 1.1fr',
+          gap: mobile ? 28 : 64,
+          alignItems: 'center',
+        }}>
+          <Reveal style={{ order: mobile ? 1 : 0 }}>
             <h2 className="serif" style={{
-              margin: '0 0 24px',
+              margin: '0 0 18px',
               color: 'var(--bronze)',
-              fontSize: mobile ? 32 : 44,
+              fontSize: mobile ? 32 : 40,
               fontWeight: 500,
             }}>
               Meet The Founder
             </h2>
-            <p className="serif" style={{
-              fontSize: mobile ? 18 : 22,
-              lineHeight: 1.55,
-              color: 'var(--ink)',
-              fontStyle: 'italic',
-              margin: '0 0 28px',
-            }}>
-              "Doris Gifting Co. was founded with a passion for thoughtful details and meaningful experiences. Led by a vision of elevated gifting — delivering quality, creativity, and professionalism in every box we create. I want every client to feel valued through gifts that are not only beautiful but intentional."
+            <p style={{ fontSize: mobile ? 14 : 15, lineHeight: 1.7, color: 'var(--ink-soft)' }}>
+              Doris Gifting Co. was founded with a passion for thoughtful details and meaningful experiences.
+              Led by a vision of elevated gifting, delivering quality, creativity, and professionalism in
+              every box we create. I want every client to feel valued through gifts that are not only beautiful
+              but intentional.
             </p>
+            <div style={{ height: 14 }} />
             <div style={{
               fontSize: 12,
-              letterSpacing: '0.32em',
+              letterSpacing: '0.16em',
               textTransform: 'uppercase',
               color: 'var(--bronze)',
             }}>
               — Doris, Founder
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+          <Reveal delay={120}>
+            <div style={{
+              width: '100%',
+              aspectRatio: mobile ? '4 / 5' : '5 / 6',
+              backgroundImage: `url(${IMG.founder})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              borderRadius: 4,
+            }} />
+          </Reveal>
+        </div>
       </div>
 
       <CTABanner mobile={mobile} go={go} />
