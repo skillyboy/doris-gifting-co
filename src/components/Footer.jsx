@@ -22,7 +22,7 @@ export default function Footer({ mobile, go }) {
           Important Links
         </div>
         <button onClick={() => go('about')} style={footLinkStyle}>About Us</button>
-        <button onClick={() => go('gallery')} style={footLinkStyle}>{mobile ? 'Portfolio' : 'Gallery'}</button>
+        <button onClick={() => go('gallery')} style={footLinkStyle}>Portfolio</button>
       </div>
       <div>
         <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 14 }}>
@@ -35,7 +35,6 @@ export default function Footer({ mobile, go }) {
         <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 14 }}>
           Find us On Social Media
         </div>
-        <div style={footLinkStyle}>Facebook</div>
         <div style={footLinkStyle}>Instagram</div>
         <div style={footLinkStyle}>Tiktok</div>
       </div>
