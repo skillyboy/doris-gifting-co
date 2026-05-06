@@ -1,7 +1,9 @@
 import React from 'react';
 
+const B = import.meta.env.BASE_URL;
+
 export default function Logo({ size = 1, variant = 'dark', className, style }) {
-  const src = variant === 'light' ? '/img/logo-white.svg' : '/img/logo.svg';
+  const src = variant === 'light' ? `${B}img/logo-white.svg` : `${B}img/logo.svg`;
   return (
     <div
       className={className}
