@@ -5,51 +5,14 @@ import Reveal from '../components/Reveal';
 import ServicesAccordion from '../components/ServicesAccordion';
 
 export default function Services({ mobile, go }) {
-  const heroH = mobile ? 360 : 480;
   const px = mobile ? 24 : 80;
 
   return (
     <div>
-      {/* Hero */}
-      <div
-        style={{
-          position: 'relative',
-          height: heroH,
-          backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.10) 35%, rgba(0,0,0,0.10) 65%, rgba(0,0,0,0.40) 100%), url(${IMG.g1})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#fff',
-            textAlign: 'center',
-            gap: 12,
-          }}
-        >
-          <div className="serif" style={{
-            fontSize: mobile ? 44 : 64,
-            lineHeight: 1,
-            textShadow: '0 2px 24px rgba(0,0,0,0.3)',
-          }}>
-            Our Services
-          </div>
-          <div style={{ fontSize: 12, letterSpacing: '0.32em', textTransform: 'uppercase', opacity: 0.85 }}>
-            Curated · Considered · Crafted
-          </div>
-        </div>
-      </div>
-
-      {/* Intro */}
+      {/* Intro (no hero/banner — page begins with the eyebrow + title) */}
       <div style={{
         background: '#fff',
-        padding: mobile ? '56px 24px 24px' : '96px 80px 32px',
+        padding: mobile ? '110px 24px 24px' : '140px 80px 32px',
         textAlign: 'center',
       }}>
         <Reveal>
