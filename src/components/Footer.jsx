@@ -35,7 +35,6 @@ export default function Footer({ mobile, go }) {
         <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 14 }}>
           Find us On Social Media
         </div>
-        <div style={footLinkStyle}>Facebook</div>
         <div style={footLinkStyle}>Instagram</div>
         <div style={footLinkStyle}>Tiktok</div>
       </div>
