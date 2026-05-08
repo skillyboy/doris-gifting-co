@@ -39,7 +39,7 @@ export default function Home({ mobile, go }) {
           <Reveal>
             <h1 className="serif" style={{
               margin: 0,
-              color: 'var(--ink)',
+              color: 'var(--bronze)',
               fontSize: mobile ? 44 : 72,
               lineHeight: 1.05,
               fontWeight: 500,
@@ -57,7 +57,22 @@ export default function Home({ mobile, go }) {
             }}>
               Every gift should be intentional and memorable. We curate bespoke experiences that articulate gratitude and celebrate connections with quiet sophistication.
             </p>
-            <button onClick={() => go('contact')} style={pill}>Send us a message</button>
+            <button
+              onClick={() => go('contact')}
+              style={{
+                background: 'transparent',
+                border: 0,
+                borderBottom: '1px solid var(--ink)',
+                color: 'var(--ink)',
+                padding: '4px 0',
+                fontSize: 14,
+                fontWeight: 500,
+                cursor: 'pointer',
+                fontFamily: 'var(--sans)',
+              }}
+            >
+              Send us a message
+            </button>
           </Reveal>
         </div>
       </section>
