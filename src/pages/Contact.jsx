@@ -1,114 +1,147 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IMG } from '../constants';
-import CTABanner from '../components/CTABanner';
+import SectionTitle from '../components/SectionTitle';
 import Reveal from '../components/Reveal';
 
-const EMAIL = 'dorisgiftingco@gmail.com';
-const PHONE_DISPLAY = '+1301364607289';
-const PHONE_HREF    = '+1301364607289';
+export default function Contact({ mobile }) {
+  const [sent, setSent] = useState(false);
 
-export default function Contact({ mobile, go }) {
   return (
-    <div>
-      <div style={{
+    <div style={{ background: '#fff' }}>
+      {/* Hero/Header */}
+      <section style={{
         background: 'var(--cream)',
-        padding: mobile ? '110px 24px 24px' : '140px 80px 32px',
+        padding: mobile ? '120px 24px 56px' : '160px 80px 80px',
         textAlign: 'center',
       }}>
         <Reveal>
-          <h1 className="serif" style={{
-            margin: 0,
-            color: 'var(--bronze)',
-            fontSize: mobile ? 36 : 44,
+          <div style={{
+            fontSize: 12,
+            letterSpacing: '0.32em',
+            textTransform: 'uppercase',
+            color: 'var(--ink-soft)',
+            marginBottom: 14,
             fontWeight: 500,
           }}>
-            Contact Us
-          </h1>
+            Contact
+          </div>
+          <SectionTitle mobile={mobile} size="lg">Contact Us</SectionTitle>
+          <p style={{
+            maxWidth: 640,
+            margin: mobile ? '20px auto 0' : '28px auto 0',
+            fontSize: mobile ? 15 : 17,
+            color: 'var(--ink-soft)',
+            lineHeight: 1.625,
+          }}>
+            We respond in five minutes. Whether you are appreciating clients, welcoming employees, or celebrating special moments — we are here.
+          </p>
         </Reveal>
-      </div>
+      </section>
 
-      <div style={{ background: 'var(--cream)', padding: mobile ? '24px' : '0 80px 80px' }}>
+      {/* Split content */}
+      <section style={{ background: '#fff', padding: mobile ? '56px 24px' : '96px 80px' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
-          gap: mobile ? 28 : 80,
-          alignItems: 'flex-start',
+          gap: mobile ? 32 : 80,
+          alignItems: 'start',
         }}>
           <Reveal>
             <div style={{
               width: '100%',
-              aspectRatio: mobile ? '4 / 5' : '5 / 6',
-              backgroundImage: `url(${IMG.contactHand})`,
+              aspectRatio: '5 / 6',
+              backgroundImage: 'url(' + IMG.contactHand + ')',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              borderRadius: 2,
             }} />
           </Reveal>
-
-          <Reveal delay={100}>
-            <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.04em', color: 'var(--ink)', marginBottom: 16 }}>
-              GET IN TOUCH
+          <Reveal delay={120}>
+            <div style={{
+              fontSize: 12,
+              letterSpacing: '0.32em',
+              textTransform: 'uppercase',
+              color: 'var(--ink-soft)',
+              marginBottom: 14,
+              fontWeight: 500,
+            }}>
+              Get In Touch
             </div>
-            <p style={{ margin: '0 0 36px', fontSize: 14, lineHeight: 1.7, color: 'var(--ink-soft)', maxWidth: 460 }}>
-              Whether you're curating a special gift, planning a corporate order, or need help bringing your vision to life,
-              we're here to help. Reach out today and let us create something thoughtful, beautiful, and truly memorable.
+            <h3 className="serif" style={{
+              margin: 0,
+              color: 'var(--brown-mid)',
+              fontSize: mobile ? 28 : 36,
+              fontWeight: 400,
+              lineHeight: 1.1,
+            }}>
+              Send us a note
+            </h3>
+            <p style={{ marginTop: 14, color: 'var(--ink-soft)', fontSize: mobile ? 14 : 15, lineHeight: 1.65 }}>
+              Tell us about your project, occasion, or recipients — we will compose a thoughtful proposal within one business day.
             </p>
 
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              rowGap: 26,
-              columnGap: 32,
-              marginBottom: 40,
-            }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Email</div>
-                <a
-                  href={`mailto:${EMAIL}`}
-                  style={{ fontSize: 13, color: 'var(--ink-soft)', textDecoration: 'none' }}
-                >
-                  {EMAIL}
-                </a>
+                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Email</div>
+                <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>hello@dorisgiftingco.com</div>
               </div>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Address</div>
-                <div style={{ fontSize: 13, color: 'var(--ink-soft)' }}>Houston, Texas</div>
+                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Phone Number</div>
+                <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+1 (713) 000-7393</div>
               </div>
               <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Phone Number</div>
-                <a
-                  href={`tel:${PHONE_HREF}`}
-                  style={{ fontSize: 13, color: 'var(--ink-soft)', textDecoration: 'none' }}
-                >
-                  {PHONE_DISPLAY}
-                </a>
+                <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Address</div>
+                <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Houston, Texas</div>
               </div>
             </div>
 
-            <a
-              href={`mailto:${EMAIL}`}
+            <button
+              onClick={() => { window.location.href = 'mailto:hello@dorisgiftingco.com'; setSent(true); }}
               style={{
-                display: 'inline-block',
-                background: 'var(--bronze)',
+                marginTop: 28,
+                background: 'var(--brown-deep)',
                 color: '#fff',
                 border: 0,
-                padding: '14px 32px',
-                borderRadius: 6,
+                padding: '12px 28px',
                 fontSize: 14,
                 fontWeight: 500,
-                letterSpacing: '0.02em',
                 cursor: 'pointer',
-                textDecoration: 'none',
                 fontFamily: 'var(--sans)',
+                borderRadius: 4,
               }}
             >
               Email Us
-            </a>
+            </button>
+            {sent && <div style={{ marginTop: 12, fontSize: 12, color: 'var(--ink-mute)' }}>Opening your mail app…</div>}
           </Reveal>
         </div>
-      </div>
+      </section>
 
-      <CTABanner mobile={mobile} go={go} />
+      {/* Gift wall band */}
+      <section style={{ background: '#fff', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
+        <Reveal>
+          <div style={{
+            position: 'relative',
+            width: '100%',
+            height: mobile ? 280 : 460,
+            backgroundImage: 'linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url(' + IMG.giftWall + ')',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+          }}>
+            <div>
+              <h3 className="serif" style={{ margin: 0, color: '#fff', fontSize: mobile ? 28 : 48, fontWeight: 400 }}>
+                Let's Create something thoughtful for you
+              </h3>
+              <p style={{ color: '#fff', opacity: 0.9, fontSize: mobile ? 13 : 15, marginTop: 14 }}>
+                We respond in five minutes.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
     </div>
   );
 }

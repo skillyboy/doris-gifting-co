@@ -1,88 +1,68 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Logo from './Logo';
 import { NAV_ITEMS } from '../constants';
 
 export default function MobileMenu({ page, go, onClose }) {
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [onClose]);
+
   return (
-    <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 200,
-        background: '#fff',
+    <div style={{
+      position: 'fixed',
+      inset: 0,
+      background: 'var(--cream)',
+      zIndex: 100,
+      animation: 'doris-fade 240ms ease',
+      display: 'flex',
+      flexDirection: 'column',
+    }}>
+      <div style={{
+        padding: '20px 24px',
         display: 'flex',
-        flexDirection: 'column',
-        padding: '24px 24px 32px',
-      }}
-    >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <Logo size={0.95} />
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}>
+        <Logo size="sm" />
         <button
-          aria-label="Close menu"
           onClick={onClose}
-          style={{
-            width: 40,
-            height: 40,
-            border: 0,
-            background: 'transparent',
-            padding: 0,
-            display: 'grid',
-            placeItems: 'center',
-            cursor: 'pointer',
-          }}
+          aria-label="Close menu"
+          style={{ background: 'transparent', border: 0, color: 'var(--brown-mid)', fontSize: 26, padding: 4, cursor: 'pointer' }}
         >
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <line x1="3" y1="3" x2="19" y2="19" stroke="var(--bronze)" strokeWidth="2" strokeLinecap="round"/>
-            <line x1="19" y1="3" x2="3" y2="19" stroke="var(--bronze)" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
+          ×
         </button>
       </div>
-
-      <div style={{
+      <nav style={{
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'center',
         justifyContent: 'center',
         gap: 28,
-        paddingLeft: 4,
       }}>
-        {NAV_ITEMS.map((n) => (
+        {NAV_ITEMS.map((it) => (
           <button
-            key={n.id}
-            onClick={() => { go(n.id); onClose(); }}
+            key={it.id}
+            onClick={() => go(it.id)}
+            className="serif"
             style={{
               background: 'transparent',
               border: 0,
-              padding: 0,
-              textAlign: 'left',
-              fontFamily: 'var(--sans)',
-              fontSize: 30,
-              color: 'var(--bronze-deep)',
-              fontWeight: page === n.id ? 600 : 400,
+              color: page === it.id ? 'var(--brown-deep)' : 'var(--brown-mid)',
+              fontSize: 32,
               cursor: 'pointer',
             }}
           >
-            {n.label}
+            {it.label}
           </button>
         ))}
-      </div>
-
-      <button
-        onClick={() => { go('contact'); onClose(); }}
-        style={{
-          background: 'var(--bronze)',
-          color: '#fff',
-          border: 0,
-          padding: '20px 0',
-          borderRadius: 12,
-          fontSize: 22,
-          fontFamily: 'var(--sans)',
-          fontWeight: 400,
-          cursor: 'pointer',
-        }}
-      >
-        Let's Talk
-      </button>
+      </nav>
     </div>
   );
 }
