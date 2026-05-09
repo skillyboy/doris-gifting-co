@@ -1,26 +1,23 @@
 import React from 'react';
 
+const B = import.meta.env.BASE_URL;
+
 export default function Logo({ size = 'md', tone = 'dark', onClick }) {
-  const fontSize = size === 'sm' ? 22 : size === 'lg' ? 38 : 28;
-  const color = tone === 'light' ? '#fff' : 'var(--brown-mid)';
+  // pixel heights: sm 32, md 44, lg 60 — match the figma's three nav/footer scales
+  const height = size === 'sm' ? 32 : size === 'lg' ? 60 : 44;
+  const filter = tone === 'light' ? 'brightness(0) invert(1)' : 'none';
   return (
-    <div onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default', lineHeight: 1, userSelect: 'none' }}>
-      <div className="serif" style={{ fontSize, color, letterSpacing: '0.02em' }}>
-        Doris
-      </div>
-      <div style={{
-        fontFamily: 'var(--serif)',
-        fontStyle: 'italic',
-        fontSize: fontSize * 0.32,
-        color,
-        letterSpacing: '0.18em',
-        textTransform: 'uppercase',
-        opacity: 0.85,
-        marginTop: 2,
-        textAlign: 'center'
-      }}>
-        Gifting Co.
-      </div>
+    <div onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default', lineHeight: 0, userSelect: 'none' }}>
+      <img
+        src={`${B}img/logo.png`}
+        alt="Doris Gifting Co."
+        style={{
+          height,
+          width: 'auto',
+          display: 'block',
+          filter,
+        }}
+      />
     </div>
   );
 }
