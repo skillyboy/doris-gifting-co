@@ -2,62 +2,52 @@ import React from 'react';
 import { IMG } from '../constants';
 
 export default function CTABanner({ mobile, go }) {
-  const headline = mobile ? 'Plan your dream event' : "Let's Create something thoughtful for you";
-  const button = mobile ? "Let's Talk" : 'Email Us';
-  const h = mobile ? 280 : 360;
-
   return (
-    <div style={{
-      background: 'var(--cream)',
-      padding: mobile ? '24px 16px' : '32px 56px',
+    <section style={{
+      width: '100%',
+      padding: mobile ? '0 24px 56px' : '0 80px 80px',
+      background: '#fff',
     }}>
-      <div
-        style={{
-          position: 'relative',
-          height: h,
-          backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.50), rgba(0,0,0,0.55)), url(${IMG.giftWall})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          borderRadius: mobile ? 16 : 20,
-          overflow: 'hidden',
-        }}
-      >
-        <div
+      <div style={{
+        position: 'relative',
+        width: '100%',
+        height: mobile ? 320 : 480,
+        backgroundImage: 'linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url(' + IMG.giftWall + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        padding: mobile ? 24 : 40,
+      }}>
+        <h2
+          className="serif"
           style={{
-            position: 'absolute',
-            inset: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+            margin: 0,
             color: '#fff',
-            textAlign: 'center',
-            padding: '0 24px',
-            gap: 12,
+            fontSize: mobile ? 30 : 56,
+            lineHeight: 1.05,
+            fontWeight: 400,
+            maxWidth: 800,
           }}
         >
-          <div className="serif" style={{ fontSize: mobile ? 32 : 44, lineHeight: 1.1 }}>
-            {headline}
-          </div>
-          <div style={{ fontSize: 14, color: '#fff', opacity: 0.9 }}>Will respond in few minutes</div>
-          <button
-            onClick={() => go && go('contact')}
-            style={{
-              marginTop: 14,
-              background: '#fff',
-              color: 'var(--ink)',
-              border: 0,
-              padding: '12px 30px',
-              borderRadius: 6,
-              fontSize: 14,
-              fontWeight: 500,
-              cursor: 'pointer',
-            }}
-          >
-            {button}
-          </button>
-        </div>
+          Let's Create something thoughtful for you
+        </h2>
+        <p style={{
+          color: '#fff',
+          fontSize: mobile ? 13 : 15,
+          opacity: 0.9,
+          margin: mobile ? '14px 0 22px' : '20px 0 32px',
+          maxWidth: 520,
+        }}>
+          We respond in five minutes.
+        </p>
+        <button onClick={() => go('contact')} className="btn-filled">
+          Email Us
+        </button>
       </div>
-    </div>
+    </section>
   );
 }
