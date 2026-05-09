@@ -96,18 +96,8 @@ export default function Contact({ mobile }) {
 
             <button
               onClick={() => { window.location.href = 'mailto:hello@dorisgiftingco.com'; setSent(true); }}
-              style={{
-                marginTop: 28,
-                background: 'var(--brown-deep)',
-                color: '#fff',
-                border: 0,
-                padding: '12px 28px',
-                fontSize: 14,
-                fontWeight: 500,
-                cursor: 'pointer',
-                fontFamily: 'var(--sans)',
-                borderRadius: 4,
-              }}
+              className="btn-primary"
+              style={{ marginTop: 28 }}
             >
               Email Us
             </button>
