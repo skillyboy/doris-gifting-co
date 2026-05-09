@@ -1,151 +1,120 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { GALLERY_FILTERS, GALLERY_ITEMS } from '../constants';
+import SectionTitle from '../components/SectionTitle';
 import CTABanner from '../components/CTABanner';
-import Lightbox from '../components/Lightbox';
 import Reveal from '../components/Reveal';
+import Lightbox from '../components/Lightbox';
 
 export default function Gallery({ mobile, go }) {
   const [filter, setFilter] = useState('All');
-  const [lbIndex, setLbIndex] = useState(null);
+  const [lightbox, setLightbox] = useState(null);
 
-  const items = filter === 'All'
-    ? GALLERY_ITEMS
-    : GALLERY_ITEMS.filter((i) => i.cat === filter);
-
-  const lbImages = items.map((i) => i.src);
+  const items = useMemo(() => {
+    if (filter === 'All') return GALLERY_ITEMS;
+    return GALLERY_ITEMS.filter((i) => i.cat === filter);
+  }, [filter]);
 
   return (
     <div>
-      {/* Title block */}
-      <div style={{
-        background: '#fff',
-        padding: mobile ? '110px 24px 24px' : '140px 80px 40px',
+      {/* Header */}
+      <section style={{
+        background: 'var(--cream)',
+        padding: mobile ? '120px 24px 56px' : '160px 80px 80px',
         textAlign: 'center',
       }}>
         <Reveal>
           <div style={{
-            fontSize: 11,
+            fontSize: 12,
             letterSpacing: '0.32em',
             textTransform: 'uppercase',
             color: 'var(--ink-soft)',
             marginBottom: 14,
+            fontWeight: 500,
           }}>
             Gallery
           </div>
-          <h1 className="serif" style={{
-            margin: 0,
-            color: 'var(--bronze)',
-            fontSize: mobile ? 30 : 40,
-            fontWeight: 500,
+          <SectionTitle mobile={mobile} size="lg">A Study in Thoughtful Details</SectionTitle>
+          <p style={{
+            maxWidth: 640,
+            margin: mobile ? '20px auto 0' : '28px auto 0',
+            fontSize: mobile ? 15 : 17,
+            color: 'var(--ink-soft)',
+            lineHeight: 1.625,
           }}>
-            A Study in Thoughtful Details
-          </h1>
+            A curated selection of recent gift compositions across corporate, custom, and special occasion work.
+          </p>
         </Reveal>
-      </div>
+      </section>
 
       {/* Filters */}
-      <div style={{ background: '#fff', padding: mobile ? '0 16px 28px' : '0 80px 40px' }}>
-        {mobile ? (
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 8, maxWidth: 320, margin: '0 auto' }}>
-            {GALLERY_FILTERS.map((f) => (
+      <section style={{ background: '#fff', padding: mobile ? '24px 24px 8px' : '40px 80px 16px' }}>
+        <div className="pillrow" style={{
+          display: 'flex',
+          gap: 10,
+          overflowX: 'auto',
+          padding: '4px 0',
+          justifyContent: mobile ? 'flex-start' : 'center',
+        }}>
+          {GALLERY_FILTERS.map((f) => {
+            const active = filter === f;
+            return (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
                 style={{
-                  padding: '14px 12px',
+                  background: active ? 'var(--brown-deep)' : 'transparent',
+                  color: active ? '#fff' : 'var(--brown-deep)',
+                  border: '1px solid var(--brown-deep)',
+                  padding: '8px 18px',
                   fontSize: 13,
-                  border: '1px solid var(--bronze)',
-                  background: filter === f ? 'var(--bronze)' : 'transparent',
-                  color: filter === f ? '#fff' : 'var(--bronze)',
                   borderRadius: 999,
-                  fontFamily: 'var(--sans)',
-                  letterSpacing: '0.04em',
+                  whiteSpace: 'nowrap',
                   cursor: 'pointer',
-                }}
-              >
-                {f.toUpperCase()}
-              </button>
-            ))}
-          </div>
-        ) : (
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 10, flexWrap: 'wrap' }}>
-            {GALLERY_FILTERS.map((f) => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                style={{
-                  padding: '12px 22px',
-                  fontSize: 12,
-                  letterSpacing: '0.14em',
-                  border: '1px solid var(--bronze)',
-                  background: filter === f ? 'var(--bronze)' : 'transparent',
-                  color: filter === f ? '#fff' : 'var(--bronze)',
-                  borderRadius: 999,
                   fontFamily: 'var(--sans)',
-                  cursor: 'pointer',
-                  textTransform: 'uppercase',
+                  fontWeight: 400,
                 }}
               >
                 {f}
               </button>
-            ))}
-          </div>
-        )}
-      </div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* Grid */}
-      <div style={{ background: '#fff', padding: mobile ? '0 16px 32px' : '0 80px 64px' }}>
+      <section style={{ background: '#fff', padding: mobile ? '24px 24px 64px' : '40px 80px 96px' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)',
-          gap: mobile ? 12 : 16,
+          gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)',
+          gap: mobile ? 8 : 14,
         }}>
           {items.map((it, i) => (
-            <Reveal key={`${filter}-${i}`} delay={i * 40}>
+            <Reveal
+              key={i}
+              delay={i * 30}
+              style={{
+                gridColumn: it.span === 2 && !mobile ? 'span 2' : 'span 1',
+              }}
+            >
               <div
+                onClick={() => setLightbox(it.src)}
                 className="gallery-cell"
-                onClick={() => setLbIndex(i)}
                 style={{
-                  gridColumn: !mobile && it.span === 2 ? 'span 2' : 'span 1',
                   width: '100%',
                   aspectRatio: it.ratio,
-                  backgroundImage: `url(${it.src})`,
+                  backgroundImage: 'url(' + it.src + ')',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
-                  borderRadius: 2,
                 }}
               />
             </Reveal>
           ))}
         </div>
-
-        <div style={{ textAlign: 'center', marginTop: mobile ? 28 : 48 }}>
-          <button style={{
-            background: 'transparent',
-            color: 'var(--ink)',
-            border: '1px solid var(--ink)',
-            padding: '12px 28px',
-            borderRadius: 999,
-            fontSize: 13,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            cursor: 'pointer',
-          }}>
-            View more
-          </button>
-        </div>
-      </div>
+      </section>
 
       <CTABanner mobile={mobile} go={go} />
 
-      {lbIndex != null && (
-        <Lightbox
-          images={lbImages}
-          index={lbIndex}
-          onClose={() => setLbIndex(null)}
-          onIndex={setLbIndex}
-        />
-      )}
+      <Lightbox src={lightbox} onClose={() => setLightbox(null)} />
     </div>
   );
 }

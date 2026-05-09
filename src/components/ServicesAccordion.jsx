@@ -1,90 +1,63 @@
 import React, { useState } from 'react';
-import { SERVICES } from '../constants';
-import Reveal from './Reveal';
+import { SERVICES, IMG } from '../constants';
 
-export default function ServicesAccordion({ mobile, defaultOpen = 0 }) {
-  const [open, setOpen] = useState(defaultOpen);
+export default function ServicesAccordion({ mobile }) {
+  const [open, setOpen] = useState(0);
 
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       {SERVICES.map((s, i) => {
         const isOpen = open === i;
         return (
-          <Reveal key={s.title} delay={i * 60}>
-            <div
+          <div key={i} style={{ borderTop: '1px solid #E5E1DA', padding: '20px 0' }}>
+            <button
+              onClick={() => setOpen(isOpen ? -1 : i)}
               style={{
-                borderBottom: '1px solid var(--line)',
-                padding: mobile ? '18px 0' : '22px 0',
+                width: '100%',
+                background: 'transparent',
+                border: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                cursor: 'pointer',
+                padding: 0,
+                color: 'var(--brown-deep)',
+                fontFamily: 'var(--sans)',
+                fontSize: mobile ? 20 : 24,
+                fontWeight: 500,
+                letterSpacing: '-0.04em',
+                lineHeight: 1.4,
               }}
             >
-              <button
-                onClick={() => setOpen(isOpen ? -1 : i)}
-                aria-expanded={isOpen}
-                style={{
-                  display: 'flex',
-                  width: '100%',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  background: 'transparent',
-                  border: 0,
-                  padding: 0,
-                  textAlign: 'left',
-                  cursor: 'pointer',
-                  gap: 16,
-                }}
-              >
-                <div style={{
-                  fontSize: mobile ? 15 : 16,
-                  fontWeight: 600,
-                  color: 'var(--ink)',
-                }}>
-                  {s.title}
+              <span>{s.title}</span>
+              <span style={{ fontSize: 22, color: 'var(--brown-deep)', fontWeight: 300 }}>
+                {isOpen ? '×' : '+'}
+              </span>
+            </button>
+            {isOpen && (
+              <div style={{ paddingTop: 14 }}>
+                <div style={{ color: 'var(--ink-soft)', fontSize: 14, marginBottom: 8, lineHeight: 1.6 }}>
+                  {s.intro}
                 </div>
-                <span
-                  aria-hidden="true"
-                  style={{
-                    width: 22,
-                    height: 22,
-                    display: 'grid',
-                    placeItems: 'center',
-                    color: 'var(--bronze)',
-                    fontSize: 20,
-                    lineHeight: 1,
-                    flexShrink: 0,
-                    transform: isOpen ? 'rotate(45deg)' : 'rotate(0)',
-                    transition: 'transform 280ms ease',
-                  }}
-                >
-                  +
-                </span>
-              </button>
-
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateRows: isOpen ? '1fr' : '0fr',
-                  transition: 'grid-template-rows 320ms ease',
-                }}
-              >
-                <div style={{ overflow: 'hidden' }}>
-                  <div style={{ paddingTop: 12, fontSize: 13, color: 'var(--ink-soft)', lineHeight: 1.7 }}>
-                    {s.intro}
-                  </div>
-                  <ul style={{
-                    margin: '8px 0 4px',
-                    paddingLeft: 18,
-                    fontSize: 13,
-                    color: 'var(--ink-soft)',
-                    lineHeight: 1.8,
-                  }}>
-                    {s.bullets.map((b) => <li key={b}>{b}</li>)}
-                  </ul>
-                </div>
+                <ul style={{ margin: 0, paddingLeft: 18, color: 'var(--ink-soft)', fontSize: 14, lineHeight: 1.8 }}>
+                  {s.bullets.map((b, k) => <li key={k}>{b}</li>)}
+                </ul>
+                {mobile && (
+                  <div style={{
+                    marginTop: 18,
+                    height: 220,
+                    backgroundImage: 'url(' + IMG.g6 + ')',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    borderRadius: 4,
+                  }} />
+                )}
               </div>
-            </div>
-          </Reveal>
+            )}
+          </div>
         );
       })}
+      <div style={{ borderTop: '1px solid #E5E1DA' }} />
     </div>
   );
 }

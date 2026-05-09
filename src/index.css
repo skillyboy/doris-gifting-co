@@ -1,14 +1,17 @@
 :root {
-  --cream: #f3ede4;
-  --cream-2: #ebe3d6;
-  --bronze: #967259;
-  --bronze-deep: #6f4f3a;
+  /* Figma color tokens */
+  --cream: #E7E0D6;        /* hero bg */
+  --cream-2: #F2F2F2;      /* alt section bg */
+  --bg-white: #FFFFFF;
+  --brown-mid: #8A6A4A;    /* hero h1, section headings, nav */
+  --brown-deep: #513C2E;   /* services title, dark accents */
+  --brown-bronze: #967259; /* testimonial bg, accents */
   --ink: #1a1410;
-  --ink-soft: #4a423c;
+  --ink-soft: #4E4541;     /* body text */
   --ink-mute: #7a6f66;
   --line: #d9cfc1;
-  --serif: 'Cormorant Garamond', 'Playfair Display', serif;
-  --sans: 'Inter', system-ui, sans-serif;
+  --serif: 'Instrument Serif', 'Cormorant Garamond', serif;
+  --sans: 'Inter Tight', 'Inter', system-ui, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -22,14 +25,14 @@ html, body {
   background: #fff;
 }
 
-p { line-height: 1.65; color: var(--ink-soft); margin: 0; }
+p { line-height: 1.625; color: var(--ink-soft); margin: 0; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
 
 .serif {
   font-family: var(--serif);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* hide scrollbars on horizontal pill rows */
@@ -40,10 +43,9 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes doris-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes doris-rise {
   from { opacity: 0; transform: scale(0.97); }
-  to   { opacity: 1; transform: scale(1); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-/* Hover lift on gallery cells */
 .gallery-cell {
   cursor: zoom-in;
   transition: transform 420ms cubic-bezier(.2,.7,.2,1), box-shadow 420ms ease;
@@ -56,7 +58,35 @@ button { font-family: inherit; cursor: pointer; }
 button {
   transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, color 220ms ease;
 }
-button:hover { transform: translateY(-1px); }
+
+/* Link-style button (Figma default) */
+.btn-link {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  padding: 12px 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+.btn-link:hover { opacity: 0.75; }
+
+/* Filled accent button (used on darker bg) */
+.btn-filled {
+  background: #fff;
+  color: var(--brown-deep);
+  border: 0;
+  padding: 12px 26px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }

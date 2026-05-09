@@ -1,38 +1,35 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-export default function Reveal({ children, delay = 0, y = 24, as: Tag = 'div', style }) {
+export default function Reveal({ children, delay = 0, style }) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+  const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setVisible(true);
-            io.disconnect();
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
-    io.observe(ref.current);
-    return () => io.disconnect();
-  }, []);
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          setTimeout(() => setShown(true), delay);
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [delay]);
 
   return (
-    <Tag
+    <div
       ref={ref}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : `translateY(${y}px)`,
-        transition: `opacity 720ms cubic-bezier(.2,.7,.2,1) ${delay}ms, transform 720ms cubic-bezier(.2,.7,.2,1) ${delay}ms`,
-        willChange: 'opacity, transform',
+        opacity: shown ? 1 : 0,
+        transform: shown ? 'translateY(0)' : 'translateY(16px)',
+        transition: 'opacity 700ms ease, transform 700ms ease',
         ...style,
       }}
     >
       {children}
-    </Tag>
+    </div>
   );
 }
