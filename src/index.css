@@ -87,6 +87,21 @@ button {
   font-weight: 500;
   cursor: pointer;
 }
+.btn-filled:hover { opacity: 0.9; }
+
+/* Primary brand button — brown-deep on light bg (Contact, MobileMenu CTA) */
+.btn-primary {
+  background: var(--brown-deep);
+  color: #fff;
+  border: 0;
+  padding: 12px 26px;
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-primary:hover { opacity: 0.9; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
