@@ -82,7 +82,7 @@ export default function Contact({ mobile }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
               <div>
                 <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Email</div>
-                <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>hello@dorisgiftingco.com</div>
+                <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>dorisgiftingco@gmail.com</div>
               </div>
               <div>
                 <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Phone Number</div>
@@ -95,7 +95,7 @@ export default function Contact({ mobile }) {
             </div>
 
             <button
-              onClick={() => { window.location.href = 'mailto:hello@dorisgiftingco.com'; setSent(true); }}
+              onClick={() => { window.location.href = 'mailto:dorisgiftingco@gmail.com'; setSent(true); }}
               className="btn-primary"
               style={{ marginTop: 28 }}
             >

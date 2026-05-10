@@ -18,7 +18,7 @@ export default function Gallery({ mobile, go }) {
     <div>
       {/* Header */}
       <section style={{
-        background: 'var(--cream)',
+        background: '#E7E0D6',
         padding: mobile ? '120px 24px 56px' : '160px 80px 80px',
         textAlign: 'center',
       }}>
@@ -47,7 +47,7 @@ export default function Gallery({ mobile, go }) {
       </section>
 
       {/* Filters */}
-      <section style={{ background: '#fff', padding: mobile ? '24px 24px 8px' : '40px 80px 16px' }}>
+      <section style={{ background: '#E7E0D6', padding: mobile ? '24px 24px 8px' : '40px 80px 16px' }}>
         <div className="pillrow" style={{
           display: 'flex',
           gap: 10,
@@ -82,7 +82,7 @@ export default function Gallery({ mobile, go }) {
       </section>
 
       {/* Grid */}
-      <section style={{ background: '#fff', padding: mobile ? '24px 24px 64px' : '40px 80px 96px' }}>
+      <section style={{ background: '#E7E0D6', padding: mobile ? '24px 24px 64px' : '40px 80px 96px' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)',
