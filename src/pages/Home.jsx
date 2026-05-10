@@ -6,19 +6,17 @@ import Reveal from '../components/Reveal';
 import ServicesAccordion from '../components/ServicesAccordion';
 
 const TESTIMONIALS = [
-  { name: 'Adaeze O.', role: 'Marketing Lead', avatar: IMG.a1, text: "The team made our client appreciation feel like a brand moment. Every detail was considered." },
-  { name: 'Marcus R.', role: 'Founder', avatar: IMG.a3, text: "Sent these to our 40 best customers — the response was instant. We will be back every quarter." },
-  { name: 'Liana P.', role: 'Bride', avatar: IMG.a2, text: "Our welcome boxes were the conversation of the weekend. Thoughtful from box to ribbon." },
-  { name: 'James K.', role: 'COO', avatar: IMG.a4, text: "Onboarding boxes that new hires actually open and post about. Quality is unmatched." },
-  { name: 'Esi A.', role: 'Stylist', avatar: IMG.a5, text: "Beautiful, intentional, and personal. Doris translates a vibe better than anyone we worked with." },
-  { name: 'Theo M.', role: 'Investor', avatar: IMG.a6, text: "A holiday gift that earned three thank-you calls. That is rare." },
+  { name: 'Adaeze O.', role: 'Marketing Lead', avatar: IMG.a1, text: 'The team made our client appreciation feel like a brand moment. Every detail was considered.' },
+  { name: 'Marcus R.', role: 'Founder', avatar: IMG.a3, text: 'Sent these to our 40 best customers — the response was instant. We will be back every quarter.' },
+  { name: 'Liana P.', role: 'Bride', avatar: IMG.a2, text: 'Our welcome boxes were the conversation of the weekend. Thoughtful from box to ribbon.' },
+  { name: 'James K.', role: 'COO', avatar: IMG.a4, text: 'Onboarding boxes that new hires actually open and post about. Quality is unmatched.' },
+  { name: 'Esi A.', role: 'Stylist', avatar: IMG.a5, text: 'Beautiful, intentional, and personal. Doris translates a vibe better than anyone we worked with.' },
+  { name: 'Theo M.', role: 'Investor', avatar: IMG.a6, text: 'A holiday gift that earned three thank-you calls. That is rare.' },
 ];
 
 const HERO_BANNER_IMAGES = [
   IMG.giftWall,
   IMG.g3,
-  IMG.g2,
-  IMG.g5,
   IMG.g4,
   IMG.g6,
 ];
@@ -36,11 +34,10 @@ export default function Home({ mobile, go }) {
 
   return (
     <div>
-      {/* HERO — cream bg, text band over, gift wall image below */}
       <section style={{
         background: 'var(--cream)',
         position: 'relative',
-        paddingTop: mobile ? 100 : 131,
+        paddingTop: mobile ? 112 : 131,
         paddingBottom: 0,
       }}>
         <div style={{
@@ -54,12 +51,13 @@ export default function Home({ mobile, go }) {
             <h1 className="serif" style={{
               margin: 0,
               color: 'var(--brown-mid)',
-              fontSize: mobile ? 44 : 64,
+              fontSize: mobile ? 40 : 64,
               lineHeight: mobile ? 1.05 : 1.1,
               fontWeight: 400,
               letterSpacing: '-0.02em',
             }}>
-              Thoughtful Gifting<br/>Elevated
+              <span style={{ whiteSpace: 'nowrap' }}>Thoughtful Gifting</span><br />
+              <span style={{ whiteSpace: 'nowrap' }}>Elevated</span>
             </h1>
           </Reveal>
           <Reveal delay={120} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: mobile ? 'auto' : 141, gap: 20 }}>
@@ -78,7 +76,6 @@ export default function Home({ mobile, go }) {
           </Reveal>
         </div>
 
-        {/* Fading hero image carousel */}
         <Reveal>
           <div style={{
             position: 'relative',
@@ -107,7 +104,6 @@ export default function Home({ mobile, go }) {
         </Reveal>
       </section>
 
-      {/* ABOUT DORIS — white bg, centered text, learn more link */}
       <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '96px 80px', textAlign: 'center' }}>
         <Reveal>
           <SectionTitle mobile={mobile}>About Doris</SectionTitle>
@@ -122,7 +118,10 @@ export default function Home({ mobile, go }) {
             textAlign: 'center',
           }}>
             At Doris Gifting Co., we believe that every gift should be intentional, meaningful, and memorable.
-            We specialize in creating premium, curated gift boxes designed to elevate both personal and professional experiences.
+            <br />
+            <span style={{ display: 'block', marginTop: 12 }}>
+              We specialize in creating premium, curated gift boxes designed to elevate both personal and professional experiences.
+            </span>
             Whether you are appreciating clients, welcoming employees, or celebrating special moments,
             our goal is to help you leave a lasting impression.
           </p>
@@ -134,8 +133,7 @@ export default function Home({ mobile, go }) {
         </Reveal>
       </section>
 
-      {/* STORE INTERIOR — light grey bg, image */}
-      <section style={{ background: 'var(--cream-2)', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
+      <section style={{ background: '#fff', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
         <Reveal>
           <div style={{
             width: '100%',
@@ -147,8 +145,7 @@ export default function Home({ mobile, go }) {
         </Reveal>
       </section>
 
-      {/* GALLERY TEASER — white bg */}
-      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '80px 80px 96px' }}>
+      <section style={{ background: '#E7E0D6', padding: mobile ? '64px 24px' : '80px 80px 96px' }}>
         <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 40 }}>
           <div style={{
             fontSize: 12,
@@ -180,11 +177,7 @@ export default function Home({ mobile, go }) {
             { src: IMG.g6 },
             { src: IMG.g7 },
           ].map(({ src, style }, i) => (
-            <Reveal
-              key={i}
-              delay={i * 40}
-              style={style}
-            >
+            <Reveal key={i} delay={i * 40} style={style}>
               <div
                 onClick={() => go('gallery')}
                 className="gallery-cell"
@@ -203,43 +196,7 @@ export default function Home({ mobile, go }) {
         </div>
       </section>
 
-      {/* VIDEO GALLERY — under Gallery teaser */}
-      <section style={{ background: '#fff', padding: mobile ? '0 24px 32px' : '0 80px 56px' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: mobile ? '1fr 1fr' : 'repeat(4, 1fr)',
-          gap: mobile ? 8 : 14,
-        }}>
-          {[
-            // Drive direct-download URLs — files must be set to "Anyone with the link" → Viewer
-            'https://drive.google.com/uc?export=download&id=1sxijd3s_3gbR3MTaAorkuTOtqSgW_SN6',
-            'https://drive.google.com/uc?export=download&id=1fMlDXOrYcDBtXwVw3g8knz5wis4a2eGu',
-            'https://drive.google.com/uc?export=download&id=1BMTA5qWrcoXJUunEWBRsjep7APP8GUBz',
-            'https://drive.google.com/uc?export=download&id=1C-eAL0VPjklhil2WIlrYRypCoHWm63m4',
-          ].map((src, i) => (
-            <Reveal key={src} delay={i * 60}>
-              <video
-                src={src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                style={{
-                  width: '100%',
-                  aspectRatio: '4 / 5',
-                  objectFit: 'cover',
-                  display: 'block',
-                  background: 'var(--cream)',
-                }}
-              />
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* SERVICES — accordion + image */}
-      <section style={{ background: '#fff', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
+      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '96px 80px' }}>
         <div style={{ marginBottom: mobile ? 24 : 36 }}>
           <div style={{
             fontSize: 12,
@@ -283,8 +240,7 @@ export default function Home({ mobile, go }) {
         </div>
       </section>
 
-      {/* TESTIMONIALS — bronze bg */}
-      <section style={{ background: 'var(--brown-bronze)', padding: mobile ? '56px 24px' : '80px 80px', color: '#fff' }}>
+      <section style={{ background: '#8A6A4A', padding: mobile ? '56px 24px' : '80px 80px', color: '#fff' }}>
         <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 48 }}>
           <h2 className="serif" style={{ margin: 0, fontSize: mobile ? 32 : 48, fontWeight: 400, color: '#fff', letterSpacing: 0 }}>
             What Our Clients Say
@@ -328,7 +284,6 @@ export default function Home({ mobile, go }) {
         </div>
       </section>
 
-      {/* CTA — gift wall + email us */}
       <CTABanner mobile={mobile} go={go} />
     </div>
   );

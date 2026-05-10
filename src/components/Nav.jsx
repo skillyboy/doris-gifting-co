@@ -13,11 +13,12 @@ export default function Nav({ page, go, mobile, onMenu, transparent }) {
       left: 0,
       right: 0,
       zIndex: 50,
-      padding: mobile ? '20px 24px' : '40px 80px',
+      padding: mobile ? '18px 24px 16px' : '40px 80px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      background: 'transparent',
+      background: mobile ? 'var(--cream)' : 'transparent',
+      borderBottom: mobile ? '1px solid #000' : 'none',
     }}>
       <div onClick={() => go('home')} style={{ cursor: 'pointer' }}>
         <Logo size={mobile ? 'sm' : 'md'} />
