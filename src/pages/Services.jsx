@@ -53,7 +53,7 @@ export default function Services({ mobile, go }) {
             <Reveal>
               <div style={{
                 height: 560,
-                backgroundImage: 'url(' + IMG.g6 + ')',
+                backgroundImage: 'url(' + IMG.g1 + ')',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }} />

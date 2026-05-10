@@ -14,7 +14,26 @@ const TESTIMONIALS = [
   { name: 'Theo M.', role: 'Investor', avatar: IMG.a6, text: "A holiday gift that earned three thank-you calls. That is rare." },
 ];
 
+const HERO_BANNER_IMAGES = [
+  IMG.giftWall,
+  IMG.g3,
+  IMG.g2,
+  IMG.g5,
+  IMG.g4,
+  IMG.g6,
+];
+
 export default function Home({ mobile, go }) {
+  const [heroIndex, setHeroIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = window.setInterval(() => {
+      setHeroIndex((index) => (index + 1) % HERO_BANNER_IMAGES.length);
+    }, 3600);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <div>
       {/* HERO — cream bg, text band over, gift wall image below */}
@@ -59,15 +78,32 @@ export default function Home({ mobile, go }) {
           </Reveal>
         </div>
 
-        {/* Gift wall image strip */}
+        {/* Fading hero image carousel */}
         <Reveal>
           <div style={{
+            position: 'relative',
             width: '100%',
             height: mobile ? 260 : 520,
-            backgroundImage: 'url(' + IMG.giftWall + ')',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }} />
+            overflow: 'hidden',
+            background: 'var(--cream)',
+          }}>
+            {HERO_BANNER_IMAGES.map((src, index) => (
+              <div
+                key={src + index}
+                aria-hidden={index !== heroIndex}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  backgroundImage: 'url(' + src + ')',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  opacity: index === heroIndex ? 1 : 0,
+                  transform: index === heroIndex ? 'scale(1)' : 'scale(1.025)',
+                  transition: 'opacity 1200ms ease, transform 5200ms ease',
+                }}
+              />
+            ))}
+          </div>
         </Reveal>
       </section>
 
@@ -132,25 +168,22 @@ export default function Home({ mobile, go }) {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: mobile ? '1fr 1fr' : '1.15fr 1fr 1fr',
-          gridTemplateRows: mobile ? 'auto' : 'repeat(2, 1fr)',
-          gap: mobile ? 8 : 14,
-          height: mobile ? 'auto' : 520,
+          gridTemplateColumns: mobile ? '1fr' : '2fr 1fr 1fr',
+          gridTemplateRows: mobile ? 'auto' : 'repeat(3, 260px)',
+          gap: mobile ? 12 : 14,
         }}>
           {[
-            { src: IMG.g3, large: true },
+            { src: IMG.g3, style: { gridColumn: mobile ? undefined : '1 / span 2', gridRow: mobile ? undefined : '1 / span 2' } },
             { src: IMG.g2 },
-            { src: IMG.g5 },
             { src: IMG.g4 },
+            { src: IMG.g5 },
+            { src: IMG.g6 },
             { src: IMG.g7 },
-          ].map(({ src, large }, i) => (
+          ].map(({ src, style }, i) => (
             <Reveal
               key={i}
               delay={i * 40}
-              style={{
-                gridColumn: large ? (mobile ? '1 / -1' : '1 / 2') : undefined,
-                gridRow: large && !mobile ? '1 / 3' : undefined,
-              }}
+              style={style}
             >
               <div
                 onClick={() => go('gallery')}
@@ -158,10 +191,11 @@ export default function Home({ mobile, go }) {
                 style={{
                   width: '100%',
                   height: mobile ? 'auto' : '100%',
-                  aspectRatio: mobile ? (large ? '4 / 5' : '1 / 1') : 'auto',
+                  aspectRatio: mobile ? '4 / 3' : 'auto',
                   backgroundImage: 'url(' + src + ')',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
+                  borderRadius: 20,
                 }}
               />
             </Reveal>
@@ -240,7 +274,7 @@ export default function Home({ mobile, go }) {
             <Reveal>
               <div style={{
                 height: 480,
-                backgroundImage: 'url(' + IMG.g6 + ')',
+                backgroundImage: 'url(' + IMG.g1 + ')',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }} />
