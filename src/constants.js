@@ -8,15 +8,13 @@ export const IMG = {
   founder:     `${B}img/founder.jpg`,
   workshop:    `${B}img/cta-wall.png`,
   // gallery — real Doris product photography
-  g1: `${B}img/g-boxes-trio.jpg`,      // Services hero
-  g2: `${B}img/g-journal-mug.jpg`,     // Home teaser small
-  g3: `${B}img/g-mens-scent.jpg`,      // Home teaser large
-  g4: `${B}img/g-whiskey-sauvage.jpg`, // Home teaser small
-  g5: `${B}img/g-spa-basket.jpg`,      // Home teaser small
-  g6: `${B}img/g-services.jpg`,        // Services + Home accordion side (figma VMO/miniwood)
-  g7: `${B}img/g-warm-cozy.jpg`,       // Home teaser small
-  g8: `${B}img/g-wellness.jpg`,
-  g9: `${B}img/g-espresso-amber.jpg`,
+  g1: `${B}img/g-vmo.jpg`,
+  g2: `${B}img/g-packaging.jpg`,
+  g3: `${B}img/g-huxley.jpg`,
+  g4: `${B}img/g-arhaus.jpg`,
+  g5: `${B}img/g-refy.jpg`,
+  g6: `${B}img/g-casa.jpg`,
+  g7: `${B}img/g-happybday.jpg`,
   // testimonial avatars
   a1: 'https://i.pravatar.cc/120?img=47',
   a2: 'https://i.pravatar.cc/120?img=32',
@@ -65,13 +63,15 @@ export const GALLERY_FILTERS = [
 ];
 
 export const GALLERY_ITEMS = [
-  { src: `${B}img/g-boxes-trio.jpg`,      cat: 'Bulk Orders',            ratio: '4 / 3', span: 2 },
-  { src: `${B}img/g-journal-mug.jpg`,     cat: 'Corporate Gifting',      ratio: '4 / 3' },
-  { src: `${B}img/g-warm-cozy.jpg`,       cat: 'Special Occasion Gifts', ratio: '1 / 1' },
-  { src: `${B}img/g-mens-scent.jpg`,      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: `${B}img/g-spa-basket.jpg`,      cat: 'Special Occasion Gifts', ratio: '1 / 1' },
-  { src: `${B}img/g-whiskey-sauvage.jpg`, cat: 'Custom Gift Boxes',      ratio: '4 / 3', span: 2 },
-  { src: `${B}img/g-brush-candle.jpg`,    cat: 'Custom Gift Boxes',      ratio: '3 / 4' },
-  { src: `${B}img/g-espresso-amber.jpg`,  cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: `${B}img/g-wellness.jpg`,        cat: 'Special Occasion Gifts', ratio: '4 / 5' },
+  { src: `${B}img/g-huxley.jpg`,    cat: 'Custom Gift Boxes',      ratio: '4 / 3', span: 2 },
+  { src: `${B}img/g-packaging.jpg`, cat: 'Corporate Gifting',      ratio: '4 / 3' },
+  { src: `${B}img/g-arhaus.jpg`,    cat: 'Bulk Orders',            ratio: '4 / 3' },
+  { src: `${B}img/g-refy.jpg`,      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: `${B}img/g-casa.jpg`,      cat: 'Bulk Orders',            ratio: '1 / 1' },
+  { src: `${B}img/g-happybday.jpg`, cat: 'Special Occasion Gifts', ratio: '1 / 1' },
+  { src: `${B}img/g-packaging.jpg`, cat: 'Corporate Gifting',      ratio: '4 / 3' },
+  { src: `${B}img/g-arhaus.jpg`,    cat: 'Bulk Orders',            ratio: '4 / 3' },
+  { src: `${B}img/g-refy.jpg`,      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: `${B}img/g-casa.jpg`,      cat: 'Bulk Orders',            ratio: '1 / 1' },
+  { src: `${B}img/g-happybday.jpg`, cat: 'Special Occasion Gifts', ratio: '4 / 5' },
 ];

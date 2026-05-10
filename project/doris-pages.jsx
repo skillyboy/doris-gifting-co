@@ -314,17 +314,17 @@ function AboutPage({ mobile, go }) {
 const GALLERY_FILTERS = ['All', 'Corporate Gifting', 'Custom Gift Boxes', 'Special Occasion Gifts', 'Bulk Orders'];
 
 const GALLERY_ITEMS = [
-  { src: 'img/g-vmo.jpg',       cat: 'Corporate Gifting',      ratio: '4 / 3', span: 2 },
-  { src: 'img/g-huxley.jpg',    cat: 'Custom Gift Boxes',      ratio: '4 / 3' },
-  { src: 'img/g-casa.jpg',      cat: 'Bulk Orders',            ratio: '1 / 1' },
-  { src: 'img/g-refy.jpg',      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: 'img/g-happybday.jpg', cat: 'Special Occasion Gifts', ratio: '1 / 1' },
-  { src: 'img/g-arhaus.jpg',    cat: 'Bulk Orders',            ratio: '1 / 1' },
-  { src: 'img/g-vmo.jpg',       cat: 'Corporate Gifting',      ratio: '4 / 3', span: 2 },
-  { src: 'img/g-casa.jpg',      cat: 'Bulk Orders',            ratio: '3 / 4' },
-  { src: 'img/g-huxley.jpg',    cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: 'img/g-happybday.jpg', cat: 'Special Occasion Gifts', ratio: '4 / 5' },
-  { src: 'img/g-refy.jpg',      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: '../public/img/g-vmo.jpg',       cat: 'Corporate Gifting',      ratio: '4 / 3', span: 2 },
+  { src: '../public/img/g-huxley.jpg',    cat: 'Custom Gift Boxes',      ratio: '4 / 3' },
+  { src: '../public/img/g-casa.jpg',      cat: 'Bulk Orders',            ratio: '1 / 1' },
+  { src: '../public/img/g-refy.jpg',      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: '../public/img/g-happybday.jpg', cat: 'Special Occasion Gifts', ratio: '1 / 1' },
+  { src: '../public/img/g-arhaus.jpg',    cat: 'Bulk Orders',            ratio: '1 / 1' },
+  { src: '../public/img/g-vmo.jpg',       cat: 'Corporate Gifting',      ratio: '4 / 3', span: 2 },
+  { src: '../public/img/g-casa.jpg',      cat: 'Bulk Orders',            ratio: '3 / 4' },
+  { src: '../public/img/g-huxley.jpg',    cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
+  { src: '../public/img/g-happybday.jpg', cat: 'Special Occasion Gifts', ratio: '4 / 5' },
+  { src: '../public/img/g-refy.jpg',      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
 ];
 
 function GalleryPage({ mobile, go }) {

@@ -86,7 +86,7 @@ export default function Footer({ mobile, go }) {
         color: 'var(--ink-mute)',
         fontSize: 12,
       }}>
-        © 2026 Doris Gifting. All rights reserved.
+        &copy; 2026 Doris Gifting Co. All rights reserved.
       </div>
     </footer>
   );
