@@ -69,9 +69,4 @@ export const GALLERY_ITEMS = [
   { src: `${B}img/g-refy.jpg`,      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
   { src: `${B}img/g-casa.jpg`,      cat: 'Bulk Orders',            ratio: '1 / 1' },
   { src: `${B}img/g-happybday.jpg`, cat: 'Special Occasion Gifts', ratio: '1 / 1' },
-  { src: `${B}img/g-packaging.jpg`, cat: 'Corporate Gifting',      ratio: '4 / 3' },
-  { src: `${B}img/g-arhaus.jpg`,    cat: 'Bulk Orders',            ratio: '4 / 3' },
-  { src: `${B}img/g-refy.jpg`,      cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: `${B}img/g-casa.jpg`,      cat: 'Bulk Orders',            ratio: '1 / 1' },
-  { src: `${B}img/g-happybday.jpg`, cat: 'Special Occasion Gifts', ratio: '4 / 5' },
 ];

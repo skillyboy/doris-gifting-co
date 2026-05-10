@@ -469,7 +469,7 @@ function ContactPage({ mobile, go }) {
             }}>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Email</div>
-                <div style={{ fontSize: 13, color: 'var(--ink-soft)' }}>hello@dorisgifting.co</div>
+                <div style={{ fontSize: 13, color: 'var(--ink-soft)' }}>dorisgiftingco@gmail.com</div>
               </div>
               <div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Address</div>
