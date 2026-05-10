@@ -13,7 +13,7 @@ export default function Nav({ page, go, mobile, onMenu, transparent }) {
       left: 0,
       right: 0,
       zIndex: 50,
-      padding: mobile ? '18px 24px 16px' : '40px 80px',
+      padding: mobile ? '0 24px 16px' : '0 80px 24px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
