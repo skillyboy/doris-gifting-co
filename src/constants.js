@@ -5,7 +5,7 @@ export const IMG = {
   storeInterior: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1600&q=80&auto=format&fit=crop',
   giftWall:    `${B}img/cta-wall.png`,
   contactHand: `${B}img/contact-hand.jpg`,
-  founder:     `${B}img/founder.jpg`,
+  founder:     `${B}img/founder.png`,
   workshop:    `${B}img/cta-wall.png`,
   // gallery — real Doris product photography
   g1: `${B}img/g-vmo.jpg`,

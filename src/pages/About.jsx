@@ -15,7 +15,6 @@ export default function About({ mobile, go }) {
         backgroundImage: 'url(' + IMG.storeInterior + ')',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        marginTop: mobile ? 80 : 120,
       }} />
 
       {/* ABOUT DORIS */}

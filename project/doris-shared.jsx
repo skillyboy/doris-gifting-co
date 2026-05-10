@@ -6,7 +6,7 @@ const IMG = {
   giftWall:      '../public/img/cta-wall.png',
   giftWall2:     '../public/img/cta-wall.png',
   contactHand:   '../public/img/g-casa.jpg',
-  founder:       '../public/img/founder.jpg',
+  founder:       '../public/img/founder.png',
   workshop:      '../public/img/cta-wall.png',
   // gallery items — real product photography
   g1: '../public/img/g-vmo.jpg',         // Corporate Gifting (VMO + miniwood)
