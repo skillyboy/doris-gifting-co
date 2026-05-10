@@ -3,22 +3,22 @@
 const IMG = {
   // hero / banners — real Doris assets
   storeInterior: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1600&q=80&auto=format&fit=crop',
-  giftWall:      'img/cta-wall.png',
-  giftWall2:     'img/cta-wall.png',
-  contactHand:   'img/contact-hand.jpg',
-  founder:       'img/founder.jpg',
-  workshop:      'img/cta-wall.png',
+  giftWall:      '../public/img/cta-wall.png',
+  giftWall2:     '../public/img/cta-wall.png',
+  contactHand:   '../public/img/g-casa.jpg',
+  founder:       '../public/img/founder.jpg',
+  workshop:      '../public/img/cta-wall.png',
   // gallery items — real product photography
-  g1: 'img/g-vmo.jpg',         // Corporate Gifting (VMO + miniwood)
-  g2: 'img/g-arhaus.jpg',      // Bulk Orders (Arhaus tote rows)
-  g3: 'img/g-huxley.jpg',      // Custom Gift Boxes (Huxley)
-  g4: 'img/g-casa.jpg',        // Bulk Orders (Casa Nahua)
-  g5: 'img/g-refy.jpg',        // Custom Gift Boxes (Refy)
-  g6: 'img/g-happybday.jpg',   // Special Occasion (Happy Birthday)
-  g7: 'img/g-vmo.jpg',
-  g8: 'img/g-huxley.jpg',
-  g9: 'img/g-casa.jpg',
-  g10:'img/g-refy.jpg',
+  g1: '../public/img/g-vmo.jpg',         // Corporate Gifting (VMO + miniwood)
+  g2: '../public/img/g-arhaus.jpg',      // Bulk Orders (Arhaus tote rows)
+  g3: '../public/img/g-huxley.jpg',      // Custom Gift Boxes (Huxley)
+  g4: '../public/img/g-casa.jpg',        // Bulk Orders (Casa Nahua)
+  g5: '../public/img/g-refy.jpg',        // Custom Gift Boxes (Refy)
+  g6: '../public/img/g-happybday.jpg',   // Special Occasion (Happy Birthday)
+  g7: '../public/img/g-vmo.jpg',
+  g8: '../public/img/g-huxley.jpg',
+  g9: '../public/img/g-casa.jpg',
+  g10:'../public/img/g-refy.jpg',
   // testimonial avatars
   a1: 'https://i.pravatar.cc/120?img=47',
   a2: 'https://i.pravatar.cc/120?img=32',
@@ -247,7 +247,7 @@ function Footer({ mobile, go }) {
           fontSize: 12, color: 'var(--ink-mute)', textAlign: 'center',
         }}
       >
-        © 2026 Doris Gifting. All rights reserved.
+        &copy; 2026 Doris Gifting Co. All rights reserved.
       </div>
     </div>
   );

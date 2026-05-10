@@ -46,7 +46,7 @@ export default function ServicesAccordion({ mobile }) {
                   <div style={{
                     marginTop: 18,
                     height: 220,
-                    backgroundImage: 'url(' + IMG.g6 + ')',
+                    backgroundImage: 'url(' + IMG.g1 + ')',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     borderRadius: 4,
