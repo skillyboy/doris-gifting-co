@@ -5,20 +5,40 @@ import CTABanner from '../components/CTABanner';
 import Reveal from '../components/Reveal';
 
 export default function About({ mobile, go }) {
+  const B = import.meta.env.BASE_URL;
+
   return (
     <div>
-      {/* HERO IMAGE — store interior, full bleed */}
-      <section style={{
-        position: 'relative',
-        width: '100%',
-        height: mobile ? 360 : 640,
-        backgroundImage: 'url(' + IMG.storeInterior + ')',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }} />
+      {/* HERO VIDEO — store interior, full bleed */}
+      <Reveal>
+        <section style={{
+          position: 'relative',
+          width: '100%',
+          height: mobile ? 320 : 560,
+          overflow: 'hidden',
+        }}>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        >
+          <source src={`${B}img/about-bg.mp4`} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+      </Reveal>
 
       {/* ABOUT DORIS */}
-      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '96px 80px', textAlign: 'center' }}>
+      <section style={{ background: 'var(--cream-2)', padding: mobile ? '64px 24px' : '96px 80px', textAlign: 'center' }}>
         <Reveal>
           <SectionTitle mobile={mobile}>About Doris</SectionTitle>
         </Reveal>
@@ -41,14 +61,13 @@ export default function About({ mobile, go }) {
       </section>
 
       {/* MEET THE FOUNDER — split layout */}
-      <section style={{ background: '#fff', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
+      <section style={{ background: 'var(--cream-2)', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
           gap: mobile ? 24 : 80,
           alignItems: 'center',
         }}>
-          <Reveal>
             <div style={{
               fontSize: 12,
               letterSpacing: '0.32em',
@@ -57,17 +76,20 @@ export default function About({ mobile, go }) {
               marginBottom: 14,
               fontWeight: 500,
             }}>
-              Meet
             </div>
-            <SectionTitle mobile={mobile} align="left" style={{ marginBottom: 24 }}>
-              Meet The Founder
-            </SectionTitle>
-            <p style={{
-              fontSize: mobile ? 15 : 17,
-              lineHeight: 1.7,
-              color: 'var(--ink-soft)',
-              marginTop: 16,
-            }}>
+            <Reveal>
+              <SectionTitle mobile={mobile} align="left" style={{ marginBottom: 24 }}>
+                Meet The Founder
+              </SectionTitle>
+            </Reveal>
+            <Reveal delay={80}>
+              <p style={{
+                maxWidth: 1036,
+                margin: '16px auto 0',
+                fontSize: mobile ? 15 : 18,
+                lineHeight: 1.625,
+                color: 'var(--ink-soft)',
+              }}>
               Doris Gifting Co. was founded with a passion for thoughtful details and meaningful experiences.
               Led by a vision of elevated gifting, delivering quality, creativity, and professionalism in every box we create,
               I want every client to feel valued through gifts that are not only beautiful but intentional.
