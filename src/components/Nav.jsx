@@ -3,7 +3,7 @@ import Logo from './Logo';
 import { NAV_ITEMS } from '../constants';
 
 export default function Nav({ page, go, mobile, onMenu, transparent }) {
-  const linkColor = 'var(--brown-mid)';
+  const linkColor = (page === 'about' && !mobile) ? '#fff' : 'var(--brown-mid)';
   const padX = mobile ? 24 : 80;
 
   return (
@@ -21,7 +21,7 @@ export default function Nav({ page, go, mobile, onMenu, transparent }) {
       borderBottom: mobile ? '1px solid #000' : 'none',
     }}>
       <div onClick={() => go('home')} style={{ cursor: 'pointer' }}>
-        <Logo size={mobile ? 'sm' : 'md'} />
+        <Logo size={mobile ? 'sm' : 'md'} tone={(page === 'about' && !mobile) ? 'light' : 'dark'} />
       </div>
 
       {mobile ? (

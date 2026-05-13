@@ -6,11 +6,13 @@ export default function CTABanner({ mobile, go }) {
     <section style={{
       width: '100%',
       padding: mobile ? '0 24px 56px' : '0 80px 80px',
-      background: '#fff',
+      background: 'var(--cream)',
     }}>
       <div style={{
         position: 'relative',
         width: '100%',
+        maxWidth: 1440,
+        margin: '0 auto',
         height: mobile ? 320 : 480,
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url(' + IMG.giftWall + ')',
         backgroundSize: 'cover',
