@@ -46,6 +46,30 @@ button { font-family: inherit; cursor: pointer; }
   to { opacity: 1; transform: scale(1); }
 }
 
+/* Gallery carousel — infinite horizontal scroll */
+@keyframes doris-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 4%, #000 96%, transparent 100%);
+}
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: doris-slide 50s linear infinite;
+  will-change: transform;
+}
+.carousel-viewport:hover .carousel-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { animation: none; }
+}
+
 .gallery-cell {
   cursor: zoom-in;
   transition: transform 420ms cubic-bezier(.2,.7,.2,1), box-shadow 420ms ease;
