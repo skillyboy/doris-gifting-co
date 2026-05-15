@@ -60,14 +60,17 @@ export default function About({ mobile, go }) {
         </Reveal>
       </section>
 
-      {/* MEET THE FOUNDER — split layout */}
+      {/* MEET THE FOUNDER — split layout (text left | image right) */}
       <section style={{ background: 'var(--cream-2)', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
-          gap: mobile ? 24 : 80,
+          gap: mobile ? 32 : 80,
           alignItems: 'center',
         }}>
+
+          {/* Left: label + title + body */}
+          <div>
             <div style={{
               fontSize: 12,
               letterSpacing: '0.32em',
@@ -76,6 +79,7 @@ export default function About({ mobile, go }) {
               marginBottom: 14,
               fontWeight: 500,
             }}>
+              Our Story
             </div>
             <Reveal>
               <SectionTitle mobile={mobile} align="left" style={{ marginBottom: 24 }}>
@@ -84,26 +88,29 @@ export default function About({ mobile, go }) {
             </Reveal>
             <Reveal delay={80}>
               <p style={{
-                maxWidth: 1036,
-                margin: '16px auto 0',
+                margin: '16px 0 0',
                 fontSize: mobile ? 15 : 18,
                 lineHeight: 1.625,
                 color: 'var(--ink-soft)',
               }}>
-              Doris Gifting Co. was founded with a passion for thoughtful details and meaningful experiences.
-              Led by a vision of elevated gifting, delivering quality, creativity, and professionalism in every box we create,
-              I want every client to feel valued through gifts that are not only beautiful but intentional.
-            </p>
-          </Reveal>
+                Doris Gifting Co. was founded with a passion for thoughtful details and meaningful experiences.
+                Led by a vision of elevated gifting, delivering quality, creativity, and professionalism in every box we create,
+                I want every client to feel valued through gifts that are not only beautiful but intentional.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* Right: founder photo */}
           <Reveal delay={120}>
             <div style={{
               width: '100%',
-              aspectRatio: mobile ? '4 / 5' : '4 / 5',
+              aspectRatio: '4 / 5',
               backgroundImage: 'url(' + IMG.founder + ')',
               backgroundSize: 'cover',
               backgroundPosition: 'center top',
             }} />
           </Reveal>
+
         </div>
       </section>
 

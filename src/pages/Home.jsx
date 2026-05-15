@@ -22,45 +22,61 @@ const HERO_BANNER_IMAGES = [
 ];
 
 export default function Home({ mobile, go }) {
-  const [heroIndex, setHeroIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    const timer = window.setInterval(() => {
-      setHeroIndex((index) => (index + 1) % HERO_BANNER_IMAGES.length);
-    }, 3600);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
   return (
     <div>
+      {/* ── HERO  (Figma: 1440×913 | #E7E0D6)
+          Image strip: top:131, left:80, 1288×141, space-between
+          Text block:  top:359, left:80, 1280×488             */}
       <section style={{
         background: 'var(--cream)',
         position: 'relative',
-        paddingTop: mobile ? 112 : 131,
-        paddingBottom: 0,
+        minHeight: mobile ? 'auto' : 913,
+        paddingBottom: mobile ? 48 : 0,
       }}>
+
+        {/* Horizontal image strip */}
+        <Reveal>
+          <div style={{
+            display: 'flex',
+            gap: mobile ? 8 : 14,
+            padding: mobile ? '106px 24px 0' : '131px 80px 0',
+            overflowX: mobile ? 'auto' : 'hidden',
+          }}>
+            {HERO_BANNER_IMAGES.map((src, i) => (
+              <div key={i} style={{
+                flex: mobile ? '0 0 72%' : '1 1 0',
+                flexShrink: 0,
+                height: mobile ? 120 : 141,
+                backgroundImage: 'url(' + src + ')',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }} />
+            ))}
+          </div>
+        </Reveal>
+
+        {/* Text block — heading left, body + CTA right */}
         <div style={{
-          padding: mobile ? '0 24px 32px' : '0 80px 40px',
+          padding: mobile ? '32px 24px 0' : '87px 80px 80px',
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : '1.05fr 1fr',
           gap: mobile ? 20 : 80,
-          alignItems: 'start',
+          alignItems: 'end',
         }}>
           <Reveal>
             <h1 className="serif" style={{
               margin: 0,
               color: 'var(--brown-mid)',
               fontSize: mobile ? 40 : 64,
-              lineHeight: mobile ? 1.05 : 1.1,
+              lineHeight: mobile ? 1.05 : 1.08,
               fontWeight: 400,
               letterSpacing: '-0.02em',
             }}>
-              <span style={{ whiteSpace: 'nowrap' }}>Thoughtful Gifting</span><br />
-              <span style={{ whiteSpace: 'nowrap' }}>Elevated</span>
+              <span style={{ display: 'block' }}>Thoughtful Gifting</span>
+              <span style={{ display: 'block' }}>Elevated</span>
             </h1>
           </Reveal>
-          <Reveal delay={120} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: mobile ? 'auto' : 141, gap: 20 }}>
+          <Reveal delay={120} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', gap: 24 }}>
             <p style={{
               fontSize: mobile ? 15 : 18,
               lineHeight: 1.625,
@@ -70,38 +86,12 @@ export default function Home({ mobile, go }) {
             }}>
               Every gift should be intentional and memorable. We curate bespoke experiences that articulate gratitude and celebrate connections with quiet sophistication.
             </p>
-            <button onClick={() => go('contact')} className="btn-link" style={{ alignSelf: mobile ? 'flex-start' : 'flex-end' }}>
+            <button onClick={() => go('contact')} className="btn-link" style={{ alignSelf: 'flex-start' }}>
               Send us a message
             </button>
           </Reveal>
         </div>
 
-        <Reveal>
-          <div style={{
-            position: 'relative',
-            width: '100%',
-            height: mobile ? 260 : 520,
-            overflow: 'hidden',
-            background: 'var(--cream)',
-          }}>
-            {HERO_BANNER_IMAGES.map((src, index) => (
-              <div
-                key={src + index}
-                aria-hidden={index !== heroIndex}
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  backgroundImage: 'url(' + src + ')',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  opacity: index === heroIndex ? 1 : 0,
-                  transform: index === heroIndex ? 'scale(1)' : 'scale(1.025)',
-                  transition: 'opacity 1200ms ease, transform 5200ms ease',
-                }}
-              />
-            ))}
-          </div>
-        </Reveal>
       </section>
 
       <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '96px 80px', textAlign: 'center' }}>
