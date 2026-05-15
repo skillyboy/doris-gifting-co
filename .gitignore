@@ -2,3 +2,7 @@ node_modules/
 dist/
 .DS_Store
 
+
+# Local-only binary assets — push manually via `git push` once proxy is fixed
+docs/img/*.mp4
+public/videos/
