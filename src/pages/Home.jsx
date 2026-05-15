@@ -145,8 +145,8 @@ export default function Home({ mobile, go }) {
         </Reveal>
       </section>
 
-      <section style={{ background: '#E7E0D6', padding: mobile ? '64px 24px' : '80px 80px 96px' }}>
-        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 40 }}>
+      <section style={{ background: '#E7E0D6', padding: mobile ? '64px 0' : '80px 0 96px' }}>
+        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 40, padding: mobile ? '0 24px' : '0 80px' }}>
           <div style={{
             fontSize: 12,
             letterSpacing: '0.32em',
@@ -163,36 +163,25 @@ export default function Home({ mobile, go }) {
           </button>
         </Reveal>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: mobile ? '1fr' : '2fr 1fr 1fr',
-          gridTemplateRows: mobile ? 'auto' : 'repeat(3, 260px)',
-          gap: mobile ? 12 : 14,
-        }}>
-          {[
-            { src: IMG.g3, style: { gridColumn: mobile ? undefined : '1 / span 2', gridRow: mobile ? undefined : '1 / span 2' } },
-            { src: IMG.g2 },
-            { src: IMG.g4 },
-            { src: IMG.g5 },
-            { src: IMG.g6 },
-            { src: IMG.g7 },
-          ].map(({ src, style }, i) => (
-            <Reveal key={i} delay={i * 40} style={style}>
+        <div className="carousel-viewport">
+          <div className="carousel-track" style={{ gap: mobile ? 12 : 18 }}>
+            {[IMG.g3, IMG.g2, IMG.g4, IMG.g5, IMG.g6, IMG.g7, IMG.g3, IMG.g2, IMG.g4, IMG.g5, IMG.g6, IMG.g7].map((src, i) => (
               <div
+                key={i}
                 onClick={() => go('gallery')}
                 className="gallery-cell"
                 style={{
-                  width: '100%',
-                  height: mobile ? 'auto' : '100%',
-                  aspectRatio: mobile ? '4 / 3' : 'auto',
+                  flex: 'none',
+                  width: mobile ? 260 : 380,
+                  aspectRatio: '4 / 5',
                   backgroundImage: 'url(' + src + ')',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   borderRadius: 20,
                 }}
               />
-            </Reveal>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
