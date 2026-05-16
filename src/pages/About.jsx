@@ -9,36 +9,44 @@ export default function About({ mobile, go }) {
 
   return (
     <div>
-      {/* HERO VIDEO — store interior, full bleed */}
+      {/* HERO BANNER — 1440×913 */}
       <Reveal>
         <section style={{
           position: 'relative',
           width: '100%',
-          height: mobile ? 320 : 560,
+          height: mobile ? 400 : 913,
           overflow: 'hidden',
         }}>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
-        >
-          <source src={`${B}img/about-bg.mp4`} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </section>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          >
+            <source src={`${B}img/about-bg.mp4`} type="video/mp4" />
+          </video>
+        </section>
       </Reveal>
 
-      {/* ABOUT DORIS */}
-      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '96px 80px', textAlign: 'center' }}>
+      {/* ABOUT DORIS — 1440×391, padding 80px, gap 50px, bg #FFFFFF */}
+      <section style={{
+        background: '#FFFFFF',
+        padding: mobile ? '64px 24px' : '80px',
+        textAlign: 'center',
+        minHeight: mobile ? 'auto' : 391,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
         <Reveal>
           <SectionTitle mobile={mobile}>About Doris</SectionTitle>
         </Reveal>
@@ -60,13 +68,24 @@ export default function About({ mobile, go }) {
         </Reveal>
       </section>
 
-      {/* MEET THE FOUNDER — split layout (text left | image right) */}
-      <section style={{ background: '#fff', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
+      {/* MEET THE FOUNDER — 1440×735, max-width 1920px, padding 80px, gap 80px, bg #FFFFFF */}
+      <section style={{
+        background: '#FFFFFF',
+        padding: mobile ? '64px 24px' : '80px',
+        minHeight: mobile ? 'auto' : 735,
+        maxWidth: 1920,
+        margin: '0 auto',
+        width: '100%',
+        boxSizing: 'border-box',
+        display: 'flex',
+        alignItems: 'center',
+      }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
           gap: mobile ? 32 : 80,
           alignItems: 'center',
+          width: '100%',
         }}>
 
           {/* Left: label + title + body */}
@@ -114,6 +133,7 @@ export default function About({ mobile, go }) {
         </div>
       </section>
 
+      {/* CTA SECTION — 1440×648, padding 80px, bg #E7E0D6 */}
       <CTABanner mobile={mobile} go={go} />
     </div>
   );
