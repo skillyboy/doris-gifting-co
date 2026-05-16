@@ -181,8 +181,8 @@ export default function Home({ mobile, go }) {
                   backgroundPosition: 'center',
                 }}
               />
-            ))}
-          </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -245,9 +245,14 @@ export default function Home({ mobile, go }) {
             <Reveal key={i} delay={i * 60}>
               <div style={{
                 background: 'rgba(255,255,255,0.08)',
-                padding: mobile ? 18 : 24,
+                padding: mobile ? 22 : 32,
                 border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: 12,
+                minHeight: mobile ? 'auto' : 380,
                 height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
               }}>
                 <div style={{ color: '#f3d9bd', fontSize: 13, marginBottom: 10, letterSpacing: '0.1em' }}>★★★★★</div>
                 <p style={{ color: '#fff', opacity: 0.95, fontSize: 14, lineHeight: 1.65, margin: '0 0 18px' }}>
