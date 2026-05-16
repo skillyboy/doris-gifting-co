@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Figma__get_metadata",
+      "mcp__claude_ai_Figma__whoami",
+      "mcp__claude_ai_Figma__get_screenshot",
+      "Bash(npm ci *)",
+      "Bash(npm run *)",
+      "Bash(npx vite *)",
+      "Bash(./node_modules/.bin/vite build *)"
+    ]
+  }
+}

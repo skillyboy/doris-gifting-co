@@ -181,9 +181,9 @@ export default function Home({ mobile, go }) {
                   backgroundPosition: 'center',
                 }}
               />
-            ))}
+            </Reveal>
+          ))}
           </div>
-        </div>
       </section>
 
       <section style={{ background: 'var(--cream-2)', padding: mobile ? '64px 24px' : '80px 80px' }}>

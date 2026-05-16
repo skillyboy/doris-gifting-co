@@ -5,15 +5,17 @@ export default function CTABanner({ mobile, go }) {
   return (
     <section style={{
       width: '100%',
-      padding: mobile ? '0 24px 56px' : '0 80px 80px',
-      background: 'var(--cream)',
+      minHeight: mobile ? 'auto' : 648,
+      padding: mobile ? '56px 24px' : '80px',
+      background: '#E7E0D6',
+      boxSizing: 'border-box',
+      display: 'flex',
+      alignItems: 'stretch',
     }}>
       <div style={{
         position: 'relative',
         width: '100%',
-        maxWidth: 1440,
-        margin: '0 auto',
-        height: mobile ? 320 : 480,
+        minHeight: mobile ? 320 : 488,
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url(' + IMG.giftWall + ')',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
