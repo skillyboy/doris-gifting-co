@@ -4,7 +4,7 @@ import Logo from './Logo';
 const links = {
   important: [
     { label: 'About Us', id: 'about' },
-    { label: 'Gallery', id: 'gallery' },
+    { label: 'Portfolio', id: 'gallery' },
   ],
   company: [
     { label: 'Privacy Policy' },
