@@ -7,10 +7,15 @@ import react from '@vitejs/plugin-react';
 // on push, so we round-trip via the API).
 export default defineConfig({
   plugins: [react()],
-  base: '/doris-gifting-co/',
+  base: '/',
   build: {
     rollupOptions: {
       external: ['react', 'react-dom', 'react-dom/client'],
     },
+  },
+  preview: {
+    host: true,
+    port: Number(process.env.PORT) || 4173,
+    allowedHosts: ['www.dorisgiftingco.com', 'dorisgiftingco.com', '.up.railway.app'],
   },
 });
