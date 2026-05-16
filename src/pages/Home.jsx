@@ -34,26 +34,42 @@ export default function Home({ mobile, go }) {
         paddingBottom: mobile ? 48 : 0,
       }}>
 
-        {/* Horizontal image strip */}
-        <Reveal>
-          <div style={{
-            display: 'flex',
-            gap: mobile ? 8 : 14,
-            padding: mobile ? '106px 24px 0' : '131px 80px 0',
-            overflowX: mobile ? 'auto' : 'hidden',
-          }}>
-            {HERO_BANNER_IMAGES.map((src, i) => (
-              <div key={i} style={{
-                flex: mobile ? '0 0 72%' : '1 1 0',
-                flexShrink: 0,
-                height: mobile ? 120 : 141,
-                backgroundImage: 'url(' + src + ')',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }} />
-            ))}
-          </div>
-        </Reveal>
+        {/* Horizontal image carousel — infinite scroll */}
+        <div style={{
+          paddingTop: mobile ? 106 : 131,
+          overflow: 'hidden',
+        }}>
+          {mobile ? (
+            /* Mobile: simple scrollable row */
+            <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingLeft: 24, paddingRight: 24 }}>
+              {HERO_BANNER_IMAGES.map((src, i) => (
+                <div key={i} style={{
+                  flexShrink: 0,
+                  width: 220,
+                  height: 120,
+                  backgroundImage: 'url(' + src + ')',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }} />
+              ))}
+            </div>
+          ) : (
+            /* Desktop: infinite auto-scroll carousel */
+            <div className="hero-carousel-track">
+              {[...HERO_BANNER_IMAGES, ...HERO_BANNER_IMAGES].map((src, i) => (
+                <div key={i} style={{
+                  flexShrink: 0,
+                  width: 310,
+                  height: 141,
+                  marginRight: 14,
+                  backgroundImage: 'url(' + src + ')',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }} />
+              ))}
+            </div>
+          )}
+        </div>
 
         {/* Text block — heading left, body + CTA right */}
         <div style={{
@@ -230,33 +246,72 @@ export default function Home({ mobile, go }) {
         </div>
       </section>
 
-      <section style={{ background: '#8A6A4A', padding: mobile ? '56px 24px' : '80px 80px', color: '#fff' }}>
-        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 80 }}>
-          <h2 className="serif" style={{ margin: 0, fontSize: mobile ? 32 : 48, fontWeight: 400, color: '#fff', letterSpacing: 0 }}>
+      {/* WHAT OUR CLIENTS SAY — 1440×1113, padding 80px, gap 80px, bg #8A6A4A */}
+      <section style={{
+        background: '#8A6A4A',
+        minHeight: mobile ? 'auto' : 1114,
+        padding: mobile ? '56px 24px' : '80px',
+        boxSizing: 'border-box',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: mobile ? 28 : 80,
+      }}>
+        <Reveal style={{ textAlign: 'center' }}>
+          <h2 className="serif" style={{
+            margin: 0,
+            fontSize: mobile ? 32 : 48,
+            fontWeight: 400,
+            color: '#fff',
+            letterSpacing: 0,
+          }}>
             What Our Clients Say
           </h2>
         </Reveal>
+
         <div style={{
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)',
-          gap: mobile ? 16 : 40,
+          gap: mobile ? 16 : 80,
+          alignItems: 'stretch',
         }}>
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={i} delay={i * 60}>
               <div style={{
-                background: 'rgba(255,255,255,0.08)',
-                padding: mobile ? 18 : 24,
-                border: '1px solid rgba(255,255,255,0.12)',
+                background: '#fff',
+                padding: mobile ? 24 : 36,
                 height: '100%',
+                boxSizing: 'border-box',
+                display: 'flex',
+                flexDirection: 'column',
               }}>
-                <div style={{ color: '#f3d9bd', fontSize: 13, marginBottom: 10, letterSpacing: '0.1em' }}>★★★★★</div>
-                <p style={{ color: '#fff', opacity: 0.95, fontSize: 14, lineHeight: 1.65, margin: '0 0 18px' }}>
-                  {t.text}
+                <div style={{
+                  color: '#8A6A4A',
+                  fontSize: 16,
+                  marginBottom: 20,
+                  letterSpacing: '0.08em',
+                }}>
+                  ★★★★★
+                </div>
+                <p style={{
+                  color: 'var(--ink)',
+                  fontSize: mobile ? 14 : 15,
+                  lineHeight: 1.7,
+                  margin: 0,
+                  flex: 1,
+                }}>
+                  "{t.text}"
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 14,
+                  marginTop: 28,
+                  paddingTop: 24,
+                  borderTop: '1px solid var(--line)',
+                }}>
                   <div style={{
-                    width: 36,
-                    height: 36,
+                    width: 44,
+                    height: 44,
                     borderRadius: 999,
                     backgroundImage: 'url(' + t.avatar + ')',
                     backgroundSize: 'cover',
@@ -264,8 +319,8 @@ export default function Home({ mobile, go }) {
                     flexShrink: 0,
                   }} />
                   <div>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: '#fff' }}>{t.name}</div>
-                    <div style={{ fontSize: 11, color: '#fff', opacity: 0.7 }}>{t.role}</div>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--brown-deep)' }}>{t.name}</div>
+                    <div style={{ fontSize: 12, color: 'var(--ink-soft)', marginTop: 2 }}>{t.role}</div>
                   </div>
                 </div>
               </div>
