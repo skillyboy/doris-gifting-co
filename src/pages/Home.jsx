@@ -1,330 +1,135 @@
 import React from 'react';
 import { IMG } from '../constants';
-import SectionTitle from '../components/SectionTitle';
 import CTABanner from '../components/CTABanner';
-import Reveal from '../components/Reveal';
 import ServicesAccordion from '../components/ServicesAccordion';
 
+const heroVideo = new URL(
+  '../../Cinematic product video of wrapped gift boxes on rustic wooden background. Very slow, smooth push-in (subtle zoom) toward the center gift box. No rotation or camera shake.Warm, soft ambient lighting with gentle highli.mp4',
+  import.meta.url,
+).href;
+
 const TESTIMONIALS = [
-  { name: 'Adaeze O.', role: 'Marketing Lead', avatar: IMG.a1, text: 'The team made our client appreciation feel like a brand moment. Every detail was considered.' },
-  { name: 'Marcus R.', role: 'Founder', avatar: IMG.a3, text: 'Sent these to our 40 best customers — the response was instant. We will be back every quarter.' },
-  { name: 'Liana P.', role: 'Bride', avatar: IMG.a2, text: 'Our welcome boxes were the conversation of the weekend. Thoughtful from box to ribbon.' },
-  { name: 'James K.', role: 'COO', avatar: IMG.a4, text: 'Onboarding boxes that new hires actually open and post about. Quality is unmatched.' },
-  { name: 'Esi A.', role: 'Stylist', avatar: IMG.a5, text: 'Beautiful, intentional, and personal. Doris translates a vibe better than anyone we worked with.' },
-  { name: 'Theo M.', role: 'Investor', avatar: IMG.a6, text: 'A holiday gift that earned three thank-you calls. That is rare.' },
+  {
+    name: 'Noma Simmons',
+    role: 'Corporate Client',
+    avatar: IMG.a1,
+    text: 'Doris made our client gifts feel personal, polished, and effortless. Every box arrived beautifully composed and right on time.',
+  },
+  {
+    name: 'Amara Johnson',
+    role: 'Event Host',
+    avatar: IMG.a2,
+    text: 'The attention to detail was exactly what I wanted. The presentation felt elevated without losing warmth.',
+  },
+  {
+    name: 'Talia Green',
+    role: 'Small Business Owner',
+    avatar: IMG.a3,
+    text: 'Our welcome kits finally matched our brand. Doris handled the sourcing, wrapping, and details with so much care.',
+  },
+  {
+    name: 'Michelle Carter',
+    role: 'HR Manager',
+    avatar: IMG.a4,
+    text: 'The employee appreciation boxes were thoughtful and consistent across the whole order. We received wonderful feedback.',
+  },
+  {
+    name: 'Rachel Adams',
+    role: 'Bride-to-be',
+    avatar: IMG.a5,
+    text: 'My bridesmaid gifts felt intimate and luxurious. The whole experience was easy from the first message.',
+  },
+  {
+    name: 'Keisha Brown',
+    role: 'Returning Customer',
+    avatar: IMG.a6,
+    text: 'I keep coming back because the gifts never feel generic. They always understand the moment and the recipient.',
+  },
 ];
 
-const HERO_BANNER_IMAGES = [
-  IMG.giftWall,
-  IMG.g3,
-  IMG.g4,
-  IMG.g6,
+const GALLERY_PREVIEW = [
+  { src: IMG.g3, className: 'home-gallery-main', alt: 'Huxley wrapped gift boxes' },
+  { src: IMG.g2, className: 'home-gallery-side home-gallery-packaging', alt: 'Gift packaging process' },
+  { src: IMG.g4, className: 'home-gallery-side', alt: 'Arhaus gift bags' },
+  { src: IMG.g5, className: 'home-gallery-tile', alt: 'Refy gift bags' },
+  { src: IMG.g6, className: 'home-gallery-tile', alt: 'Casa Naiha boxed gifts' },
+  { src: IMG.g7, className: 'home-gallery-tile', alt: 'Birthday gift box' },
 ];
 
 export default function Home({ mobile, go }) {
   return (
-    <div>
-      {/* ── HERO  (Figma: 1440×913 | #E7E0D6)
-          Image strip: top:131, left:80, 1288×141, space-between
-          Text block:  top:359, left:80, 1280×488             */}
-      <section style={{
-        background: 'var(--cream)',
-        position: 'relative',
-        minHeight: mobile ? 'auto' : 913,
-        paddingBottom: mobile ? 48 : 0,
-      }}>
-
-        {/* Horizontal image carousel — infinite scroll */}
-        <div style={{
-          paddingTop: mobile ? 106 : 131,
-          overflow: 'hidden',
-        }}>
-          {mobile ? (
-            /* Mobile: simple scrollable row */
-            <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingLeft: 24, paddingRight: 24 }}>
-              {HERO_BANNER_IMAGES.map((src, i) => (
-                <div key={i} style={{
-                  flexShrink: 0,
-                  width: 220,
-                  height: 120,
-                  backgroundImage: 'url(' + src + ')',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }} />
-              ))}
-            </div>
-          ) : (
-            /* Desktop: infinite auto-scroll carousel */
-            <div className="hero-carousel-track">
-              {[...HERO_BANNER_IMAGES, ...HERO_BANNER_IMAGES].map((src, i) => (
-                <div key={i} style={{
-                  flexShrink: 0,
-                  width: 310,
-                  height: 141,
-                  marginRight: 14,
-                  backgroundImage: 'url(' + src + ')',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }} />
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Text block — heading left, body + CTA right */}
-        <div style={{
-          padding: mobile ? '32px 24px 0' : '87px 80px 80px',
-          display: 'grid',
-          gridTemplateColumns: mobile ? '1fr' : '1.05fr 1fr',
-          gap: mobile ? 20 : 80,
-          alignItems: 'end',
-        }}>
-          <Reveal>
-            <h1 className="serif" style={{
-              margin: 0,
-              color: 'var(--brown-mid)',
-              fontSize: mobile ? 40 : 64,
-              lineHeight: mobile ? 1.05 : 1.08,
-              fontWeight: 400,
-              letterSpacing: '-0.02em',
-            }}>
-              <span style={{ display: 'block' }}>Thoughtful Gifting</span>
-              <span style={{ display: 'block' }}>Elevated</span>
-            </h1>
-          </Reveal>
-          <Reveal delay={120} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', gap: 24 }}>
-            <p style={{
-              fontSize: mobile ? 15 : 18,
-              lineHeight: 1.625,
-              color: 'var(--ink-soft)',
-              margin: 0,
-              maxWidth: 440,
-            }}>
-              Every gift should be intentional and memorable. We curate bespoke experiences that articulate gratitude and celebrate connections with quiet sophistication.
-            </p>
-            <button onClick={() => go('contact')} className="btn-link" style={{ alignSelf: 'flex-start' }}>
-              Send us a message
-            </button>
-          </Reveal>
-        </div>
-
-      </section>
-
-      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '80px 80px', textAlign: 'center' }}>
-        <Reveal>
-          <SectionTitle mobile={mobile}>About Doris</SectionTitle>
-        </Reveal>
-        <Reveal delay={80}>
-          <p style={{
-            maxWidth: 1036,
-            margin: mobile ? '24px auto 0' : '50px auto 0',
-            fontSize: mobile ? 15 : 18,
-            lineHeight: 1.625,
-            color: 'var(--ink-soft)',
-            textAlign: 'center',
-          }}>
-            At Doris Gifting Co., we believe that every gift should be intentional, meaningful, and memorable.
-            <br />
-            <span style={{ display: 'block', marginTop: 12 }}>
-              We specialize in creating premium, curated gift boxes designed to elevate both personal and professional experiences.
-            </span>
-            Whether you are appreciating clients, welcoming employees, or celebrating special moments,
-            our goal is to help you leave a lasting impression.
+    <div className="home-page">
+      <section className="home-hero">
+        <div className="home-hero-copy">
+          <h1 className="serif">Thoughtful Gifting<br />Elevated</h1>
+          <p>
+            Every gift should be intentional and memorable. We curate bespoke experiences that articulate gratitude and celebrate connections with quiet sophistication.
           </p>
-        </Reveal>
-        <Reveal delay={140}>
-          <button onClick={() => go('about')} className="btn-link" style={{ marginTop: mobile ? 24 : 32 }}>
-            Learn More
-          </button>
-        </Reveal>
+          <button onClick={() => go('contact')} className="btn-link">Send us a message</button>
+        </div>
+        <div className="home-hero-media">
+          <video src={heroVideo} autoPlay muted loop playsInline aria-label="Wrapped gifts on a rustic table" />
+        </div>
       </section>
 
-      <section style={{ background: '#fff', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
-        <Reveal>
-          <div style={{
-            width: '100%',
-            height: mobile ? 240 : 520,
-            backgroundImage: 'url(' + IMG.storeInterior + ')',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }} />
-        </Reveal>
+      <section className="home-about">
+        <h2 className="serif">About Doris</h2>
+        <p>
+          At Doris Gifting Co., we believe that every gift should be intentional, meaningful, and memorable.
+          <br />
+          We specialize in creating premium, curated gift boxes designed to elevate both personal and professional experiences. Whether you are appreciating clients, welcoming employees, or celebrating special moments, our goal is to help you leave a lasting impression.
+        </p>
+        <button onClick={() => go('about')} className="btn-link">Learn More</button>
+        <div className="home-about-image">
+          <video src={`${import.meta.env.BASE_URL}img/about-bg.mp4`} autoPlay muted loop playsInline aria-label="Doris Gifting Co. studio interior" />
+        </div>
       </section>
 
-      <section style={{ background: '#E7E0D6', padding: mobile ? '64px 24px' : '80px 80px 96px' }}>
-        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 50 }}>
-          <div style={{
-            fontSize: 12,
-            letterSpacing: '0.32em',
-            textTransform: 'uppercase',
-            color: 'var(--ink-soft)',
-            marginBottom: 12,
-            fontWeight: 500,
-          }}>
-            Gallery
-          </div>
-          <SectionTitle mobile={mobile} size="md">A Study in Thoughtful Details</SectionTitle>
-          <button onClick={() => go('gallery')} className="btn-link" style={{ marginTop: 20 }}>
-            View Gallery
-          </button>
-        </Reveal>
+      <section className="home-gallery-section">
+        <div className="section-kicker">Gallery</div>
+        <h2 className="serif">A Study in Thoughtful Details</h2>
+        <button onClick={() => go('gallery')} className="btn-link">View Gallery</button>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: mobile ? '1fr' : '2fr 1fr 1fr',
-          gridTemplateRows: mobile ? 'auto' : 'repeat(3, 260px)',
-          gap: mobile ? 8 : 20,
-        }}>
-          {[
-            { src: IMG.g3, style: { gridColumn: mobile ? undefined : '1 / span 2', gridRow: mobile ? undefined : '1 / span 2' } },
-            { src: IMG.g2 },
-            { src: IMG.g4 },
-            { src: IMG.g5 },
-            { src: IMG.g6 },
-            { src: IMG.g7 },
-          ].map(({ src, style }, i) => (
-            <Reveal key={i} delay={i * 40} style={style}>
-              <div
-                key={i}
-                onClick={() => go('gallery')}
-                className="gallery-cell"
-                style={{
-                  flex: 'none',
-                  width: mobile ? 260 : 380,
-                  aspectRatio: '4 / 5',
-                  backgroundImage: 'url(' + src + ')',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-            </Reveal>
+        <div className="home-gallery-grid">
+          {GALLERY_PREVIEW.map((item) => (
+            <button
+              key={`${item.alt}-${item.className}`}
+              className={`home-gallery-card ${item.className}`}
+              onClick={() => go('gallery')}
+              aria-label={item.alt}
+            >
+              <img src={item.src} alt="" />
+            </button>
           ))}
-          </div>
+        </div>
       </section>
 
-      <section style={{ background: 'var(--cream-2)', padding: mobile ? '64px 24px' : '80px 80px' }}>
-        <div style={{ marginBottom: mobile ? 24 : 36 }}>
-          <div style={{
-            fontSize: 12,
-            letterSpacing: '0.32em',
-            textTransform: 'uppercase',
-            color: 'var(--ink-soft)',
-            marginBottom: 12,
-            fontWeight: 500,
-          }}>
-            Services
-          </div>
-          <h2 className="serif" style={{
-            margin: 0,
-            color: 'var(--brown-mid)',
-            fontSize: mobile ? 28 : 40,
-            fontWeight: 400,
-            maxWidth: 720,
-            lineHeight: 1.1,
-            letterSpacing: 0,
-          }}>
-            How we craft meaningful gifting experiences
-          </h2>
+      <section className="home-services">
+        <div>
+          <div className="section-kicker section-kicker-left">Services</div>
+          <h2 className="serif">How we craft meaningful gifting experiences</h2>
         </div>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: mobile ? '1fr' : '1.1fr 1fr',
-          gap: mobile ? 24 : 56,
-          alignItems: 'start',
-        }}>
+        <div className="home-services-body">
           <ServicesAccordion mobile={mobile} />
-          {!mobile && (
-            <Reveal>
-              <div style={{
-                height: 480,
-                backgroundImage: 'url(' + IMG.g1 + ')',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }} />
-            </Reveal>
-          )}
+          <img src={IMG.g1} alt="Corporate gift boxes with branded items" />
         </div>
       </section>
 
-      {/* WHAT OUR CLIENTS SAY — 1440×1113, padding 80px, gap 80px, bg #8A6A4A */}
-      <section style={{
-        background: '#8A6A4A',
-        minHeight: mobile ? 'auto' : 1114,
-        padding: mobile ? '56px 24px' : '80px',
-        boxSizing: 'border-box',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: mobile ? 28 : 80,
-      }}>
-        <Reveal style={{ textAlign: 'center' }}>
-          <h2 className="serif" style={{
-            margin: 0,
-            fontSize: mobile ? 32 : 48,
-            fontWeight: 400,
-            color: '#fff',
-            letterSpacing: 0,
-          }}>
-            What Our Clients Say
-          </h2>
-        </Reveal>
-
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)',
-          gap: mobile ? 16 : 80,
-          alignItems: 'stretch',
-        }}>
+      <section className="home-testimonials">
+        <h2 className="serif">What Our Clients Say</h2>
+        <div className="home-testimonial-grid">
           {TESTIMONIALS.map((t, i) => (
-            <Reveal key={i} delay={i * 60}>
-              <div style={{
-                background: '#fff',
-                padding: mobile ? 24 : 36,
-                height: '100%',
-                boxSizing: 'border-box',
-                display: 'flex',
-                flexDirection: 'column',
-              }}>
-                <div style={{
-                  color: '#8A6A4A',
-                  fontSize: 16,
-                  marginBottom: 20,
-                  letterSpacing: '0.08em',
-                }}>
-                  ★★★★★
-                </div>
-                <p style={{
-                  color: 'var(--ink)',
-                  fontSize: mobile ? 14 : 15,
-                  lineHeight: 1.7,
-                  margin: 0,
-                  flex: 1,
-                }}>
-                  "{t.text}"
-                </p>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 14,
-                  marginTop: 28,
-                  paddingTop: 24,
-                  borderTop: '1px solid var(--line)',
-                }}>
-                  <div style={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: 999,
-                    backgroundImage: 'url(' + t.avatar + ')',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    flexShrink: 0,
-                  }} />
-                  <div>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--brown-deep)' }}>{t.name}</div>
-                    <div style={{ fontSize: 12, color: 'var(--ink-soft)', marginTop: 2 }}>{t.role}</div>
-                  </div>
+            <article className="home-testimonial" key={`${t.name}-${i}`}>
+              <div className="home-stars">*****</div>
+              <p>{t.text}</p>
+              <div className="home-person">
+                <img src={t.avatar} alt="" />
+                <div>
+                  <strong>{t.name}</strong>
+                  <span>{t.role}</span>
                 </div>
               </div>
-            </Reveal>
+            </article>
           ))}
         </div>
       </section>
