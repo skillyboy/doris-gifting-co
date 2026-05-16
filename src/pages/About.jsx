@@ -98,7 +98,6 @@ export default function About({ mobile, go }) {
               marginBottom: 14,
               fontWeight: 500,
             }}>
-              Our Story
             </div>
             <Reveal>
               <SectionTitle mobile={mobile} align="left" style={{ marginBottom: 24 }}>
@@ -138,3 +137,6 @@ export default function About({ mobile, go }) {
     </div>
   );
 }
+
+
+
