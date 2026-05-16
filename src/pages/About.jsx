@@ -5,52 +5,23 @@ import CTABanner from '../components/CTABanner';
 import Reveal from '../components/Reveal';
 
 export default function About({ mobile, go }) {
-  const B = import.meta.env.BASE_URL;
-
   return (
     <div>
-      {/* HERO BANNER — 1440×913 */}
-      <section style={{
-        position: 'relative',
-        width: '100%',
-        height: mobile ? 400 : 913,
-        overflow: 'hidden',
-        backgroundColor: '#E7E0D6',
-        backgroundImage: 'url(' + IMG.storeInterior + '), url(' + IMG.giftWall + ')',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster={IMG.giftWall}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
-        >
-          <source src={`${B}img/about-bg.mp4`} type="video/mp4" />
-        </video>
-      </section>
+      {/* HERO — store / gift imagery, full bleed */}
+      <Reveal>
+        <section style={{
+          position: 'relative',
+          width: '100%',
+          height: mobile ? 320 : 560,
+          overflow: 'hidden',
+          backgroundImage: 'url(' + IMG.giftWall + ')',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }} />
+      </Reveal>
 
-      {/* ABOUT DORIS — 1440×391, padding 80px, gap 50px, bg #FFFFFF */}
-      <section style={{
-        background: '#FFFFFF',
-        padding: mobile ? '64px 24px' : '80px',
-        textAlign: 'center',
-        minHeight: mobile ? 'auto' : 391,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+      {/* ABOUT DORIS */}
+      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '96px 80px', textAlign: 'center' }}>
         <Reveal>
           <SectionTitle mobile={mobile}>About Doris</SectionTitle>
         </Reveal>
@@ -72,24 +43,13 @@ export default function About({ mobile, go }) {
         </Reveal>
       </section>
 
-      {/* MEET THE FOUNDER — 1440×735, max-width 1920px, padding 80px, gap 80px, bg #FFFFFF */}
-      <section style={{
-        background: '#FFFFFF',
-        padding: mobile ? '64px 24px' : '80px',
-        minHeight: mobile ? 'auto' : 735,
-        maxWidth: 1920,
-        margin: '0 auto',
-        width: '100%',
-        boxSizing: 'border-box',
-        display: 'flex',
-        alignItems: 'center',
-      }}>
+      {/* MEET THE FOUNDER — split layout (text left | image right) */}
+      <section style={{ background: '#fff', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
           gap: mobile ? 32 : 80,
           alignItems: 'center',
-          width: '100%',
         }}>
 
           {/* Left: label + title + body */}
@@ -102,6 +62,7 @@ export default function About({ mobile, go }) {
               marginBottom: 14,
               fontWeight: 500,
             }}>
+              Our Story
             </div>
             <Reveal>
               <SectionTitle mobile={mobile} align="left" style={{ marginBottom: 24 }}>
@@ -136,9 +97,7 @@ export default function About({ mobile, go }) {
         </div>
       </section>
 
-      {/* CTA SECTION — 1440×648, padding 80px, bg #E7E0D6 */}
       <CTABanner mobile={mobile} go={go} />
     </div>
   );
 }
-
