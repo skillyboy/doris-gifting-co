@@ -5,6 +5,25 @@ import Reveal from '../components/Reveal';
 
 export default function Contact({ mobile }) {
   const [sent, setSent] = useState(false);
+  const inputStyle = {
+    width: '100%',
+    border: '1px solid var(--line)',
+    background: '#fff',
+    color: 'var(--ink)',
+    borderRadius: 6,
+    padding: '12px 13px',
+    fontFamily: 'var(--sans)',
+    fontSize: 14,
+    lineHeight: 1.4,
+    outline: 'none',
+  };
+  const labelStyle = {
+    display: 'block',
+    color: 'var(--brown-deep)',
+    fontSize: 12,
+    fontWeight: 600,
+    marginBottom: 7,
+  };
 
   return (
     <div>
@@ -103,26 +122,103 @@ export default function Contact({ mobile }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
                 <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Email</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>dorisgiftingco@gmail.com</div>
-                </div>
-                <div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Phone Number</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+1 (713) 000-7393</div>
+                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+234 913 646 0729</div>
                 </div>
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Address</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Houston, Texas</div>
+                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Address 2, Lagos, Nigeria</div>
                 </div>
               </div>
 
-              <button
-                onClick={() => { window.location.href = 'mailto:dorisgiftingco@gmail.com'; setSent(true); }}
-                className="btn-primary"
-                style={{ marginTop: 28 }}
+              <form
+                action="https://formsubmit.co/dorisgiftingco@gmail.com"
+                method="POST"
+                style={{
+                  marginTop: 34,
+                  padding: mobile ? 20 : 24,
+                  background: 'rgba(255,255,255,0.48)',
+                  border: '1px solid rgba(81,60,46,0.14)',
+                  borderRadius: 10,
+                  display: 'grid',
+                  gap: 16,
+                }}
+                onSubmit={() => setSent(true)}
               >
-                Email Us
-              </button>
+                <input type="hidden" name="_subject" value="New Doris Gifting Co. Quote Request" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
+                  gap: 14,
+                }}>
+                  <label>
+                    <span style={labelStyle}>Full Name</span>
+                    <input style={inputStyle} type="text" name="Full Name" required />
+                  </label>
+                  <label>
+                    <span style={labelStyle}>Phone Number</span>
+                    <input style={inputStyle} type="tel" name="Phone Number" required />
+                  </label>
+                </div>
+
+                <label>
+                  <span style={labelStyle}>Email Address</span>
+                  <input style={inputStyle} type="email" name="Email Address" required />
+                </label>
+
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
+                  gap: 14,
+                }}>
+                  <label>
+                    <span style={labelStyle}>Gifting Choice</span>
+                    <select style={inputStyle} name="Gifting Choice" required defaultValue="">
+                      <option value="" disabled>Select one</option>
+                      <option>Corporate Gifting</option>
+                      <option>Custom Gift Boxes</option>
+                      <option>Special Occasion Gifts</option>
+                      <option>Bulk Orders</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span style={labelStyle}>Estimated Budget</span>
+                    <input style={inputStyle} type="text" name="Estimated Budget" placeholder="e.g. ₦250,000" />
+                  </label>
+                </div>
+
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
+                  gap: 14,
+                }}>
+                  <label>
+                    <span style={labelStyle}>Quantity</span>
+                    <input style={inputStyle} type="number" min="1" name="Quantity" placeholder="How many gifts?" />
+                  </label>
+                  <label>
+                    <span style={labelStyle}>Needed By</span>
+                    <input style={inputStyle} type="date" name="Needed By" />
+                  </label>
+                </div>
+
+                <label>
+                  <span style={labelStyle}>Tell Us What You Need</span>
+                  <textarea
+                    style={{ ...inputStyle, minHeight: 108, resize: 'vertical' }}
+                    name="Quote Details"
+                    required
+                    placeholder="Share the occasion, recipient details, preferred colors, branding needs, or delivery notes."
+                  />
+                </label>
+
+                <button className="btn-primary" type="submit" style={{ justifySelf: 'start' }}>
+                  Get a Quote
+                </button>
+              </form>
               {sent && (
                 <div style={{ marginTop: 12, fontSize: 12, color: 'var(--ink-mute)' }}>
                   Opening your mail app…
