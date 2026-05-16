@@ -38,7 +38,7 @@ export default function About({ mobile, go }) {
       </Reveal>
 
       {/* ABOUT DORIS */}
-      <section style={{ background: 'var(--cream-2)', padding: mobile ? '64px 24px' : '96px 80px', textAlign: 'center' }}>
+      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '96px 80px', textAlign: 'center' }}>
         <Reveal>
           <SectionTitle mobile={mobile}>About Doris</SectionTitle>
         </Reveal>
@@ -61,7 +61,7 @@ export default function About({ mobile, go }) {
       </section>
 
       {/* MEET THE FOUNDER — split layout (text left | image right) */}
-      <section style={{ background: 'var(--cream-2)', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
+      <section style={{ background: '#fff', padding: mobile ? '0 24px 64px' : '0 80px 96px' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
