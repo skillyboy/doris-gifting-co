@@ -5,18 +5,22 @@ export default function CTABanner({ mobile, go }) {
   return (
     <section style={{
       width: '100%',
-      padding: mobile ? '0 24px 56px' : '0 80px 80px',
-      background: 'var(--cream)',
+      // top padding gives cream breathing room so the rounded image
+      // doesn't fuse with the brown testimonials section above
+      padding: mobile ? '56px 24px' : '80px',
+      background: '#E7E0D6',
     }}>
       <div style={{
         position: 'relative',
         width: '100%',
         maxWidth: 1440,
         margin: '0 auto',
-        height: mobile ? 320 : 480,
+        height: mobile ? 360 : 648,
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url(' + IMG.giftWall + ')',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        borderRadius: mobile ? 18 : 28,
+        overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
