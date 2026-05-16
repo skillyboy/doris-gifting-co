@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:docs": "vite build && rm -rf docs && cp -r dist docs && touch docs/.nojekyll",
+    "build": "vite build --configLoader runner",
+    "build:docs": "vite build --configLoader runner && rm -rf docs && cp -r dist docs && touch docs/.nojekyll",
     "preview": "vite preview",
-    "start": "vite preview --host 0.0.0.0 --port ${PORT:-4173}"
+    "start": "vite preview --host 0.0.0.0 --configLoader runner"
   },
   "dependencies": {
     "react": "^18.3.1",
