@@ -94,7 +94,7 @@ export default function Home({ mobile, go }) {
 
       </section>
 
-      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '96px 80px', textAlign: 'center' }}>
+      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '80px 80px', textAlign: 'center' }}>
         <Reveal>
           <SectionTitle mobile={mobile}>About Doris</SectionTitle>
         </Reveal>
@@ -135,8 +135,8 @@ export default function Home({ mobile, go }) {
         </Reveal>
       </section>
 
-      <section style={{ background: '#E7E0D6', padding: mobile ? '64px 0' : '80px 0 96px' }}>
-        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 40, padding: mobile ? '0 24px' : '0 80px' }}>
+      <section style={{ background: '#E7E0D6', padding: mobile ? '64px 24px' : '80px 80px 96px' }}>
+        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 50 }}>
           <div style={{
             fontSize: 12,
             letterSpacing: '0.32em',
@@ -153,9 +153,21 @@ export default function Home({ mobile, go }) {
           </button>
         </Reveal>
 
-        <div className="carousel-viewport">
-          <div className="carousel-track" style={{ gap: mobile ? 12 : 18 }}>
-            {[IMG.g3, IMG.g2, IMG.g4, IMG.g5, IMG.g6, IMG.g7, IMG.g3, IMG.g2, IMG.g4, IMG.g5, IMG.g6, IMG.g7].map((src, i) => (
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: mobile ? '1fr' : '2fr 1fr 1fr',
+          gridTemplateRows: mobile ? 'auto' : 'repeat(3, 260px)',
+          gap: mobile ? 8 : 20,
+        }}>
+          {[
+            { src: IMG.g3, style: { gridColumn: mobile ? undefined : '1 / span 2', gridRow: mobile ? undefined : '1 / span 2' } },
+            { src: IMG.g2 },
+            { src: IMG.g4 },
+            { src: IMG.g5 },
+            { src: IMG.g6 },
+            { src: IMG.g7 },
+          ].map(({ src, style }, i) => (
+            <Reveal key={i} delay={i * 40} style={style}>
               <div
                 key={i}
                 onClick={() => go('gallery')}
@@ -167,7 +179,6 @@ export default function Home({ mobile, go }) {
                   backgroundImage: 'url(' + src + ')',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
-                  borderRadius: 20,
                 }}
               />
             ))}
@@ -175,7 +186,7 @@ export default function Home({ mobile, go }) {
         </div>
       </section>
 
-      <section style={{ background: '#fff', padding: mobile ? '64px 24px' : '96px 80px' }}>
+      <section style={{ background: 'var(--cream-2)', padding: mobile ? '64px 24px' : '80px 80px' }}>
         <div style={{ marginBottom: mobile ? 24 : 36 }}>
           <div style={{
             fontSize: 12,
@@ -220,7 +231,7 @@ export default function Home({ mobile, go }) {
       </section>
 
       <section style={{ background: '#8A6A4A', padding: mobile ? '56px 24px' : '80px 80px', color: '#fff' }}>
-        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 48 }}>
+        <Reveal style={{ textAlign: 'center', marginBottom: mobile ? 28 : 80 }}>
           <h2 className="serif" style={{ margin: 0, fontSize: mobile ? 32 : 48, fontWeight: 400, color: '#fff', letterSpacing: 0 }}>
             What Our Clients Say
           </h2>
@@ -228,7 +239,7 @@ export default function Home({ mobile, go }) {
         <div style={{
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)',
-          gap: mobile ? 16 : 24,
+          gap: mobile ? 16 : 40,
         }}>
           {TESTIMONIALS.map((t, i) => (
             <Reveal key={i} delay={i * 60}>

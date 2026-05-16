@@ -14,7 +14,7 @@ const links = {
 
 export default function Footer({ mobile, go }) {
   return (
-    <footer style={{ background: '#fff', padding: mobile ? '40px 24px 24px' : '64px 80px 32px', borderTop: '1px solid #E5E1DA' }}>
+    <footer style={{ background: '#fff', padding: mobile ? '40px 24px 20px' : '64px 80px 20px', borderTop: '1px solid var(--line)' }}>
       <div style={{
         display: 'grid',
         gridTemplateColumns: mobile ? '1fr' : '1.4fr 1fr 1fr 1fr',
@@ -80,7 +80,7 @@ export default function Footer({ mobile, go }) {
       </div>
 
       <div style={{
-        borderTop: '1px solid #E5E1DA',
+        borderTop: '1px solid var(--line)',
         paddingTop: 18,
         textAlign: 'center',
         color: 'var(--ink-mute)',

@@ -9,7 +9,7 @@ export default function ServicesAccordion({ mobile }) {
       {SERVICES.map((s, i) => {
         const isOpen = open === i;
         return (
-          <div key={i} style={{ borderTop: '1px solid #E5E1DA', padding: '20px 0' }}>
+          <div key={i} style={{ borderTop: '1px solid var(--line)', padding: '20px 0' }}>
             <button
               onClick={() => setOpen(isOpen ? -1 : i)}
               style={{
@@ -57,7 +57,7 @@ export default function ServicesAccordion({ mobile }) {
           </div>
         );
       })}
-      <div style={{ borderTop: '1px solid #E5E1DA' }} />
+      <div style={{ borderTop: '1px solid var(--line)' }} />
     </div>
   );
 }
