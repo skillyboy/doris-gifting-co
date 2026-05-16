@@ -10,31 +10,35 @@ export default function About({ mobile, go }) {
   return (
     <div>
       {/* HERO BANNER — 1440×913 */}
-      <Reveal>
-        <section style={{
-          position: 'relative',
-          width: '100%',
-          height: mobile ? 400 : 913,
-          overflow: 'hidden',
-        }}>
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          >
-            <source src={`${B}img/about-bg.mp4`} type="video/mp4" />
-          </video>
-        </section>
-      </Reveal>
+      <section style={{
+        position: 'relative',
+        width: '100%',
+        height: mobile ? 400 : 913,
+        overflow: 'hidden',
+        backgroundColor: '#E7E0D6',
+        backgroundImage: 'url(' + IMG.storeInterior + '), url(' + IMG.giftWall + ')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={IMG.giftWall}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        >
+          <source src={`${B}img/about-bg.mp4`} type="video/mp4" />
+        </video>
+      </section>
 
       {/* ABOUT DORIS — 1440×391, padding 80px, gap 50px, bg #FFFFFF */}
       <section style={{
@@ -137,6 +141,4 @@ export default function About({ mobile, go }) {
     </div>
   );
 }
-
-
 
