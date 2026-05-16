@@ -19,6 +19,8 @@ export default function CTABanner({ mobile, go }) {
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)), url(' + IMG.giftWall + ')',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        borderRadius: mobile ? 8 : 12,
+        overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
