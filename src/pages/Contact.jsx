@@ -221,7 +221,7 @@ export default function Contact({ mobile }) {
               </form>
               {sent && (
                 <div style={{ marginTop: 12, fontSize: 12, color: 'var(--ink-mute)' }}>
-                  Opening your mail app…
+                  Sending your quote request...
                 </div>
               )}
             </div>
