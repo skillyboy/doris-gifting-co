@@ -122,7 +122,19 @@ export default function Contact({ mobile }) {
                 will curate a thoughtful custom proposal.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
+              <div style={{
+                display: 'flex',
+                flexDirection: mobile ? 'column' : 'row',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+                gap: mobile ? 18 : 24,
+                marginTop: 28,
+              }}>
+                <div>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Address</div>
+                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Houston, Texas</div>
+                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Victoria Island, Lagos</div>
+                </div>
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 10 }}>Reach Us</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
@@ -186,11 +198,6 @@ export default function Contact({ mobile }) {
                       );
                     })}
                   </div>
-                </div>
-                <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Address</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Houston, Texas</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Victoria Island, Lagos</div>
                 </div>
               </div>
 
