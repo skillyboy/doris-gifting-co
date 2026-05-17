@@ -73,15 +73,17 @@ export default function Contact({ mobile }) {
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
           gap: mobile ? 32 : 80,
-          alignItems: 'start',
+          alignItems: mobile ? 'start' : 'stretch',
           flex: 1,
         }}>
 
           {/* Left: photo */}
-          <Reveal>
+          <Reveal style={{ height: mobile ? 'auto' : '100%' }}>
             <div style={{
               width: '100%',
-              aspectRatio: '4 / 5',
+              height: mobile ? undefined : '100%',
+              aspectRatio: mobile ? '4 / 5' : undefined,
+              minHeight: mobile ? undefined : 420,
               backgroundImage: 'url(' + IMG.contactHand + ')',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -123,7 +125,7 @@ export default function Contact({ mobile }) {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Phone Number</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+1 (713) 000-7393</div>
+                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+1 (713) 000 7393</div>
                   <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+234 803 456 7305</div>
                 </div>
                 <div>
@@ -166,10 +168,20 @@ export default function Contact({ mobile }) {
                   </label>
                 </div>
 
-                <label>
-                  <span style={labelStyle}>Email Address</span>
-                  <input style={inputStyle} type="email" name="Email Address" required />
-                </label>
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
+                  gap: 14,
+                }}>
+                  <label>
+                    <span style={labelStyle}>Email Address</span>
+                    <input style={inputStyle} type="email" name="Email Address" required />
+                  </label>
+                  <label>
+                    <span style={labelStyle}>Schedule Day</span>
+                    <input style={inputStyle} type="date" name="Schedule Day" />
+                  </label>
+                </div>
 
                 <div style={{
                   display: 'grid',
@@ -187,25 +199,15 @@ export default function Contact({ mobile }) {
                     </select>
                   </label>
                   <label>
-                    <span style={labelStyle}>Estimated Budget</span>
-                    <input style={inputStyle} type="text" name="Estimated Budget" />
-                  </label>
-                </div>
-
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
-                  gap: 14,
-                }}>
-                  <label>
                     <span style={labelStyle}>Quantity</span>
                     <input style={inputStyle} type="number" min="1" name="Quantity" placeholder="How many gifts?" />
                   </label>
-                  <label>
-                    <span style={labelStyle}>Schedule Day</span>
-                    <input style={inputStyle} type="date" name="Schedule Day" />
-                  </label>
                 </div>
+
+                <label>
+                  <span style={labelStyle}>Estimated Budget</span>
+                  <input style={inputStyle} type="text" name="Estimated Budget" />
+                </label>
 
                 <label>
                   <span style={labelStyle}>Tell Us What You Need</span>
