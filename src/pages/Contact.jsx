@@ -126,7 +126,7 @@ export default function Contact({ mobile }) {
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Phone Number</div>
                   <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+1 (713) 000 7393</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+234 803 456 7305</div>
+                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+ (234) 803 456 7305</div>
                 </div>
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Address</div>
@@ -163,8 +163,8 @@ export default function Contact({ mobile }) {
                     <input style={inputStyle} type="text" name="Full Name" required />
                   </label>
                   <label>
-                    <span style={labelStyle}>Phone Number</span>
-                    <input style={inputStyle} type="tel" name="Phone Number" required />
+                    <span style={labelStyle}>Whatsapp</span>
+                    <input style={inputStyle} type="tel" name="Whatsapp" required />
                   </label>
                 </div>
 
@@ -203,11 +203,6 @@ export default function Contact({ mobile }) {
                     <input style={inputStyle} type="number" min="1" name="Quantity" placeholder="How many gifts?" />
                   </label>
                 </div>
-
-                <label>
-                  <span style={labelStyle}>Estimated Budget</span>
-                  <input style={inputStyle} type="text" name="Estimated Budget" />
-                </label>
 
                 <label>
                   <span style={labelStyle}>Tell Us What You Need</span>
