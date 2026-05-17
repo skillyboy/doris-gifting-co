@@ -131,7 +131,7 @@ export default function Contact({ mobile }) {
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Address</div>
                   <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Houston, Texas</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Lagos, Nigeria</div>
+                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Victoria Island, Lagos</div>
                 </div>
               </div>
 
