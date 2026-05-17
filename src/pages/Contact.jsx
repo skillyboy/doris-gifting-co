@@ -124,9 +124,26 @@ export default function Contact({ mobile }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
                 <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Phone Number</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+1 (713) 000 7393</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+ (234) 803 456 7305</div>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 6 }}>WhatsApp</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {[
+                      { display: '+1 (713) 000 7393', wa: '17130007393' },
+                      { display: '+ (234) 803 456 7305', wa: '2348034567305' },
+                    ].map((p) => (
+                      <a
+                        key={p.wa}
+                        href={'https://wa.me/' + p.wa}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--ink-soft)', fontSize: 14, textDecoration: 'none' }}
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true">
+                          <path d="M.5 23.5l1.65-6.03A11.6 11.6 0 0 1 .56 11.6C.56 5.2 5.76 0 12.16 0a11.55 11.55 0 0 1 8.2 3.4 11.5 11.5 0 0 1 3.4 8.2c0 6.4-5.2 11.6-11.6 11.6a11.6 11.6 0 0 1-5.55-1.41L.5 23.5zM6.9 19.4l.35.2a9.6 9.6 0 0 0 4.9 1.34h.01c5.32 0 9.65-4.32 9.65-9.64a9.58 9.58 0 0 0-2.82-6.82A9.56 9.56 0 0 0 12.16 1.9c-5.32 0-9.64 4.32-9.64 9.64 0 1.82.51 3.6 1.48 5.13l.23.37-.98 3.57 3.66-.96zM17.4 14.3c-.07-.12-.26-.2-.55-.34-.29-.15-1.7-.84-1.97-.94-.26-.1-.46-.14-.65.14-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.14-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.5.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.15-.65-1.57-.9-2.15-.23-.56-.47-.48-.65-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.4 0 1.41 1.03 2.77 1.17 2.96.14.19 2.02 3.08 4.9 4.32.68.29 1.22.47 1.63.6.69.22 1.31.19 1.8.12.55-.08 1.7-.7 1.94-1.36.24-.67.24-1.24.17-1.36z" />
+                        </svg>
+                        {p.display}
+                      </a>
+                    ))}
+                  </div>
                 </div>
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Address</div>
@@ -163,8 +180,8 @@ export default function Contact({ mobile }) {
                     <input style={inputStyle} type="text" name="Full Name" required />
                   </label>
                   <label>
-                    <span style={labelStyle}>Whatsapp</span>
-                    <input style={inputStyle} type="tel" name="Whatsapp" required />
+                    <span style={labelStyle}>Phone Number</span>
+                    <input style={inputStyle} type="tel" name="Phone Number" required />
                   </label>
                 </div>
 
