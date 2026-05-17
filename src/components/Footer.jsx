@@ -72,8 +72,25 @@ export default function Footer({ mobile, go }) {
             letterSpacing: '0.02em',
           }}>Find us On Social Media</div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {['Facebook', 'Instagram', 'Tiktok'].map((l) => (
-              <li key={l} style={{ color: 'var(--ink-soft)', fontSize: 14 }}>{l}</li>
+            {[
+              { label: 'Facebook' },
+              { label: 'Instagram', href: 'https://www.instagram.com/dorisgiftingco' },
+              { label: 'Tiktok' },
+            ].map((s) => (
+              <li key={s.label} style={{ color: 'var(--ink-soft)', fontSize: 14 }}>
+                {s.href ? (
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'var(--ink-soft)', textDecoration: 'none' }}
+                  >
+                    {s.label}
+                  </a>
+                ) : (
+                  s.label
+                )}
+              </li>
             ))}
           </ul>
         </div>
