@@ -1,0 +1,135 @@
+{
+  "brand": "Doris Gifting Co.",
+  "logo_color_choice": "black",
+  "reference_urls": {
+    "wordmark_brown": "https://skillyboy.github.io/doris-gifting-co/img/logo.png",
+    "kraft_box_huxley": "https://skillyboy.github.io/doris-gifting-co/img/g-huxley.jpg",
+    "hands_ribbon": "https://skillyboy.github.io/doris-gifting-co/img/contact-hand.jpg",
+    "matte_black_box": "https://skillyboy.github.io/doris-gifting-co/img/g-happybday.jpg",
+    "cta_wall": "https://skillyboy.github.io/doris-gifting-co/img/cta-wall.png",
+    "cream_bag_refy": "https://skillyboy.github.io/doris-gifting-co/img/g-refy.jpg",
+    "corporate_totes_arhaus": "https://skillyboy.github.io/doris-gifting-co/img/g-arhaus.jpg",
+    "wood_kit_vmo": "https://skillyboy.github.io/doris-gifting-co/img/g-vmo.jpg",
+    "kraft_mailers_casa": "https://skillyboy.github.io/doris-gifting-co/img/g-casa.jpg"
+  },
+  "images": [
+    {
+      "id": "IMG-1",
+      "filename": "hero-landscape-16x9.png",
+      "model": "flux_2",
+      "aspect_ratio": "16:9",
+      "medias": [
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/logo.png", "role": "image"},
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/cta-wall.png", "role": "image"},
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/g-huxley.jpg", "role": "image"}
+      ],
+      "prompt": "Editorial luxury hero photograph for Doris Gifting Co. A curated arrangement of premium gift boxes on a dark walnut surface against a soft cream-to-charcoal gradient backdrop. Mix of textures: matte black hard-shell box with a hand-tied black satin bow and a small matte-gold 'Doris' wordmark embossed on the lid, two kraft-brown boxes stacked with black grosgrain ribbon and dried eucalyptus, one ivory linen-wrapped box with a champagne-gold wax seal. Warm cinematic lighting from camera-left, long soft shadows, shallow depth of field. Tagline space on the left third of the frame. Style: high-end art direction reminiscent of Aesop / Loewe / Huxley packaging photography. 4K, photoreal, no text artifacts other than the logo wordmark."
+    },
+    {
+      "id": "IMG-2",
+      "filename": "hero-portrait-9x16.png",
+      "model": "flux_2",
+      "aspect_ratio": "9:16",
+      "medias": [
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/logo.png", "role": "image"},
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/g-happybday.jpg", "role": "image"}
+      ],
+      "prompt": "Vertical mobile hero shot for Doris Gifting Co. Single signature matte-black gift box centered, hand-tied black silk ribbon falling naturally to the side, small embossed 'Doris' wordmark in matte gold on the lid. Soft cream tulle and dried botanicals frame the bottom edge. Background: gentle warm gradient from cream to deep charcoal. Cinematic side light, gallery-quality product photograph. Negative space at top for headline copy. Photoreal, 4K, no extra text."
+    },
+    {
+      "id": "IMG-3",
+      "filename": "product-card-kraft-1x1.png",
+      "model": "flux_2",
+      "aspect_ratio": "1:1",
+      "medias": [
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/logo.png", "role": "image"},
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/g-huxley.jpg", "role": "image"}
+      ],
+      "prompt": "Square product image of a single Doris Gifting Co. signature kraft box on a warm oak surface. Box is rich cocoa-brown matte cardstock, lid slightly ajar revealing tissue paper and a folded handwritten note card. Hand-tied black satin ribbon with a small matte-gold tag stamped 'Doris'. Soft directional window light, gentle shadows, neutral cream wall in the soft-focus background. Editorial e-commerce style. No extra text, photoreal, 4K."
+    },
+    {
+      "id": "IMG-4",
+      "filename": "product-card-cream-bag-1x1.png",
+      "model": "flux_2",
+      "aspect_ratio": "1:1",
+      "medias": [
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/logo.png", "role": "image"},
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/g-refy.jpg", "role": "image"}
+      ],
+      "prompt": "Square product image of a cream Doris Gifting Co. premium paper gift bag with twisted black satin handles, small matte-black 'Doris' wordmark printed lower-left on the bag. Tissue paper peeking from the top, a tied black ribbon and a wax seal in deep burgundy. Soft seamless ivory background, single soft key light from upper-left, refined editorial product photography. Photoreal, 4K, no extra text."
+    },
+    {
+      "id": "IMG-5",
+      "filename": "lifestyle-hands-ribbon-4x3.png",
+      "model": "flux_2",
+      "aspect_ratio": "4:3",
+      "medias": [
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/contact-hand.jpg", "role": "image"}
+      ],
+      "prompt": "Lifestyle close-up of two well-manicured hands tying a black satin bow on a matte black Doris gift box, set on a textured cream linen tablecloth. Dried eucalyptus, a brass scissor, and a small 'Doris' branded card visible in the soft-focus foreground. Warm window light from the right, soft natural shadows. Cinematic editorial styling, 35mm look, shallow depth of field. Photoreal, 4K, no on-image text other than the small Doris card."
+    },
+    {
+      "id": "IMG-6",
+      "filename": "lifestyle-corporate-tablescape-4x3.png",
+      "model": "flux_2",
+      "aspect_ratio": "4:3",
+      "medias": [
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/g-arhaus.jpg", "role": "image"},
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/logo.png", "role": "image"}
+      ],
+      "prompt": "Corporate gifting tablescape: rows of identical cream canvas tote bags with a small matte-black 'Doris' wordmark printed on the side, each tote holding a kraft gift box tied with black grosgrain ribbon. Set on a long ivory-clothed banquet table inside a softly-lit event venue, warm tungsten uplighting in the background. Editorial event photography, depth of field falling off into the back, photoreal, 4K, no extra signage text."
+    },
+    {
+      "id": "IMG-7",
+      "filename": "cta-wall-refresh-21x9.png",
+      "model": "marketing_studio_image",
+      "aspect_ratio": "21:9",
+      "medias": [
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/cta-wall.png", "role": "image"},
+        {"value": "https://skillyboy.github.io/doris-gifting-co/img/logo.png", "role": "image"}
+      ],
+      "prompt": "Editorial wall arrangement of dozens of premium gift boxes stacked into a pyramid silhouette against a deep charcoal backdrop. Mix of kraft brown, matte black, cream linen, and deep burgundy wraps, each finished with black satin ribbons, gold wax seals, and dried floral sprigs. Warm rim lighting from the upper corners, cinematic chiaroscuro, soft glow on the center boxes. The overall composition leaves a clean horizontal band of negative space across the lower third for a call-to-action overlay. Photoreal, 4K, no on-image text."
+    }
+  ],
+  "videos": [
+    {
+      "id": "VID-1",
+      "filename": "hero-loop-push-in-16x9.mp4",
+      "model": "seedance_2_0",
+      "aspect_ratio": "16:9",
+      "duration": 5,
+      "resolution": "1080p",
+      "depends_on": "IMG-1",
+      "medias_note": "Pass the IMG-1 job_id as medias[].value with role='start_image' once IMG-1 completes.",
+      "prompt": "Very slow, smooth push-in (subtle zoom toward center). No rotation, no camera shake. Warm ambient lighting with gentle highlight shifts across the ribbons as if a slow breath of light passes over the arrangement. Faint particles of light catching the satin and gold accents. Cinematic, hushed, luxurious mood. No text, no logos appearing or disappearing, no people entering frame."
+    },
+    {
+      "id": "VID-2",
+      "filename": "unboxing-teaser-9x16.mp4",
+      "model": "seedance_2_0",
+      "aspect_ratio": "9:16",
+      "duration": 5,
+      "resolution": "1080p",
+      "depends_on": "IMG-5",
+      "medias_note": "Pass the IMG-5 job_id as medias[].value with role='start_image' once IMG-5 completes.",
+      "prompt": "Hands slowly pull one end of the black satin ribbon, the bow unties in a smooth elegant motion and falls softly to either side of the box. Camera holds steady on the box. Warm natural window light from the right, soft shadows, shallow depth of field. The lid stays closed — anticipation only. Cinematic, hushed, premium feel. No text, no captions."
+    }
+  ],
+  "marketing_studio": [
+    {
+      "id": "MS-1",
+      "filename": "ms-webproduct-ad-9x16.mp4",
+      "step_a": {
+        "tool": "show_marketing_studio",
+        "params": {"action": "fetch", "type": "webproduct", "url": "https://skillyboy.github.io/doris-gifting-co/"}
+      },
+      "step_b": {
+        "tool": "generate_video",
+        "params": {"model": "marketing_studio_video", "aspect_ratio": "9:16", "duration": 8, "resolution": "720p"},
+        "note": "Merge with next_step payload from Step A.",
+        "prompt": "Promote Doris Gifting Co. — premium, curated gift boxes for weddings, corporate events, and personal milestones. Tone: warm, refined, 'thoughtful gifting, elevated.' Show wrapped boxes, ribbon details, and the brand wordmark moments. End on a soft fade with the tagline."
+      }
+    }
+  ],
+  "credit_estimate": {"low": 60, "high": 105}
+}

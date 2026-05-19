@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { IMG } from '../constants';
 import SectionTitle from '../components/SectionTitle';
 import Reveal from '../components/Reveal';
+import WhatsAppPopup from '../components/WhatsAppPopup';
 
 export default function Contact({ mobile }) {
   const [sent, setSent] = useState(false);
+  const [whatsAppOpen, setWhatsAppOpen] = useState(false);
   const inputStyle = {
     width: '100%',
     border: '1px solid var(--line)',
@@ -122,8 +124,27 @@ export default function Contact({ mobile }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
                 <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Phone Number</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>+234 913 646 0729</div>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>WhatsApp</div>
+                  <button
+                    type="button"
+                    onClick={() => setWhatsAppOpen(true)}
+                    style={{
+                      background: 'transparent',
+                      border: 0,
+                      borderBottom: '1px solid var(--brown-deep)',
+                      color: 'var(--brown-deep)',
+                      fontSize: 14,
+                      padding: '0 0 3px',
+                      fontFamily: 'var(--sans)',
+                    }}
+                  >
+                    Choose WhatsApp number
+                  </button>
+                </div>
+                <div>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Phone Numbers</div>
+                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>US: +1 (301) 364-6072</div>
+                  <div style={{ color: 'var(--ink-soft)', fontSize: 14, marginTop: 3 }}>Nigeria: +234 (0) 8102904984</div>
                 </div>
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Address</div>
@@ -276,6 +297,11 @@ export default function Contact({ mobile }) {
         </Reveal>
       </section>
 
+      <WhatsAppPopup
+        open={whatsAppOpen}
+        onClose={() => setWhatsAppOpen(false)}
+        mobile={mobile}
+      />
     </div>
   );
 }
