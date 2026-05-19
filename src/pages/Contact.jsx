@@ -180,20 +180,10 @@ export default function Contact({ mobile }) {
                   </label>
                 </div>
 
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
-                  gap: 14,
-                }}>
-                  <label>
-                    <span style={labelStyle}>Email Address</span>
-                    <input style={inputStyle} type="email" name="Email Address" required />
-                  </label>
-                  <label>
-                    <span style={labelStyle}>Estimated Budget</span>
-                    <input style={inputStyle} type="text" name="Estimated Budget" />
-                  </label>
-                </div>
+                <label>
+                  <span style={labelStyle}>Email Address</span>
+                  <input style={inputStyle} type="email" name="Email Address" required />
+                </label>
 
                 <div style={{
                   display: 'grid',
