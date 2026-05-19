@@ -7,7 +7,9 @@
       "Bash(npm ci *)",
       "Bash(npm run *)",
       "Bash(npx vite *)",
-      "Bash(./node_modules/.bin/vite build *)"
+      "Bash(./node_modules/.bin/vite build *)",
+      "mcp__4d544869-3886-4e46-91e1-4dbe61a33b0d__balance",
+      "mcp__4d544869-3886-4e46-91e1-4dbe61a33b0d__show_plans_and_credits"
     ]
   }
 }

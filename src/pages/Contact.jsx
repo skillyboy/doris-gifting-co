@@ -64,8 +64,8 @@ export default function Contact({ mobile }) {
               color: 'var(--ink-soft)',
               lineHeight: 1.625,
             }}>
-              We respond in five minutes. Whether you are appreciating clients,
-              welcoming employees, or celebrating special moments — we are here.
+              Whether you are appreciating clients, welcoming employees, or
+              celebrating special moments. Tell us what you are planning.
             </p>
           </div>
         </Reveal>
@@ -75,15 +75,17 @@ export default function Contact({ mobile }) {
           display: 'grid',
           gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
           gap: mobile ? 32 : 80,
-          alignItems: 'start',
+          alignItems: mobile ? 'start' : 'stretch',
           flex: 1,
         }}>
 
           {/* Left: photo */}
-          <Reveal>
+          <Reveal style={{ height: mobile ? 'auto' : '100%' }}>
             <div style={{
               width: '100%',
-              aspectRatio: '4 / 5',
+              height: mobile ? undefined : '100%',
+              aspectRatio: mobile ? '4 / 5' : undefined,
+              minHeight: mobile ? undefined : 420,
               backgroundImage: 'url(' + IMG.contactHand + ')',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -118,8 +120,8 @@ export default function Contact({ mobile }) {
                 fontSize: mobile ? 14 : 15,
                 lineHeight: 1.65,
               }}>
-                Tell us about your project, occasion, or recipients — we will compose
-                a thoughtful proposal within one business day.
+                Tell us your gifting goals. Send us a note below, and our team
+                will curate a thoughtful custom proposal.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
@@ -178,25 +180,14 @@ export default function Contact({ mobile }) {
                   </label>
                 </div>
 
-                <label>
-                  <span style={labelStyle}>Email Address</span>
-                  <input style={inputStyle} type="email" name="Email Address" required />
-                </label>
-
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: mobile ? '1fr' : '1fr 1fr',
                   gap: 14,
                 }}>
                   <label>
-                    <span style={labelStyle}>Gifting Choice</span>
-                    <select style={inputStyle} name="Gifting Choice" required defaultValue="">
-                      <option value="" disabled>Select one</option>
-                      <option>Corporate Gifting</option>
-                      <option>Custom Gift Boxes</option>
-                      <option>Special Occasion Gifts</option>
-                      <option>Bulk Orders</option>
-                    </select>
+                    <span style={labelStyle}>Email Address</span>
+                    <input style={inputStyle} type="email" name="Email Address" required />
                   </label>
                   <label>
                     <span style={labelStyle}>Estimated Budget</span>
@@ -210,12 +201,18 @@ export default function Contact({ mobile }) {
                   gap: 14,
                 }}>
                   <label>
-                    <span style={labelStyle}>Quantity</span>
-                    <input style={inputStyle} type="number" min="1" name="Quantity" placeholder="How many gifts?" />
+                    <span style={labelStyle}>Function</span>
+                    <select style={inputStyle} name="Function" required defaultValue="">
+                      <option value="" disabled>Select one</option>
+                      <option>Corporate Gifting</option>
+                      <option>Custom Gift Boxes</option>
+                      <option>Special Occasion Gifts</option>
+                      <option>Bulk Orders</option>
+                    </select>
                   </label>
                   <label>
-                    <span style={labelStyle}>Needed By</span>
-                    <input style={inputStyle} type="date" name="Needed By" />
+                    <span style={labelStyle}>Quantity</span>
+                    <input style={inputStyle} type="number" min="1" name="Quantity" placeholder="How many gifts?" />
                   </label>
                 </div>
 
