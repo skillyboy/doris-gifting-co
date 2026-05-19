@@ -141,15 +141,8 @@ export default function Contact({ mobile }) {
                     Choose WhatsApp number
                   </button>
                 </div>
-                <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Phone Numbers</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>US: +1 (301) 364-6072</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14, marginTop: 3 }}>Nigeria: +234 (0) 8102904984</div>
-                </div>
-                <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>Address</div>
-                  <div style={{ color: 'var(--ink-soft)', fontSize: 14 }}>Address 2, Lagos, Nigeria</div>
-                </div>
+
+
               </div>
 
               <form
@@ -207,7 +200,7 @@ export default function Contact({ mobile }) {
                   </label>
                   <label>
                     <span style={labelStyle}>Estimated Budget</span>
-                    <input style={inputStyle} type="text" name="Estimated Budget" placeholder="e.g. ₦250,000" />
+                    <input style={inputStyle} type="text" name="Estimated Budget" />
                   </label>
                 </div>
 
