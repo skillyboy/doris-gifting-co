@@ -120,7 +120,6 @@ export default function Home({ mobile, go }) {
         <div className="home-testimonial-grid">
           {TESTIMONIALS.map((t, i) => (
             <article className="home-testimonial" key={`${t.name}-${i}`}>
-              <div className="home-stars">*****</div>
               <p>{t.text}</p>
               <div className="home-person">
                 <img src={t.avatar} alt="" />
