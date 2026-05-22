@@ -8,18 +8,19 @@ const heroVideo = new URL(
   import.meta.url,
 ).href;
 
+
 const TESTIMONIALS = [
   {
-    name: 'Noma Simmons',
-    role: 'Corporate Client',
+    name: 'Angela Gomez',
+    role: 'Coporate Client',
     avatar: IMG.a1,
-    text: 'Doris made our client gifts feel personal, polished, and effortless. Every box arrived beautifully composed and right on time.',
+    text: 'Working with Doris Gifting Co was such a beautiful experience from start to finish. The attention to detail, creativity, and professionalism truly stood out.',
   },
   {
-    name: 'Amara Johnson',
-    role: 'Event Host',
+    name: 'Preye Alaere',
+    role: 'Client',
     avatar: IMG.a2,
-    text: 'The attention to detail was exactly what I wanted. The presentation felt elevated without losing warmth.',
+    text: 'Every gift was thoughtfully arranged and delivered with so much elegance and care. You can tell there’s genuine passion behind the brand. If you’re looking for luxury gifting with a personal touch, Doris Gifting Co is definitely the perfect choice. Highly recommend!',
   },
   {
     name: 'Talia Green',
@@ -34,16 +35,16 @@ const TESTIMONIALS = [
     text: 'The employee appreciation boxes were thoughtful and consistent across the whole order. We received wonderful feedback.',
   },
   {
-    name: 'Rachel Adams',
-    role: 'Bride-to-be',
+    name: 'Gloria Soysal',
+    role: 'Founder, EffiDeli',
     avatar: IMG.a5,
-    text: 'My bridesmaid gifts felt intimate and luxurious. The whole experience was easy from the first message.',
+    text: "Thank you to Doris Gifting Co for the beautiful personalized gift boxes for Ozan's 2nd birthday. His friends absolutely loved them and honestly, their mothers did too.",
   },
   {
-    name: 'Keisha Brown',
-    role: 'Returning Customer',
+    name: 'Janet Harvey',
+    role: '',
     avatar: IMG.a6,
-    text: 'I keep coming back because the gifts never feel generic. They always understand the moment and the recipient.',
+    text: 'The personalized motivational cards were such a thoughtful touch and made the gifts even more special. Seeing the surprise and excitement from everyone was priceless. We are definitely coming back for my daughter\'s 3rd birthday celebration.',
   },
 ];
 
@@ -120,7 +121,6 @@ export default function Home({ mobile, go }) {
         <div className="home-testimonial-grid">
           {TESTIMONIALS.map((t, i) => (
             <article className="home-testimonial" key={`${t.name}-${i}`}>
-              <div className="home-stars">*****</div>
               <p>{t.text}</p>
               <div className="home-person">
                 <img src={t.avatar} alt="" />
