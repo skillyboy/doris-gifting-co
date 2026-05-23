@@ -12,7 +12,7 @@ const heroVideo = new URL(
 const TESTIMONIALS = [
   {
     name: 'Angela Gomez',
-    role: 'Coporate Client',
+    role: 'Corporate Client',
     avatar: IMG.a1,
     text: 'Working with Doris Gifting Co was such a beautiful experience from start to finish. The attention to detail, creativity, and professionalism truly stood out.',
   },
