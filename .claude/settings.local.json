@@ -12,7 +12,9 @@
       "mcp__4d544869-3886-4e46-91e1-4dbe61a33b0d__show_plans_and_credits",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "mcp__f69d5ef5-ef50-4c9e-ba50-222df56da7a8__search_files",
+      "mcp__f69d5ef5-ef50-4c9e-ba50-222df56da7a8__list_recent_files"
     ]
   }
 }
