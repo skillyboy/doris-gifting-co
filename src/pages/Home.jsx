@@ -11,7 +11,7 @@ const heroVideo = new URL(
 
 const TESTIMONIALS = [
   {
-    name: 'Angela Gomez',
+    name: 'Amara Joy',
     role: 'Corporate Client',
     avatar: IMG.a1,
     text: 'Working with Doris Gifting Co was such a beautiful experience from start to finish. The attention to detail, creativity, and professionalism truly stood out.',
@@ -23,25 +23,25 @@ const TESTIMONIALS = [
     text: 'Every gift was thoughtfully arranged and delivered with so much elegance and care. You can tell there’s genuine passion behind the brand. If you’re looking for luxury gifting with a personal touch, Doris Gifting Co is definitely the perfect choice. Highly recommend!',
   },
   {
-    name: 'Talia Green',
+    name: 'Temi Ore',
     role: 'Small Business Owner',
     avatar: IMG.a3,
     text: 'Our welcome kits finally matched our brand. Doris handled the sourcing, wrapping, and details with so much care.',
   },
   {
-    name: 'Michelle Carter',
+    name: 'Anna Okeke',
     role: 'HR Manager',
     avatar: IMG.a4,
     text: 'The employee appreciation boxes were thoughtful and consistent across the whole order. We received wonderful feedback.',
   },
   {
-    name: 'Gloria Soysal',
+    name: 'Chioma Soysal',
     role: 'Founder, EffiDeli',
     avatar: IMG.a5,
     text: "Thank you to Doris Gifting Co for the beautiful personalized gift boxes for Ozan's 2nd birthday. His friends absolutely loved them and honestly, their mothers did too.",
   },
   {
-    name: 'Janet Harvey',
+    name: 'Bukky Ore',
     role: '',
     avatar: IMG.a6,
     text: 'The personalized motivational cards were such a thoughtful touch and made the gifts even more special. Seeing the surprise and excitement from everyone was priceless. We are definitely coming back for my daughter\'s 3rd birthday celebration.',
