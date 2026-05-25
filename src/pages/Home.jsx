@@ -15,12 +15,14 @@ const ANON_AVATAR =
     "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='#8A6A4A'/><circle cx='32' cy='25' r='12' fill='#F2ECE3'/><path d='M11 57c0-12 10-20 21-20s21 8 21 20z' fill='#F2ECE3'/></svg>",
   );
 
+const photo = (file) => `${import.meta.env.BASE_URL}img/${encodeURIComponent(file)}`;
+
 
 const TESTIMONIALS = [
   {
     name: 'Amara Joy',
     role: 'Corporate Client',
-    avatar: ANON_AVATAR,
+    avatar: photo('Amara Joy.jpg'),
     text: 'Working with Doris Gifting Co was such a beautiful experience from start to finish. The attention to detail, creativity, and professionalism truly stood out.',
   },
   {
@@ -32,25 +34,25 @@ const TESTIMONIALS = [
   {
     name: 'Temi Ore',
     role: 'Small Business Owner',
-    avatar: ANON_AVATAR,
+    avatar: photo('Temi Ore.jpg'),
     text: 'Our welcome kits finally matched our brand. Doris handled the sourcing, wrapping, and details with so much care.',
   },
   {
     name: 'Anna Okeke',
     role: 'HR Manager',
-    avatar: ANON_AVATAR,
+    avatar: photo('Anna Okeke.jpg'),
     text: 'The employee appreciation boxes were thoughtful and consistent across the whole order. We received wonderful feedback.',
   },
   {
     name: 'Chioma Soysal',
     role: 'Founder, EffiDeli',
-    avatar: ANON_AVATAR,
+    avatar: photo('Gloria Soysal.jpeg'),
     text: "Thank you to Doris Gifting Co for the beautiful personalized gift boxes for Ozan's 2nd birthday. His friends absolutely loved them and honestly, their mothers did too.",
   },
   {
     name: 'Bukky Ore',
-    role: '',
-    avatar: ANON_AVATAR,
+    role: 'Client',
+    avatar: photo('Bukky Ore.jpg'),
     text: 'The personalized motivational cards were such a thoughtful touch and made the gifts even more special. Seeing the surprise and excitement from everyone was priceless. We are definitely coming back for my daughter\'s 3rd birthday celebration.',
   },
 ];
