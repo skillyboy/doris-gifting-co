@@ -51,7 +51,7 @@ export default function CTABanner({ mobile, go }) {
           We respond in five minutes.
         </p>
         <button onClick={() => go('contact')} className="btn-filled">
-          Email Us
+          Contact Us
         </button>
       </div>
     </section>

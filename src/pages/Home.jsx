@@ -51,7 +51,7 @@ const TESTIMONIALS = [
   },
   {
     name: 'Bukky Ore',
-    role: '',
+    role: 'Client',
     avatar: photo('Bukky Ore.jpg'),
     text: 'The personalized motivational cards were such a thoughtful touch and made the gifts even more special. Seeing the surprise and excitement from everyone was priceless. We are definitely coming back for my daughter\'s 3rd birthday celebration.',
   },
