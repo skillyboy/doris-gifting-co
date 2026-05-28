@@ -13,7 +13,7 @@ const links = {
   social: [
     { label: 'Facebook', href: 'https://www.facebook.com/dorisgiftingco' },
     { label: 'Instagram', href: 'https://www.instagram.com/dorisgiftingco' },
-    { label: 'WhatsApp', href: 'https://wa.me/1234567890' },
+    { label: 'WhatsApp', href: 'https://wa.me/13013646072' },
   ],
 };
 
