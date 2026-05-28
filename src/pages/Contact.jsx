@@ -146,78 +146,75 @@ export default function Contact({ mobile }) {
 
                 <div style={{ marginTop: 20 }}>
                   <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 12 }}>Connect With Us</div>
-                  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-                    <a
-                      href="https://www.instagram.com/dorisgiftingco"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Instagram"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: 40,
-                        height: 40,
-                        borderRadius: '50%',
-                        background: 'var(--brown-deep)',
-                        color: '#fff',
-                        textDecoration: 'none',
-                        transition: 'background 0.3s ease',
-                      }}
-                      onMouseEnter={(e) => e.target.style.background = 'var(--brown-mid)'}
-                      onMouseLeave={(e) => e.target.style.background = 'var(--brown-deep)'}
-                    >
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.441 15.892h-2.887v4.526h-3.868v-4.526H8.681v-3.202h.005v-2.408c0-1.878.889-3.014 3.129-3.014.89 0 1.654.067 1.876.097v2.178h-1.288c-1.018 0-1.217.484-1.217 1.194v1.566h2.438l-.317 2.409z"></path>
-                      </svg>
-                    </a>
-                    <a
-                      href="https://www.facebook.com/dorisgiftingco"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Facebook"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: 40,
-                        height: 40,
-                        borderRadius: '50%',
-                        background: 'var(--brown-deep)',
-                        color: '#fff',
-                        textDecoration: 'none',
-                        transition: 'background 0.3s ease',
-                      }}
-                      onMouseEnter={(e) => e.target.style.background = 'var(--brown-mid)'}
-                      onMouseLeave={(e) => e.target.style.background = 'var(--brown-deep)'}
-                    >
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M9.101 23.691v-7.98H6.627v-2.604h2.474v-1.888c0-2.416 1.455-3.728 3.529-3.728.989 0 1.839.073 2.165.094v2.51h-1.487c-1.165 0-1.395.555-1.395 1.367v1.791h2.787l-.363 2.604h-2.424v7.98H9.101Z"></path>
-                      </svg>
-                    </a>
+                  <div style={{ display: 'flex', gap: 15, alignItems: 'center' }}>
                     <a
                       href="https://wa.me/13013646072"
                       target="_blank"
                       rel="noopener noreferrer"
                       title="WhatsApp"
                       style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: 40,
-                        height: 40,
+                        width: 45,
+                        height: 45,
                         borderRadius: '50%',
                         background: 'var(--brown-deep)',
                         color: '#fff',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 22,
                         textDecoration: 'none',
                         transition: 'background 0.3s ease',
                       }}
-                      onMouseEnter={(e) => e.target.style.background = 'var(--brown-mid)'}
-                      onMouseLeave={(e) => e.target.style.background = 'var(--brown-deep)'}
+                      onMouseEnter={(e) => e.currentTarget.style.background = '#c9a24d'}
+                      onMouseLeave={(e) => e.currentTarget.style.background = 'var(--brown-deep)'}
                     >
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.275 0-2.505.247-3.711.703L3.713 2.223l1.473 4.372c-.512 1.265-.786 2.66-.786 4.071 0 5.561 4.526 10.087 10.087 10.087 2.693 0 5.216-1.04 7.14-2.937 1.924-1.897 2.981-4.42 2.981-7.15 0-5.561-4.526-10.087-10.087-10.087"></path>
-                      </svg>
+                      <i className="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a
+                      href="https://instagram.com/dorisgiftingco"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Instagram"
+                      style={{
+                        width: 45,
+                        height: 45,
+                        borderRadius: '50%',
+                        background: 'var(--brown-deep)',
+                        color: '#fff',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 22,
+                        textDecoration: 'none',
+                        transition: 'background 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.background = '#c9a24d'}
+                      onMouseLeave={(e) => e.currentTarget.style.background = 'var(--brown-deep)'}
+                    >
+                      <i className="fa-brands fa-instagram"></i>
+                    </a>
+                    <a
+                      href="https://facebook.com/dorisgiftingco"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Facebook"
+                      style={{
+                        width: 45,
+                        height: 45,
+                        borderRadius: '50%',
+                        background: 'var(--brown-deep)',
+                        color: '#fff',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 22,
+                        textDecoration: 'none',
+                        transition: 'background 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.background = '#c9a24d'}
+                      onMouseLeave={(e) => e.currentTarget.style.background = 'var(--brown-deep)'}
+                    >
+                      <i className="fa-brands fa-facebook"></i>
                     </a>
                   </div>
                 </div>

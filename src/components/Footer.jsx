@@ -76,23 +76,82 @@ export default function Footer({ mobile, go }) {
             marginBottom: 14,
             letterSpacing: '0.02em',
           }}>Follow Us</div>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-            {links.social.map((s) => (
-              <li key={s.label} style={{ color: 'var(--ink-soft)', fontSize: 14 }}>
-                {s.href ? (
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: 'var(--ink-soft)', textDecoration: 'none' }}
-                  >
-                    {s.label}
-                  </a>
-                ) : (
-                  s.label
-                )}
-              </li>
-            ))}
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', gap: 12 }}>
+            <li>
+              <a
+                href="https://www.facebook.com/dorisgiftingco"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Facebook"
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: '50%',
+                  background: 'var(--brown-deep)',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 18,
+                  textDecoration: 'none',
+                  transition: 'background 0.3s ease',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.background = '#c9a24d'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'var(--brown-deep)'}
+              >
+                <i className="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/dorisgiftingco"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: '50%',
+                  background: 'var(--brown-deep)',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 18,
+                  textDecoration: 'none',
+                  transition: 'background 0.3s ease',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.background = '#c9a24d'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'var(--brown-deep)'}
+              >
+                <i className="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/13013646072"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="WhatsApp"
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: '50%',
+                  background: 'var(--brown-deep)',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 18,
+                  textDecoration: 'none',
+                  transition: 'background 0.3s ease',
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.background = '#c9a24d'}
+                onMouseLeave={(e) => e.currentTarget.style.background = 'var(--brown-deep)'}
+              >
+                <i className="fa-brands fa-whatsapp"></i>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
