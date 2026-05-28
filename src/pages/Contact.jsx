@@ -126,7 +126,7 @@ export default function Contact({ mobile }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--brown-deep)', marginBottom: 8 }}>Address</div>
+                  <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--brown-deep)', marginBottom: 8 }}>Address</div>
                   <p style={{
                     margin: 0,
                     color: 'var(--ink-soft)',
@@ -138,7 +138,7 @@ export default function Contact({ mobile }) {
                 </div>
 
                 <div style={{ marginTop: 20 }}>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--brown-deep)', marginBottom: 12 }}>Connect With Us</div>
+                  <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--brown-deep)', marginBottom: 12 }}>Connect With Us</div>
                   <div style={{ display: 'flex', gap: 15, alignItems: 'center' }}>
                     <a
                       href="https://wa.me/13013646072"
