@@ -11,9 +11,9 @@ const links = {
     { label: 'Terms of Service' },
   ],
   social: [
-    { label: 'Facebook' },
+    { label: 'Facebook', href: 'https://www.facebook.com/dorisgiftingco' },
     { label: 'Instagram', href: 'https://www.instagram.com/dorisgiftingco' },
-    { label: 'Tiktok' },
+    { label: 'WhatsApp', href: 'https://wa.me/1234567890' },
   ],
 };
 

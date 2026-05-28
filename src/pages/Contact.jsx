@@ -144,6 +144,85 @@ export default function Contact({ mobile }) {
                   </button>
                 </div>
 
+                <div style={{ marginTop: 20 }}>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 12 }}>Connect With Us</div>
+                  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+                    <a
+                      href="https://www.instagram.com/dorisgiftingco"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Instagram"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: 40,
+                        height: 40,
+                        borderRadius: '50%',
+                        background: 'var(--brown-deep)',
+                        color: '#fff',
+                        textDecoration: 'none',
+                        transition: 'background 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => e.target.style.background = 'var(--brown-mid)'}
+                      onMouseLeave={(e) => e.target.style.background = 'var(--brown-deep)'}
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <circle cx="17.5" cy="6.5" r="1.5"></circle>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://www.facebook.com/dorisgiftingco"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Facebook"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: 40,
+                        height: 40,
+                        borderRadius: '50%',
+                        background: 'var(--brown-deep)',
+                        color: '#fff',
+                        textDecoration: 'none',
+                        transition: 'background 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => e.target.style.background = 'var(--brown-mid)'}
+                      onMouseLeave={(e) => e.target.style.background = 'var(--brown-deep)'}
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M18 2h-3a6 6 0 0 0-6 6v4h-2v4h2v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h1z"></path>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://wa.me/1234567890"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="WhatsApp"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: 40,
+                        height: 40,
+                        borderRadius: '50%',
+                        background: 'var(--brown-deep)',
+                        color: '#fff',
+                        textDecoration: 'none',
+                        transition: 'background 0.3s ease',
+                      }}
+                      onMouseEnter={(e) => e.target.style.background = 'var(--brown-mid)'}
+                      onMouseLeave={(e) => e.target.style.background = 'var(--brown-deep)'}
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M21.5 2H2.5C1.12 2 0 3.12 0 4.5v15C0 20.88 1.12 22 2.5 22h18.99C22.88 22 24 20.88 24 19.5v-15C24 3.12 22.88 2 21.5 2zm-4.39 15.5H18.5v6h-3.5v-6h-2.68v-3h2.68v-1.93c0-2.25.543-3.57 3.47-3.57h2.62v3h-1.82c-.6 0-.63.22-.63.65v1.85h2.5l-.34 3z"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
 
               </div>
 
