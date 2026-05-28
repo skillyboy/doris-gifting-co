@@ -126,7 +126,7 @@ export default function Contact({ mobile }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
                 <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 8 }}>Address</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--brown-deep)', marginBottom: 8 }}>Address</div>
                   <p style={{
                     margin: 0,
                     color: 'var(--ink-soft)',
