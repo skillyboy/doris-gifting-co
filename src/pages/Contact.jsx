@@ -126,22 +126,15 @@ export default function Contact({ mobile }) {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 28 }}>
                 <div>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 4 }}>WhatsApp</div>
-                  <button
-                    type="button"
-                    onClick={() => setWhatsAppOpen(true)}
-                    style={{
-                      background: 'transparent',
-                      border: 0,
-                      borderBottom: '1px solid var(--brown-deep)',
-                      color: 'var(--brown-deep)',
-                      fontSize: 14,
-                      padding: '0 0 3px',
-                      fontFamily: 'var(--sans)',
-                    }}
-                  >
-                    Choose WhatsApp number
-                  </button>
+                  <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--brown-deep)', marginBottom: 8 }}>Address</div>
+                  <p style={{
+                    margin: 0,
+                    color: 'var(--ink-soft)',
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                  }}>
+                    Houston, Texas
+                  </p>
                 </div>
 
                 <div style={{ marginTop: 20 }}>
