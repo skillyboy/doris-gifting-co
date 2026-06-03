@@ -74,5 +74,10 @@ export const GALLERY_ITEMS = [
   { src: `${B}img/IMG_2363.jpeg`,                                        cat: 'Custom Gift Boxes',      ratio: '4 / 3' },
   { src: `${B}img/499A7578_Original.jpeg`,                               cat: 'Corporate Gifting',      ratio: '1 / 1' },
   { src: `${B}img/37017450-8AA9-4317-A256-7676D4E7B97B.jpeg`,           cat: 'Special Occasion Gifts', ratio: '1 / 1' },
-  { src: `${B}img/b56a08df-1f6f-4aaa-93c9-277a603c99f6.jpeg`,           cat: 'Bulk Orders',            ratio: '4 / 3' },
+  { src: `${B}img/b56a08df-1f6f-4aaa-93c9-277a603c99f6.jpeg`,                     cat: 'Bulk Orders',            ratio: '4 / 3' },
+  { src: `${B}img/WhatsApp Image 2026-06-03 at 6.26.59 PM.jpeg`,               cat: 'Custom Gift Boxes',      ratio: '4 / 3', span: 2 },
+  { src: `${B}img/WhatsApp Image 2026-06-03 at 6.27.02 PM.jpeg`,               cat: 'Special Occasion Gifts', ratio: '1 / 1' },
+  { src: `${B}img/WhatsApp Image 2026-06-03 at 6.27.06 PM.jpeg`,               cat: 'Corporate Gifting',      ratio: '4 / 3' },
+  { src: `${B}img/WhatsApp Image 2026-06-03 at 6.27.08 PM.jpeg`,               cat: 'Bulk Orders',            ratio: '1 / 1' },
+  { src: `${B}img/WhatsApp Image 2026-06-03 at 6.27.09 PM.jpeg`,               cat: 'Special Occasion Gifts', ratio: '4 / 3' },
 ];
