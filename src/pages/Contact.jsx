@@ -229,8 +229,9 @@ export default function Contact({ mobile }) {
                 onSubmit={() => setSent(true)}
               >
                 <input type="hidden" name="_subject" value="New Doris Gifting Co. Quote Request" />
-                <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
+                {/* Honeypot: real users leave this blank; bots fill it and get rejected. */}
+                <input type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
 
                 <div style={{
                   display: 'grid',

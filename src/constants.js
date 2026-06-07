@@ -2,11 +2,9 @@ const B = import.meta.env.BASE_URL; // '/' in dev, '/doris-gifting-co/' in build
 
 export const IMG = {
   // hero / banners
-  storeInterior: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=1600&q=80&auto=format&fit=crop',
   giftWall:    `${B}img/cta-wall.png`,
   contactHand: `${B}img/contact-hand.jpg`,
   founder:     `${B}img/founder.png`,
-  workshop:    `${B}img/cta-wall.png`,
   // gallery — real Doris product photography
   g1: `${B}img/g-vmo.jpg`,
   g2: `${B}img/g-packaging.jpg`,
@@ -15,13 +13,6 @@ export const IMG = {
   g5: `${B}img/g-refy.jpg`,
   g6: `${B}img/g-casa.jpg`,
   g7: `${B}img/g-happybday.jpg`,
-  // testimonial avatars
-  a1: 'https://i.pravatar.cc/120?img=47',
-  a2: 'https://i.pravatar.cc/120?img=32',
-  a3: 'https://i.pravatar.cc/120?img=12',
-  a4: 'https://i.pravatar.cc/120?img=5',
-  a5: 'https://i.pravatar.cc/120?img=20',
-  a6: 'https://i.pravatar.cc/120?img=49',
 };
 
 export const NAV_ITEMS = [

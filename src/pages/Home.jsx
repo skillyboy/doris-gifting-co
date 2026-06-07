@@ -108,7 +108,7 @@ export default function Home({ mobile, go }) {
               onClick={() => go('gallery')}
               aria-label={item.alt}
             >
-              <img src={item.src} alt="" />
+              <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
             </button>
           ))}
         </div>
@@ -121,7 +121,7 @@ export default function Home({ mobile, go }) {
         </div>
         <div className="home-services-body">
           <ServicesAccordion mobile={mobile} />
-          <img src={IMG.g1} alt="Corporate gift boxes with branded items" />
+          <img src={IMG.g1} alt="Corporate gift boxes with branded items" loading="lazy" decoding="async" />
         </div>
       </section>
 
@@ -132,7 +132,7 @@ export default function Home({ mobile, go }) {
             <article className="home-testimonial" key={`${t.name}-${i}`}>
               <p>{t.text}</p>
               <div className="home-person">
-                <img src={t.avatar} alt="" />
+                <img src={t.avatar} alt={t.name} width="42" height="42" loading="lazy" decoding="async" />
                 <div>
                   <strong>{t.name}</strong>
                   <span>{t.role}</span>

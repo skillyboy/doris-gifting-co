@@ -53,7 +53,7 @@ export default function Gallery({ mobile, go }) {
                 className="gallery-cell gallery-page-cell"
                 style={{ aspectRatio: it.ratio }}
               >
-                <img src={it.src} alt="" className="gallery-page-image" />
+                <img src={it.src} alt={`Doris Gifting Co. ${it.cat}`} className="gallery-page-image" loading="lazy" decoding="async" />
               </button>
             </Reveal>
           ))}
