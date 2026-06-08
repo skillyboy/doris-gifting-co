@@ -2,7 +2,16 @@ node_modules/
 dist/
 .DS_Store
 
+# Never commit large/unsupported media — repo LFS budget is exceeded.
+# Videos belong on a CDN; HEIC is not browser-renderable (convert to .jpg).
+*.mov
+*.MOV
+*.heic
+*.HEIC
 
 # Local-only binary assets — push manually via `git push` once proxy is fixed
 docs/img/*.mp4
 public/videos/
+
+# ...except the small homepage hero video, which must deploy with the site
+!docs/img/about-bg.mp4
