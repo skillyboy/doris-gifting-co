@@ -55,12 +55,12 @@ const TESTIMONIALS = [
 ];
 
 const GALLERY_PREVIEW = [
-  { src: IMG.g3, className: 'home-gallery-main', alt: 'Huxley wrapped gift boxes' },
-  { src: IMG.g2, className: 'home-gallery-side home-gallery-packaging', alt: 'Gift packaging process' },
-  { src: IMG.g4, className: 'home-gallery-side', alt: 'Arhaus gift bags' },
-  { src: IMG.g5, className: 'home-gallery-tile', alt: 'Refy gift bags' },
-  { src: IMG.g6, className: 'home-gallery-tile', alt: 'Casa Naiha boxed gifts' },
-  { src: IMG.g7, className: 'home-gallery-tile', alt: 'Birthday gift box' },
+  { src: IMG.g3, className: 'home-gallery-main', alt: 'Curated Doris gift box arrangement' },
+  { src: IMG.g2, className: 'home-gallery-side home-gallery-packaging', alt: 'Gift packaging detail' },
+  { src: IMG.g4, className: 'home-gallery-side', alt: 'Wrapped gift presentation' },
+  { src: IMG.g5, className: 'home-gallery-tile', alt: 'Personalized gift set' },
+  { src: IMG.g6, className: 'home-gallery-tile', alt: 'Bespoke gift box' },
+  { src: IMG.g7, className: 'home-gallery-tile', alt: 'Special occasion gift' },
 ];
 
 export default function Home({ mobile, go }) {

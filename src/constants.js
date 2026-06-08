@@ -7,6 +7,14 @@ export const IMG = {
   contactHand: `${B}img/contact-hand.jpg`,
   founder:     `${B}img/founder.png`,
   workshop:    `${B}img/cta-wall.png`,
+  // home page gallery preview + services image — real Doris photography
+  g1: `${B}img/IMG_1649.jpg`,
+  g2: `${B}img/IMG_2363.jpeg`,
+  g3: `${B}img/IMG_1635.jpg`,
+  g4: `${B}img/IMG_2254.jpeg`,
+  g5: `${B}img/IMG_1669.jpg`,
+  g6: `${B}img/whatsapp-1.jpeg`,
+  g7: `${B}img/IMG_1673.jpg`,
   // testimonial avatars
   a1: 'https://i.pravatar.cc/120?img=47',
   a2: 'https://i.pravatar.cc/120?img=32',
