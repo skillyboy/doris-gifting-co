@@ -80,4 +80,10 @@ export const GALLERY_ITEMS = [
   { src: `${B}img/WhatsApp Image 2026-06-03 at 6.27.06 PM.jpeg`,               cat: 'Corporate Gifting',      ratio: '4 / 3' },
   { src: `${B}img/WhatsApp Image 2026-06-03 at 6.27.08 PM.jpeg`,               cat: 'Bulk Orders',            ratio: '1 / 1' },
   { src: `${B}img/WhatsApp Image 2026-06-03 at 6.27.09 PM.jpeg`,               cat: 'Special Occasion Gifts', ratio: '4 / 3' },
+  { src: `${B}img/IMG_1635.HEIC`,                                               cat: 'Custom Gift Boxes',      ratio: '4 / 3', span: 2 },
+  { src: `${B}img/IMG_1648.HEIC`,                                               cat: 'Special Occasion Gifts', ratio: '1 / 1' },
+  { src: `${B}img/IMG_1649.HEIC`,                                               cat: 'Corporate Gifting',      ratio: '4 / 3' },
+  { src: `${B}img/IMG_1652.HEIC`,                                               cat: 'Bulk Orders',            ratio: '1 / 1' },
+  { src: `${B}img/IMG_1669.HEIC`,                                               cat: 'Custom Gift Boxes',      ratio: '4 / 3' },
+  { src: `${B}img/IMG_1673.HEIC`,                                               cat: 'Special Occasion Gifts', ratio: '4 / 3' },
 ];
