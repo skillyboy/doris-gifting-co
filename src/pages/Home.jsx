@@ -19,7 +19,7 @@ const TESTIMONIALS = [
   {
     name: 'Amara Joy',
     role: 'Corporate Client',
-    avatar: photo('Amara Joy.jpg'),
+    avatar: photo('amara-joy.jpg'),
     text: 'Working with Doris Gifting Co was such a beautiful experience from start to finish. The attention to detail, creativity, and professionalism truly stood out.',
   },
   {
@@ -31,25 +31,25 @@ const TESTIMONIALS = [
   {
     name: 'Temi Ore',
     role: 'Small Business Owner',
-    avatar: photo('Temi Ore.jpg'),
+    avatar: photo('temi-ore.jpg'),
     text: 'Our welcome kits finally matched our brand. Doris handled the sourcing, wrapping, and details with so much care.',
   },
   {
     name: 'Anna Okeke',
     role: 'HR Manager',
-    avatar: photo('Anna Okeke.jpg'),
+    avatar: photo('anna-okeke.jpg'),
     text: 'The employee appreciation boxes were thoughtful and consistent across the whole order. We received wonderful feedback.',
   },
   {
     name: 'Chioma Soysal',
     role: 'Founder, EffiDeli',
-    avatar: photo('Gloria Soysal.jpeg'),
+    avatar: photo('gloria-soysal.jpeg'),
     text: "Thank you to Doris Gifting Co for the beautiful personalized gift boxes for Ozan's 2nd birthday. His friends absolutely loved them and honestly, their mothers did too.",
   },
   {
     name: 'Bukky Ore',
     role: 'Client',
-    avatar: photo('Bukky Ore.jpg'),
+    avatar: photo('bukky-ore.jpg'),
     text: 'The personalized motivational cards were such a thoughtful touch and made the gifts even more special. Seeing the surprise and excitement from everyone was priceless. We are definitely coming back for my daughter\'s 3rd birthday celebration.',
   },
 ];
