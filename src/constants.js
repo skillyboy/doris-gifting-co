@@ -7,14 +7,6 @@ export const IMG = {
   contactHand: `${B}img/contact-hand.jpg`,
   founder:     `${B}img/founder.png`,
   workshop:    `${B}img/cta-wall.png`,
-  // gallery — real Doris product photography
-  g1: `${B}img/g-vmo.jpg`,
-  g2: `${B}img/g-packaging.jpg`,
-  g3: `${B}img/g-huxley.jpg`,
-  g4: `${B}img/g-arhaus.jpg`,
-  g5: `${B}img/g-refy.jpg`,
-  g6: `${B}img/g-casa.jpg`,
-  g7: `${B}img/g-happybday.jpg`,
   // testimonial avatars
   a1: 'https://i.pravatar.cc/120?img=47',
   a2: 'https://i.pravatar.cc/120?img=32',
@@ -63,13 +55,6 @@ export const GALLERY_FILTERS = [
 ];
 
 export const GALLERY_ITEMS = [
-  { src: `${B}img/g-huxley.jpg`,                                        cat: 'Custom Gift Boxes',      ratio: '4 / 3', span: 2 },
-  { src: `${B}img/g-packaging.jpg`,                                      cat: 'Corporate Gifting',      ratio: '4 / 3' },
-  { src: `${B}img/g-arhaus.jpg`,                                         cat: 'Bulk Orders',            ratio: '4 / 3' },
-  { src: `${B}img/g-refy.jpg`,                                           cat: 'Custom Gift Boxes',      ratio: '1 / 1' },
-  { src: `${B}img/g-casa.jpg`,                                           cat: 'Bulk Orders',            ratio: '1 / 1' },
-  { src: `${B}img/g-happybday.jpg`,                                      cat: 'Special Occasion Gifts', ratio: '1 / 1' },
-  { src: `${B}img/g-vmo.jpg`,                                            cat: 'Corporate Gifting',      ratio: '4 / 3', span: 2 },
   { src: `${B}img/IMG_2254.jpeg`,                                        cat: 'Special Occasion Gifts', ratio: '4 / 3' },
   { src: `${B}img/IMG_2363.jpeg`,                                        cat: 'Custom Gift Boxes',      ratio: '4 / 3' },
   { src: `${B}img/499A7578_Original.jpeg`,                               cat: 'Corporate Gifting',      ratio: '1 / 1' },
